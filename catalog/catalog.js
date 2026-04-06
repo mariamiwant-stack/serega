@@ -1,0 +1,3221 @@
+
+    // ====== ДЕМО-ДАННЫЕ: вместо этого подставишь свои JSON ======
+    /**
+     * @typedef {Object} CatalogItem
+     * @property {string} id
+     * @property {string} name
+     * @property {string} image
+     * @property {string} price
+     * @property {string} price_text
+     * @property {string} type
+     * @property {string} use
+     * @property {string} source
+     * @property {string} category
+     * @property {string} [subtype]
+     * @property {string} [url]
+     */
+
+    /** @type {CatalogItem[]} */
+
+
+    const blissRaw = [
+        {
+    "name": "МДФ BLISS EW-900H",
+    "url": "https://www.moer.ru/catalog/mdf_kromka_pvkh_kromka_abs_kromka_3d/mdf/mdf_bliss_1/mdf_bliss_ew_900h/",
+    "image": "https://www.moer.ru/upload/iblock/393/nwrljh992hszvbbx1o4545q0sheimtju/ff4e943a_be05_11f0_8639_a4bf0103e980_0a7ddaf6_d66a_11f0_977a_a4bf0103e980.jpg",
+    "price": "9850",
+    "price_text": "9 850 руб./лист"
+  },
+  {
+    "name": "МДФ BLISS EW-9089H-13",
+    "url": "https://www.moer.ru/catalog/mdf_kromka_pvkh_kromka_abs_kromka_3d/mdf/mdf_bliss_1/mdf_bliss_ew_9089h_13/",
+    "image": "https://www.moer.ru/upload/iblock/6c7/oby1yw8telpo0l7pwnpzanm2xrp0x05i/e83125ba_be05_11f0_8639_a4bf0103e980_2098fb36_d66a_11f0_977a_a4bf0103e980.jpg",
+    "price": "9850",
+    "price_text": "9 850 руб./лист"
+  },
+  {
+    "name": "МДФ BLISS EW-900H-6",
+    "url": "https://www.moer.ru/catalog/mdf_kromka_pvkh_kromka_abs_kromka_3d/mdf/mdf_bliss_1/mdf_bliss_ew_900h_6/",
+    "image": "https://www.moer.ru/upload/iblock/2b7/n9jt372kek3e2pdtmjrc297505jr328b/8cbb2794_be05_11f0_8639_a4bf0103e980_1931b37e_d66a_11f0_977a_a4bf0103e980.jpg",
+    "price": "9850",
+    "price_text": "9 850 руб./лист"
+  },
+  {
+    "name": "МДФ BLISS EW-900H-5",
+    "url": "https://www.moer.ru/catalog/mdf_kromka_pvkh_kromka_abs_kromka_3d/mdf/mdf_bliss_1/mdf_bliss_ew_900h_5/",
+    "image": "https://www.moer.ru/upload/iblock/18f/9142rgkigg45lhhwrbcxndgnxpunggg5/8067922a_be05_11f0_8639_a4bf0103e980_13ac27cc_d66a_11f0_977a_a4bf0103e980.jpg",
+    "price": "9850",
+    "price_text": "9 850 руб./лист"
+  },
+  {
+    "name": "МДФ BLISS EW-900H-7",
+    "url": "/img/bliss/BLISS EW-900H-7.png",
+    "image": "",
+    "price": "9850",
+    "price_text": "9 850 руб./лист"
+  },
+  {
+    "name": "МДФ BLISS M-023 (металлик)",
+    "url": "/img/bliss/BLISS M-023.png",
+    "image": "",
+    "price": "9850",
+    "price_text": "9 850 руб./лист"
+  },
+  {
+    "name": "МДФ BLISS M-014 (металлик)",
+    "url": "/img/bliss/BLISS M-014.png",
+    "image": "",
+    "price": "9850",
+    "price_text": "9 850 руб./лист"
+  },
+  {
+    "name": "МДФ BLISS M-020 (металлик)",
+    "url": "/img/bliss/BLISS M-020.png",
+    "image": "",
+    "price": "9850",
+    "price_text": "9 850 руб./лист"
+  },
+  {
+    "name": "МДФ BLISS W-2311",
+    "url": "/img/bliss/BLISS W-2311.png",
+    "image": "",
+    "price": "9850",
+    "price_text": "9 850 руб./лист"
+  },
+  {
+    "name": "МДФ BLISS 002",
+    "url": "https://www.moer.ru/catalog/mdf_kromka_pvkh_kromka_abs_kromka_3d/mdf/mdf_bliss_1/mdf_bliss_002/",
+    "image": "",
+    "price": "9850",
+    "price_text": "9 850 руб./лист"
+  },
+  {
+    "name": "МДФ BLISS M-005 (металлик)",
+    "url": "https://www.moer.ru/catalog/mdf_kromka_pvkh_kromka_abs_kromka_3d/mdf/mdf_bliss_1/mdf_bliss_m_005_metallik/",
+    "image": "",
+    "price": "9850",
+    "price_text": "9 850 руб./лист"
+  },
+  {
+    "name": "МДФ BLISS M-012 (металлик)",
+    "url": "https://www.moer.ru/catalog/mdf_kromka_pvkh_kromka_abs_kromka_3d/mdf/mdf_bliss_1/mdf_bliss_m_012_metallik/",
+    "image": "",
+    "price": "9850",
+    "price_text": "9 850 руб./лист"
+  },
+  {
+    "name": "МДФ BLISS M-003 (металлик)",
+    "url": "https://www.moer.ru/catalog/mdf_kromka_pvkh_kromka_abs_kromka_3d/mdf/mdf_bliss_1/mdf_bliss_m_003_metallik/",
+    "image": "",
+    "price": "9850",
+    "price_text": "9 850 руб./лист"
+  },
+  {
+    "name": "МДФ BLISS W-2307",
+    "url": "https://www.moer.ru/catalog/mdf_kromka_pvkh_kromka_abs_kromka_3d/mdf/mdf_bliss_1/mdf_bliss_w_2307/",
+    "image": "",
+    "price": "9850",
+    "price_text": "9 850 руб./лист"
+  },
+  {
+    "name": "МДФ BLISS W-2325",
+    "url": "https://www.moer.ru/catalog/mdf_kromka_pvkh_kromka_abs_kromka_3d/mdf/mdf_bliss_1/mdf_bliss_w_2325/",
+    "image": "",
+    "price": "9850",
+    "price_text": "9 850 руб./лист"
+  },
+  {
+    "name": "МДФ BLISS W-2309",
+    "url": "https://www.moer.ru/catalog/mdf_kromka_pvkh_kromka_abs_kromka_3d/mdf/mdf_bliss_1/mdf_bliss_w_2309/",
+    "image": "",
+    "price": "9850",
+    "price_text": "9 850 руб./лист"
+  },
+  {
+    "name": "МДФ BLISS W-2326",
+    "url": "https://www.moer.ru/catalog/mdf_kromka_pvkh_kromka_abs_kromka_3d/mdf/mdf_bliss_1/mdf_bliss_w_2326/",
+    "image": "",
+    "price": "9850",
+    "price_text": "9 850 руб./лист"
+  },
+  {
+    "name": "МДФ BLISS M-006 (металлик)",
+    "url": "https://www.moer.ru/catalog/mdf_kromka_pvkh_kromka_abs_kromka_3d/mdf/mdf_bliss_1/mdf_bliss_m_006_metallik/",
+    "image": "",
+    "price": "9850",
+    "price_text": "9 850 руб./лист"
+  },
+  {
+    "name": "МДФ BLISS M-019 (металлик)",
+    "url": "https://www.moer.ru/catalog/mdf_kromka_pvkh_kromka_abs_kromka_3d/mdf/mdf_bliss_1/mdf_bliss_m_019_metallik/",
+    "image": "",
+    "price": "9850",
+    "price_text": "9 850 руб./лист"
+  },
+  {
+    "name": "МДФ BLISS 010",
+    "url": "https://www.moer.ru/catalog/mdf_kromka_pvkh_kromka_abs_kromka_3d/mdf/mdf_bliss_1/mdf_bliss_010/",
+    "image": "",
+    "price": "9850",
+    "price_text": "9 850 руб./лист"
+  },
+  {
+    "name": "МДФ BLISS 130 (с шиммером)",
+    "url": "https://www.moer.ru/catalog/mdf_kromka_pvkh_kromka_abs_kromka_3d/mdf/mdf_bliss_1/mdf_bliss_130_s_shimmerom/",
+    "image": "https://www.moer.ru/upload/iblock/a3c/1ywkgyudsm2866ckacao6zqbvs3wwjmn/fc707008_f553_11ed_8eaf_ac1f6b2047fa_ff67c0c8_033a_11ee_99f2_ac1f6b2047fa.jpg",
+    "price": "9850",
+    "price_text": "9 850 руб./лист"
+  },
+  {
+    "name": "МДФ BLISS 129 (с шиммером)",
+    "url": "https://www.moer.ru/catalog/mdf_kromka_pvkh_kromka_abs_kromka_3d/mdf/mdf_bliss_1/mdf_bliss_129_s_shimmerom/",
+    "image": "https://www.moer.ru/upload/iblock/b08/oiq1xo8txp72654723swm0bh53hou406/f4ad0f7a_f553_11ed_8eaf_ac1f6b2047fa_f666f49e_033a_11ee_99f2_ac1f6b2047fa.jpg",
+    "price": "9850",
+    "price_text": "9 850 руб./лист"
+  },
+  {
+    "name": "МДФ BLISS 127 (с шиммером)",
+    "url": "https://www.moer.ru/catalog/mdf_kromka_pvkh_kromka_abs_kromka_3d/mdf/mdf_bliss_1/mdf_bliss_127_s_shimmerom/",
+    "image": "https://www.moer.ru/upload/iblock/815/ggy9ya30lsvai8lcj9518q1z5snt8xm3/ed5e1796_f553_11ed_8eaf_ac1f6b2047fa_f075a652_033a_11ee_99f2_ac1f6b2047fa.jpg",
+    "price": "9850",
+    "price_text": "9 850 руб./лист"
+  },
+  {
+    "name": "МДФ BLISS 126 (с шиммером)",
+    "url": "https://www.moer.ru/catalog/mdf_kromka_pvkh_kromka_abs_kromka_3d/mdf/mdf_bliss_1/mdf_bliss_126_s_shimmerom/",
+    "image": "https://www.moer.ru/upload/iblock/45b/ti1vwopgg5iamsf7pgm8l4f6jw6kud66/e6bbf764_f553_11ed_8eaf_ac1f6b2047fa_b07902a2_00f5_11ee_8571_ac1f6b2047fa.jpg",
+    "price": "9850",
+    "price_text": "9 850 руб./лист"
+  },
+  {
+    "name": "МДФ BLISS 106",
+    "url": "https://www.moer.ru/catalog/mdf_kromka_pvkh_kromka_abs_kromka_3d/mdf/mdf_bliss_1/mdf_bliss_106/",
+    "image": "",
+    "price": "9850",
+    "price_text": "9 850 руб./лист"
+  },
+  {
+    "name": "МДФ BLISS 103",
+    "url": "https://www.moer.ru/catalog/mdf_kromka_pvkh_kromka_abs_kromka_3d/mdf/mdf_bliss_1/mdf_bliss_103/",
+    "image": "",
+    "price": "9850",
+    "price_text": "9 850 руб./лист"
+  },
+  {
+    "name": "МДФ BLISS 005",
+    "url": "https://www.moer.ru/catalog/mdf_kromka_pvkh_kromka_abs_kromka_3d/mdf/mdf_bliss_1/mdf_bliss_005/",
+    "image": "",
+    "price": "9850",
+    "price_text": "9 850 руб./лист"
+  },
+  {
+    "name": "МДФ BLISS 121",
+    "url": "https://www.moer.ru/catalog/mdf_kromka_pvkh_kromka_abs_kromka_3d/mdf/mdf_bliss_1/mdf_bliss_121/",
+    "image": "",
+    "price": "9850",
+    "price_text": "9 850 руб./лист"
+  },
+  {
+    "name": "МДФ BLISS 111",
+    "url": "https://www.moer.ru/catalog/mdf_kromka_pvkh_kromka_abs_kromka_3d/mdf/mdf_bliss_1/mdf_bliss_111/",
+    "image": "",
+    "price": "9850",
+    "price_text": "9 850 руб./лист"
+  },
+  {
+    "name": "МДФ BLISS 118",
+    "url": "https://www.moer.ru/catalog/mdf_kromka_pvkh_kromka_abs_kromka_3d/mdf/mdf_bliss_1/mdf_bliss_118/",
+    "image": "",
+    "price": "9850",
+    "price_text": "9 850 руб./лист"
+  },
+  {
+    "name": "МДФ BLISS 110",
+    "url": "https://www.moer.ru/catalog/mdf_kromka_pvkh_kromka_abs_kromka_3d/mdf/mdf_bliss_1/mdf_bliss_110/",
+    "image": "",
+    "price": "9850",
+    "price_text": "9 850 руб./лист"
+  },
+  {
+    "name": "МДФ BLISS 102",
+    "url": "https://www.moer.ru/catalog/mdf_kromka_pvkh_kromka_abs_kromka_3d/mdf/mdf_bliss_1/mdf_bliss_102/",
+    "image": "",
+    "price": "9850",
+    "price_text": "9 850 руб./лист"
+  },
+  {
+    "name": "МДФ BLISS 100",
+    "url": "https://www.moer.ru/catalog/mdf_kromka_pvkh_kromka_abs_kromka_3d/mdf/mdf_bliss_1/mdf_bliss_100/",
+    "image": "",
+    "price": "9850",
+    "price_text": "9 850 руб./лист"
+  },
+  {
+    "name": "МДФ BLISS 001",
+    "url": "https://www.moer.ru/catalog/mdf_kromka_pvkh_kromka_abs_kromka_3d/mdf/mdf_bliss_1/mdf_bliss_001/",
+    "image": "",
+    "price": "9850",
+    "price_text": "9 850 руб./лист"
+  }
+    ]
+
+
+
+    const eggerRaw = [
+      {
+    "name": "ЛДСП AF416 Текстиль бежевый ST10 2800 х 2070 х 16 мм, Egger",
+    "url": "https://vl.expolesdv.ru/catalog/ldsp_fasady_stoleshnitsy/ldsp/ldsp_egger/reproduktsii_materialov_egger/53864/",
+    "image": "https://vl.expolesdv.ru/upload/delight.webpconverter/upload/resize_cache/iblock/3f5/skulhcmo36vzw2bi812t6k89o3dub81t/170_170_2/a16fe0f5-5b4e-11ed-82d4-a4bf013e202f_d5ae0600-5b4e-11ed-82d4-a4bf013e202f.jpeg.webp?17488632892586",
+    "price": "7609",
+    "price_text": "7 609 руб. /шт"
+  },
+  {
+    "name": "ЛДСП AF800 Мрамор Кристалл ST9, 2800 х 2070 х 16 мм, Egger",
+    "url": "https://vl.expolesdv.ru/catalog/ldsp_fasady_stoleshnitsy/ldsp/ldsp_egger/reproduktsii_materialov_egger/63147/",
+    "image": "https://vl.expolesdv.ru/upload/delight.webpconverter/upload/resize_cache/iblock/e42/pd399u3rd3n4dg5fwkudc5f9sv7n53gg/170_170_2/d4e986ed-4c97-11f0-9b9b-005056a415e2_39d98423-b6be-11f0-9ba7-005056a415e2.jpeg.webp?17648972615100",
+    "price": "7609",
+    "price_text": "7 609 руб. /шт"
+  },
+  {
+    "name": "ЛДСП AU163 Карри желтый ST9, 2800 х 2070 х 16 мм, Egger",
+    "url": "https://vl.expolesdv.ru/catalog/ldsp_fasady_stoleshnitsy/ldsp/ldsp_egger/odnotonnye_dekory_egger/63635/",
+    "image": "https://vl.expolesdv.ru/upload/delight.webpconverter/upload/resize_cache/iblock/844/jacvfoci2uztcs4tbht9a6w4k9w6u2q0/170_170_2/1e83e056-65c0-11f0-9b9d-005056a415e2_925f248a-e160-11f0-9bae-005056a415e2.jpeg.webp?1766740266142",
+    "price": "7609",
+    "price_text": "7 609 руб. /шт"
+  },
+  {
+    "name": "ЛДСП AU311 Бургундский красный ST9, 2800 х 2070 х 16 мм, Egger",
+    "url": "https://vl.expolesdv.ru/catalog/ldsp_fasady_stoleshnitsy/ldsp/ldsp_egger/odnotonnye_dekory_egger/61598/",
+    "image": "https://vl.expolesdv.ru/upload/delight.webpconverter/upload/resize_cache/iblock/593/1peorvn9tsb634y2vh90uabceswberrm/170_170_2/3fffb6fb-0849-11f0-9b9a-005056a415e2_837aa826-2a25-11f0-9b9a-005056a415e2.jpeg.webp?1772154531132",
+    "price": "7095",
+    "price_text": "7 095 руб. /шт"
+  },
+  {
+    "name": "ЛДСП AU325 Розовый антик ST9, 2800 х 2070 х 16 мм, Egger",
+    "url": "https://vl.expolesdv.ru/catalog/ldsp_fasady_stoleshnitsy/ldsp/ldsp_egger/odnotonnye_dekory_egger/55194/",
+    "image": "https://vl.expolesdv.ru/upload/delight.webpconverter/upload/resize_cache/iblock/a13/ccu7fk82ao75uuszr9lahmf2zd4ka41h/170_170_2/bc50b133-ee05-11ed-82db-a4bf013e202f_30e9710d-00dd-11ee-82dc-a4bf013e202f.jpeg.webp?1764897261134",
+    "price": "7095",
+    "price_text": "7 095 руб. /шт"
+  },
+  {
+    "name": "ЛДСП AU502 Синий дымчатый ST9 2800 х 2070 х 16 мм, Egger",
+    "url": "https://vl.expolesdv.ru/catalog/ldsp_fasady_stoleshnitsy/ldsp/ldsp_egger/odnotonnye_dekory_egger/61678/",
+    "image": "https://vl.expolesdv.ru/upload/delight.webpconverter/upload/resize_cache/iblock/09c/tan7o2bj7oxquhq80hf294hsbgs9vpgr/170_170_2/c709119f-2a5f-11f0-9b9a-005056a415e2_e52d58f5-2a5f-11f0-9b9a-005056a415e2.jpg.webp?1771566824130",
+    "price": "7609",
+    "price_text": "7 609 руб. /шт"
+  },
+  {
+    "name": "ЛДСП AU504 Альпийское озеро ST9, 2800 х 2070 х 16 мм, Egger",
+    "url": "https://vl.expolesdv.ru/catalog/ldsp_fasady_stoleshnitsy/ldsp/ldsp_egger/odnotonnye_dekory_egger/63820/",
+    "image": "https://vl.expolesdv.ru/upload/delight.webpconverter/upload/resize_cache/iblock/ab5/x6nixt61lc79h1zdvtlwpvt6ddh1wskr/170_170_2/ee6b433d-d367-11f0-9bac-005056a415e2_d79b582e-f216-11f0-9bae-005056a415e2.jpg.webp?1768578816130",
+    "price": "7095",
+    "price_text": "7 095 руб. /шт"
+  },
+ 
+  {
+    "name": "ЛДСП AU636 Фьерд зеленый ST9, 2800 х 2070 х 16 мм, Egger",
+    "url": "https://vl.expolesdv.ru/catalog/ldsp_fasady_stoleshnitsy/ldsp/ldsp_egger/odnotonnye_dekory_egger/54306/",
+    "image": "https://vl.expolesdv.ru/upload/delight.webpconverter/upload/resize_cache/iblock/424/p3cowb20anj4at7kjtmp7xbef96sr753/170_170_2/801878d6-c72a-11ed-82db-a4bf013e202f_efb93f65-c72a-11ed-82db-a4bf013e202f.jpeg.webp?1768578817136",
+    "price": "7609",
+    "price_text": "7 609 руб. /шт"
+  },
+  {
+    "name": "ЛДСП AU638 Зеленый шалфей ST9, 2800 х 2070 х 16 мм, Egger",
+    "url": "https://vl.expolesdv.ru/catalog/ldsp_fasady_stoleshnitsy/ldsp/ldsp_egger/odnotonnye_dekory_egger/61591/",
+    "image": "https://vl.expolesdv.ru/upload/delight.webpconverter/upload/resize_cache/iblock/36e/epou6nkz3vee66ci9fz1nal20s4qbb57/170_170_2/913396f6-e51c-11ef-9b98-005056a415e2_e57aa128-2a25-11f0-9b9a-005056a415e2.jpeg.webp?1748872168124",
+    "price": "7609",
+    "price_text": "7 609 руб. /шт"
+  },
+  {
+    "name": "ЛДСП AU818 Темно-коричневый ST9 2800 х 2070 х 16 мм, Egger",
+    "url": "https://vl.expolesdv.ru/catalog/ldsp_fasady_stoleshnitsy/ldsp/ldsp_egger/odnotonnye_dekory_egger/62045/",
+    "image": "https://vl.expolesdv.ru/upload/delight.webpconverter/upload/resize_cache/iblock/9a1/r22ynvfdhf86eyd8y27zvrbzuf0sfu3i/170_170_2/6d0af7b3-2a5e-11f0-9b9a-005056a415e2_dd676658-4cc6-11f0-9b9b-005056a415e2.jpg.webp?1750382196130",
+    "price": "7609",
+    "price_text": "7 609 руб. /шт"
+  },
+  {
+    "name": "ЛДСП F186 Бетон Чикаго светло - серый ST9, 2800 х 2070 х 16 мм, Egger",
+    "url": "https://vl.expolesdv.ru/catalog/ldsp_fasady_stoleshnitsy/ldsp/ldsp_egger/reproduktsii_materialov_egger/43513/",
+    "image": "https://vl.expolesdv.ru/upload/delight.webpconverter/upload/resize_cache/iblock/e51/br9b3uwpc9h12mq4y60dj1hib3hni57w/170_170_2/6f6bd3a4-e74d-11e6-80e6-00155d0d0a2d_553704ea-f40f-11e6-80e6-00155d0d0a2d.jpeg.webp?17430287333326",
+    "price": "7609",
+    "price_text": "7 609 руб. /шт"
+  },
+  {
+    "name": "ЛДСП F186 Бетон Чикаго светло - серый ST9, 2800 х 2070 х 25 мм, Egger",
+    "url": "https://vl.expolesdv.ru/catalog/ldsp_fasady_stoleshnitsy/ldsp/ldsp_egger/reproduktsii_materialov_egger/42020/",
+    "image": "https://vl.expolesdv.ru/upload/delight.webpconverter/upload/resize_cache/iblock/aae/7glreufo5whz9p5okieawqgfb7cej9ns/170_170_2/224e1fc3-2637-11e7-80e9-00155d0d0a2d_2a902233-2637-11e7-80e9-00155d0d0a2d.jpeg.webp?17488364963326",
+    "price": "10097",
+    "price_text": "10 097 руб. /шт"
+  },
+  {
+    "name": "ЛДСП F187 Бетон Чикаго темно - серый ST9, 2800 х 2070 х 16 мм, Egger",
+    "url": "https://vl.expolesdv.ru/catalog/ldsp_fasady_stoleshnitsy/ldsp/ldsp_egger/reproduktsii_materialov_egger/41880/",
+    "image": "https://vl.expolesdv.ru/upload/delight.webpconverter/upload/resize_cache/iblock/320/9ygtcz4fval9ux79etjwfw0vk0vn9n43/170_170_2/bb80f32b-2636-11e7-80e9-00155d0d0a2d_e7da9c4c-2636-11e7-80e9-00155d0d0a2d.jpeg.webp?17488364961132",
+    "price": "7609",
+    "price_text": "7 609 руб. /шт"
+  },
+  {
+    "name": "ЛДСП F206 Камень Пьетра Гриджиа черный ST9, 2800 х 2070 х 16 мм, Egger",
+    "url": "https://vl.expolesdv.ru/catalog/ldsp_fasady_stoleshnitsy/ldsp/ldsp_egger/reproduktsii_materialov_egger/50841/",
+    "image": "https://vl.expolesdv.ru/upload/delight.webpconverter/upload/resize_cache/iblock/ead/gptax9ktg69r0s9zcjhvyts4dcfweoz9/170_170_2/a9d90bb7-7015-11eb-82b0-a4bf013e202f_bfc0f36d-7015-11eb-82b0-a4bf013e202f.jpeg.webp?17488421683664",
+    "price": "7609",
+    "price_text": "7 609 руб. /шт"
+  },
+  {
+    "name": "ЛДСП F235 Сланец Скиваро ST10, 2800 х 2070 х 16 мм, Egger",
+    "url": "https://vl.expolesdv.ru/catalog/ldsp_fasady_stoleshnitsy/ldsp/ldsp_egger/reproduktsii_materialov_egger/57281/",
+    "image": "/catalog/img_catalog/F235 ST10.png",
+    "price": "7609",
+    "price_text": "7 609 руб. /шт"
+  },
+  {
+    "name": "ЛДСП F243 Мрамор Кандела светло-серый ST10, 2800 х 2070 х 16 мм, Egger",
+    "url": "https://vl.expolesdv.ru/catalog/ldsp_fasady_stoleshnitsy/ldsp/ldsp_egger/reproduktsii_materialov_egger/57280/",
+    "image": "https://vl.expolesdv.ru/upload/delight.webpconverter/upload/resize_cache/iblock/374/ctj31pfpuohf7laldqqd11btmn1jh6ub/170_170_2/c76c9f65-ae8d-11ee-82ec-a4bf013e202f_e225896a-d6ad-11ee-9b85-005056a415e2.jpeg.webp?17488682625842",
+    "price": "7609",
+    "price_text": "7 609 руб. /шт"
+  },
+  {
+    "name": "ЛДСП F323 Кобра бронза ST20, 2800 х 2070 х 16 мм, Egger",
+    "url": "https://vl.expolesdv.ru/catalog/ldsp_fasady_stoleshnitsy/ldsp/ldsp_egger/reproduktsii_materialov_egger/57626/",
+    "image": "https://vl.expolesdv.ru/upload/delight.webpconverter/upload/resize_cache/iblock/04e/zqe64j7u9054b4i1vty3rhsyp9shp8dz/170_170_2/376596c7-ba62-11ee-9b85-005056a415e2_2a9721a4-ed7f-11ee-9b86-005056a415e2.jpeg.webp?17488682622506",
+    "price": "8000",
+    "price_text": "8 000 руб. /шт"
+  },
+  {
+    "name": "ЛДСП F416 Текстиль бежевый ST10 2800 х 2070 х 16 мм, Egger",
+    "url": "https://vl.expolesdv.ru/catalog/ldsp_fasady_stoleshnitsy/ldsp/ldsp_egger/reproduktsii_materialov_egger/49461/",
+    "image": "https://vl.expolesdv.ru/upload/delight.webpconverter/upload/resize_cache/iblock/1e0/p0k2xg0ql28a63833bt2nvket1lswcin/170_170_2/bb32152a-5002-11ea-829d-a4bf013e202f_231da4bd-6298-11ea-829e-a4bf013e202f.jpeg.webp?1748840497604",
+    "price": "7609",
+    "price_text": "7 609 руб. /шт"
+  },
+  {
+    "name": "ЛДСП F433 Лён антрацит ST10 2800 х 2070 х 16 мм, Egger",
+    "url": "https://vl.expolesdv.ru/catalog/ldsp_fasady_stoleshnitsy/ldsp/ldsp_egger/reproduktsii_materialov_egger/41797/",
+    "image": "https://vl.expolesdv.ru/upload/delight.webpconverter/upload/resize_cache/iblock/c04/tl4zrqvvhy2hs18vacpmeu5bra9mxh5e/170_170_2/d8d0a48b-094a-11e7-80e6-00155d0d0a2d_4d9ec657-5710-11e8-8116-00155d0d0a2d.jpeg.webp?17488364961378",
+    "price": "7609",
+    "price_text": "7 609 руб. /шт"
+  },
+  {
+    "name": "ЛДСП F501 Алюминий Матированный ST2, 2800 х 2070 х 16 мм, Egger",
+    "url": "https://vl.expolesdv.ru/catalog/ldsp_fasady_stoleshnitsy/ldsp/ldsp_egger/reproduktsii_materialov_egger/55798/",
+    "image": "https://vl.expolesdv.ru/upload/delight.webpconverter/upload/resize_cache/iblock/3e7/g1hslzupacav18921lw83fzcug91tn9v/170_170_2/9304eac9-00f8-11ee-82dc-a4bf013e202f_27668132-027f-11ee-82dc-a4bf013e202f.jpeg.webp?1766663780166",
+    "price": "5694",
+    "price_text": "5 694 руб. /шт"
+  },
+  {
+    "name": "ЛДСП F528 Металл брашированный бронзовый ST20, 2800 х 2070 х 16 мм, Egger",
+    "url": "https://vl.expolesdv.ru/catalog/ldsp_fasady_stoleshnitsy/ldsp/ldsp_egger/reproduktsii_materialov_egger/57676/",
+    "image": "https://vl.expolesdv.ru/upload/delight.webpconverter/upload/resize_cache/iblock/37d/emjbqb0upq393fgw8bil455715sbigbx/170_170_2/0a3f7543-be40-11ee-9b85-005056a415e2_b510c091-f2f3-11ee-9b86-005056a415e2.jpeg.webp?1748868262150",
+    "price": "8000",
+    "price_text": "8 000 руб. /шт"
+  },
+  {
+    "name": "ЛДСП F637 Хромикс белый ST16, 2800 х 2070 х 16 мм, Egger",
+    "url": "https://vl.expolesdv.ru/catalog/ldsp_fasady_stoleshnitsy/ldsp/ldsp_egger/reproduktsii_materialov_egger/49460/",
+    "image": "https://vl.expolesdv.ru/upload/delight.webpconverter/upload/resize_cache/iblock/ff2/ay74i99e92s0f9dy4v53srz50xm96e1x/170_170_2/4dd5eeec-5002-11ea-829d-a4bf013e202f_5f261c46-6298-11ea-829e-a4bf013e202f.jpeg.webp?17488404981764",
+    "price": "8000",
+    "price_text": "8 000 руб. /шт"
+  },
+  {
+    "name": "ЛДСП F685 Акапулько ST10, 2800 х 2070 х 16 мм, Egger",
+    "url": "https://vl.expolesdv.ru/catalog/ldsp_fasady_stoleshnitsy/ldsp/ldsp_egger/reproduktsii_materialov_egger/57285/",
+    "image": "https://vl.expolesdv.ru/upload/delight.webpconverter/upload/resize_cache/iblock/bb0/5knmfnu2sq2b61nmn9fj0lo398bal1se/170_170_2/ae9d36c1-bbf0-11ee-9b85-005056a415e2_332c4a0a-d6aa-11ee-9b85-005056a415e2.jpeg.webp?17488682628258",
+    "price": "7609",
+    "price_text": "7 609 руб. /шт"
+  },
+  {
+    "name": "ЛДСП F765 Серебристый матовый ST20, 2800 х 2070 х 16 мм, Egger",
+    "url": "https://vl.expolesdv.ru/catalog/ldsp_fasady_stoleshnitsy/ldsp/ldsp_egger/reproduktsii_materialov_egger/57620/",
+    "image": "https://vl.expolesdv.ru/upload/delight.webpconverter/upload/resize_cache/iblock/9b2/q1qdur4ivwo4gacakm2iojf8jrpktcgv/170_170_2/3d4f1c9d-be40-11ee-9b85-005056a415e2_b55acad3-effa-11ee-9b86-005056a415e2.jpeg.webp?1748868262164",
+    "price": "7106",
+    "price_text": "7 106 руб. /шт"
+  },
+  {
+    "name": "ЛДСП H1145 Дуб Бардолино натуральный ST10, 2800 х 2070 х 16 мм, Egger",
+    "url": "https://vl.expolesdv.ru/catalog/ldsp_fasady_stoleshnitsy/ldsp/ldsp_egger/drevesnye_reproduktsii_egger/47260/",
+    "image": "https://vl.expolesdv.ru/upload/delight.webpconverter/upload/resize_cache/iblock/be1/uf6ueyt19n0cxpb1cgwoee319sfinh9i/170_170_2/39f2b300-14e6-4b47-bda0-86cf81285792_f796db3e-52ef-11e6-80da-00155d0d0a2d.jpeg.webp?17488333423868",
+    "price": "6781",
+    "price_text": "6 781 руб. /шт"
+  },
+  {
+    "name": "ЛДСП H1176 Дуб Галифакс белый ST37, 2800 х 2070 х 8 мм, Egger",
+    "url": "https://vl.expolesdv.ru/catalog/ldsp_fasady_stoleshnitsy/ldsp/ldsp_egger/filvud_egger/47716/",
+    "image": "https://vl.expolesdv.ru/upload/delight.webpconverter/upload/resize_cache/iblock/9be/tmi4j5lwyt9yeo64zma6yjx3kwk5j39y/170_170_2/d79f1d8a-fcf6-11e8-8285-a4bf013e202f_e2332fd7-fcf6-11e8-8285-a4bf013e202f.jpeg.webp?17430294113848",
+    "price": "7491",
+    "price_text": "7 491 руб. /шт"
+  },
+  {
+    "name": "ЛДСП H1199 Дуб Термо черно-коричневый ST12, 2800 х 2070 х 16 мм, Egger",
+    "url": "https://vl.expolesdv.ru/catalog/ldsp_fasady_stoleshnitsy/ldsp/ldsp_egger/drevesnye_reproduktsii_egger/50264/",
+    "image": "https://vl.expolesdv.ru/upload/delight.webpconverter/upload/resize_cache/iblock/265/jmn2huthzszsqhjshq671564n9cm9i74/170_170_2/63c97d1c-de96-11ea-82a1-a4bf013e202f_83fe9119-de96-11ea-82a1-a4bf013e202f.jpeg.webp?17488450643810",
+    "price": "7106",
+    "price_text": "7 106 руб. /шт"
+  },
+  {
+    "name": "ЛДСП H1223 Ясень Севилья ST19, 2800 х 2070 х 16 мм, Egger",
+    "url": "https://vl.expolesdv.ru/catalog/ldsp_fasady_stoleshnitsy/ldsp/ldsp_egger/drevesnye_reproduktsii_egger/57284/",
+    "image": "https://vl.expolesdv.ru/upload/delight.webpconverter/upload/resize_cache/iblock/7d6/0zo1zh8agiwdlt986zv2batm6xnstigl/170_170_2/0c1e2067-bb44-11ee-9b85-005056a415e2_5dc54796-cf9e-11ee-9b85-005056a415e2.jpeg.webp?17488676181768",
+    "price": "8000",
+    "price_text": "8 000 руб. /шт"
+  },
+  {
+    "name": "ЛДСП H1225 Ясень Тронхейм ST12, 2800 х 2070 х 16 мм, Egger",
+    "url": "https://vl.expolesdv.ru/catalog/ldsp_fasady_stoleshnitsy/ldsp/ldsp_egger/drevesnye_reproduktsii_egger/57326/",
+    "image": "https://vl.expolesdv.ru/upload/delight.webpconverter/upload/resize_cache/iblock/856/jx9ygydiz4212oftjpd5tfsko5c6wfly/170_170_2/0a1edac2-b02c-11ee-82ec-a4bf013e202f_f4f01107-dc2a-11ee-9b86-005056a415e2.jpeg.webp?17488676181270",
+    "price": "7106",
+    "price_text": "7 106 руб. /шт"
+  },
+  {
+    "name": "ЛДСП H1242 Акация Шеффилд натуральный ST10, 2800 х 2070 х 16 мм, Egger",
+    "url": "https://vl.expolesdv.ru/catalog/ldsp_fasady_stoleshnitsy/ldsp/ldsp_egger/drevesnye_reproduktsii_egger/58324/",
+    "image": "https://vl.expolesdv.ru/upload/delight.webpconverter/upload/resize_cache/iblock/bad/316q9yosd19jyn4lpbd51mvxxmr2x5k1/170_170_2/6bb672fb-38d2-11ef-9b89-005056a415e2_e95cac13-5394-11ef-9b8a-005056a415e2.jpeg.webp?17488711633550",
+    "price": "7609",
+    "price_text": "7 609 руб. /шт"
+  },
+  {
+    "name": "ЛДСП H1250 Ясень Наварра ST36, 2800 х 2070 х 16 мм, Egger",
+    "url": "https://vl.expolesdv.ru/catalog/ldsp_fasady_stoleshnitsy/ldsp/ldsp_egger/filvud_egger/48505/",
+    "image": "https://vl.expolesdv.ru/upload/delight.webpconverter/upload/resize_cache/iblock/9bb/tjaki1vux88agt7506mjz1flxpifhgf3/170_170_2/b417119e-57e2-11e4-b3a1-002590306afe_0980733a-202e-11e8-8115-00155d0d0a2d.jpeg.webp?17488334633308",
+    "price": "8417",
+    "price_text": "8 417 руб. /шт"
+  },
+  {
+    "name": "ЛДСП H1250 Ясень Наварра ST36, 2800 х 2070 х 18 мм, Egger",
+    "url": "https://vl.expolesdv.ru/catalog/ldsp_fasady_stoleshnitsy/ldsp/ldsp_egger/filvud_egger/48917/",
+    "image": "https://vl.expolesdv.ru/upload/delight.webpconverter/upload/resize_cache/iblock/0f7/13k6gndz9e6ej839p1h7be0ghczpr36m/170_170_2/1a37d785-cf9a-11e9-8298-a4bf013e202f_88f0b29d-f146-11e9-8299-a4bf013e202f.jpeg.webp?17430294123308",
+    "price": "8359",
+    "price_text": "8 359 руб. /шт"
+  },
+  {
+    "name": "ЛДСП H1277 Акация Лэйклэнд светлая ST9, 2800 х 2070 х 16 мм, Egger",
+    "url": "https://vl.expolesdv.ru/catalog/ldsp_fasady_stoleshnitsy/ldsp/ldsp_egger/drevesnye_reproduktsii_egger/41970/",
+    "image": "https://vl.expolesdv.ru/upload/delight.webpconverter/upload/resize_cache/iblock/e74/buycf3rbfpsoal1d3pdzdnt4yvgwzasv/170_170_2/25f2ae2c-db75-11e5-80c1-00155d0d0a2d_3b4eeab8-0afc-11e8-8112-00155d0d0a2d.jpeg.webp?17488381731334",
+    "price": "6945",
+    "price_text": "6 945 руб. /шт"
+  },
+  {
+    "name": "ЛДСП H1303 Дуб Бельмонт коричневый ST12, 2800 х 2070 х 16 мм, Egger",
+    "url": "https://vl.expolesdv.ru/catalog/ldsp_fasady_stoleshnitsy/ldsp/ldsp_egger/drevesnye_reproduktsii_egger/58259/",
+    "image": "https://vl.expolesdv.ru/upload/delight.webpconverter/upload/resize_cache/iblock/ebd/v64scewe7kx41to1ryml5ee20xwi4b70/170_170_2/a9848950-ae8a-11ee-82ec-a4bf013e202f_48c5fc92-4ed6-11ef-9b89-005056a415e2.jpeg.webp?17488711635950",
+    "price": "7095",
+    "price_text": "7 095 руб. /шт"
+  },
+  {
+    "name": "ЛДСП H1307 Орех Вармия коричневый ST19, 2800 х 2070 х 16 мм, Egger",
+    "url": "https://vl.expolesdv.ru/catalog/ldsp_fasady_stoleshnitsy/ldsp/ldsp_egger/drevesnye_reproduktsii_egger/57614/",
+    "image": "https://vl.expolesdv.ru/upload/delight.webpconverter/upload/resize_cache/iblock/952/47n2ua8287zega23u5l2bjv7bbd9kwjv/170_170_2/66355141-ba69-11ee-9b85-005056a415e2_00f82dab-f921-11ef-9b98-005056a415e2.jpeg.webp?17430290473258",
+    "price": "8000",
+    "price_text": "8 000 руб. /шт"
+  },
+  {
+    "name": "ЛДСП H1312 Дуб Уайт-Ривер песочно-бежевый ST10, 2800 х 2070 х 16 мм, Egger",
+    "url": "https://vl.expolesdv.ru/catalog/ldsp_fasady_stoleshnitsy/ldsp/ldsp_egger/drevesnye_reproduktsii_egger/49465/",
+    "image": "https://vl.expolesdv.ru/upload/delight.webpconverter/upload/resize_cache/iblock/eb3/6mkriirczskq5t9udadljovo8bdnqyvp/170_170_2/f3f88662-5005-11ea-829d-a4bf013e202f_e40ed588-6298-11ea-829e-a4bf013e202f.jpeg.webp?17488407721968",
+    "price": "7609",
+    "price_text": "7 609 руб. /шт"
+  },
+  {
+    "name": "ЛДСП H1313 Дуб Уайт-Ривер серо-коричневый ST10, 2800 х 2070 х 16 мм, Egger",
+    "url": "https://vl.expolesdv.ru/catalog/ldsp_fasady_stoleshnitsy/ldsp/ldsp_egger/drevesnye_reproduktsii_egger/49458/",
+    "image": "https://vl.expolesdv.ru/upload/delight.webpconverter/upload/resize_cache/iblock/768/rh2g4k9csjfnvro8jq6grbjkzzrn4ei2/170_170_2/bdf8f4b6-5096-11ea-829d-a4bf013e202f_04ba8edc-6299-11ea-829e-a4bf013e202f.jpeg.webp?17488407721886",
+    "price": "7609",
+    "price_text": "7 609 руб. /шт"
+  },
+  {
+    "name": "ЛДСП H1318 Дикий дуб натуральный ST10, 2800 х 2070 х 16 мм, Egger",
+    "url": "https://vl.expolesdv.ru/catalog/ldsp_fasady_stoleshnitsy/ldsp/ldsp_egger/drevesnye_reproduktsii_egger/49459/",
+    "image": "https://vl.expolesdv.ru/upload/delight.webpconverter/upload/resize_cache/iblock/d5b/urfr6e414i4j1sr1cfvlmq16xi3bx96i/170_170_2/99051eb5-5097-11ea-829d-a4bf013e202f_21f8e74f-6299-11ea-829e-a4bf013e202f.jpeg.webp?17488410121944",
+    "price": "7106",
+    "price_text": "7 106 руб. /шт"
+  },
+  {
+    "name": "ЛДСП H1318 Дикий дуб натуральный ST10, 2800 х 2070 х 25 мм, Egger",
+    "url": "https://vl.expolesdv.ru/catalog/ldsp_fasady_stoleshnitsy/ldsp/ldsp_egger/zakaznye_6/50159/",
+    "image": "https://vl.expolesdv.ru/upload/delight.webpconverter/upload/resize_cache/iblock/38a/fwysf0p5v52vy34c9poh01nfbfi6whht/170_170_2/3ed4437e-c039-11ea-82a1-a4bf013e202f_fd7c3783-c1a3-11ea-82a1-a4bf013e202f.jpeg.webp?17488427901944",
+    "price": "9394",
+    "price_text": "9 394 руб. /шт"
+  },
+  {
+    "name": "ЛДСП H1330 Дуб Санта-Фе винтаж ST10, 2800 х 2070 х 16 мм, Egger",
+    "url": "https://vl.expolesdv.ru/catalog/ldsp_fasady_stoleshnitsy/ldsp/ldsp_egger/drevesnye_reproduktsii_egger/49467/",
+    "image": "https://vl.expolesdv.ru/upload/delight.webpconverter/upload/resize_cache/iblock/976/4mdxr9nztjmn4osb21tfwjzz9lpcejh1/170_170_2/1f1abbbd-5097-11ea-829d-a4bf013e202f_356b15c7-6299-11ea-829e-a4bf013e202f.jpeg.webp?17488410133154",
+    "price": "7609",
+    "price_text": "7 609 руб. /шт"
+  },
+  {
+    "name": "ЛДСП H1346 Дуб Шерман антрацит ST32 2800 х 2070 х 16 мм, Egger",
+    "url": "https://vl.expolesdv.ru/catalog/ldsp_fasady_stoleshnitsy/ldsp/ldsp_egger/filvud_egger/53351/",
+    "image": "https://vl.expolesdv.ru/upload/delight.webpconverter/upload/resize_cache/iblock/9cf/ahc65khhfecg9bypfpo3hsop9g7uinfk/170_170_2/ac2fc554-4e98-11ed-82d0-a4bf013e202f_b0fba91e-4e99-11ed-82d0-a4bf013e202f.jpeg.webp?17488632883736",
+    "price": "8894",
+    "price_text": "8 894 руб. /шт"
+  },
+  {
+    "name": "ЛДСП H1399 Дуб Денвер трюфель ST10, 2800 х 2070 х 16 мм, Egger",
+    "url": "https://vl.expolesdv.ru/catalog/ldsp_fasady_stoleshnitsy/ldsp/ldsp_egger/drevesnye_reproduktsii_egger/53181/",
+    "image": "https://vl.expolesdv.ru/upload/delight.webpconverter/upload/resize_cache/iblock/0f5/j28uj0l28r9wjkbqhx4dhnv8ss00eh5u/170_170_2/63927894-1593-11ed-82c9-a4bf013e202f_e22e2c8d-1593-11ed-82c9-a4bf013e202f.jpeg.webp?17488629552552",
+    "price": "7609",
+    "price_text": "7 609 руб. /шт"
+  },
+  {
+    "name": "ЛДСП H1401 Сосна Касцина ST22, 2800 х 2070 х 16 мм, Egger",
+    "url": "https://vl.expolesdv.ru/catalog/ldsp_fasady_stoleshnitsy/ldsp/ldsp_egger/drevesnye_reproduktsii_egger/42003/",
+    "image": "https://vl.expolesdv.ru/upload/delight.webpconverter/upload/resize_cache/iblock/9c6/xy0vv22pdvbz5veqny1hw68zyg0yfgqe/170_170_2/b34c5554-db92-11e6-80e5-00155d0d0a2d_c1eddf64-db92-11e6-80e5-00155d0d0a2d.jpeg.webp?17488381732900",
+    "price": "7106",
+    "price_text": "7 106 руб. /шт"
+  },
+  {
+    "name": "ЛДСП H1401 Сосна Касцина ST22, 2800 х 2070 х 25 мм, Egger",
+    "url": "https://vl.expolesdv.ru/catalog/ldsp_fasady_stoleshnitsy/ldsp/ldsp_egger/drevesnye_reproduktsii_egger/46372/",
+    "image": "https://vl.expolesdv.ru/upload/delight.webpconverter/upload/resize_cache/iblock/4a6/tat948scnzunx3ibhwrzh3zzeagdak0r/170_170_2/53db1407-020b-11e7-80e6-00155d0d0a2d_5a37a757-020b-11e7-80e6-00155d0d0a2d.jpeg.webp?17488381731188",
+    "price": "9394",
+    "price_text": "9 394 руб. /шт"
+  },
+  {
+    "name": "ЛДСП H1401 Сосна Касцина ST22, 2800 х 2070 х 8 мм, Egger",
+    "url": "https://vl.expolesdv.ru/catalog/ldsp_fasady_stoleshnitsy/ldsp/ldsp_egger/drevesnye_reproduktsii_egger/44820/",
+    "image": "https://vl.expolesdv.ru/upload/delight.webpconverter/upload/resize_cache/iblock/f9f/q0846m29627sb9hi6a0baxac3ab8tatj/170_170_2/008fe4a4-473e-11e7-80e9-00155d0d0a2d_47135436-473e-11e7-80e9-00155d0d0a2d.jpeg.webp?17488381742900",
+    "price": "5668",
+    "price_text": "5 668 руб. /шт"
+  },
+  {
+    "name": "ЛДСП H1424 Файнлайн крем  ST22, 2800 х 2070 х 25 мм, Egger",
+    "url": "https://vl.expolesdv.ru/catalog/ldsp_fasady_stoleshnitsy/ldsp/ldsp_egger/drevesnye_reproduktsii_egger/43044/",
+    "image": "https://vl.expolesdv.ru/upload/delight.webpconverter/upload/resize_cache/iblock/b91/gzq2hol5l5ahswtj6ht2jfj29qayjv47/170_170_2/c4d70228-da87-11e5-80c1-00155d0d0a2d_96230576-7573-11e6-80dd-00155d0d0a2d.jpeg.webp?17666600011152",
+    "price": "7073",
+    "price_text": "7 073 руб. /шт"
+  },
+  {
+    "name": "ЛДСП H1487 Пихта Брамберг ST22, 2800 х 2070 х 16 мм, Egger",
+    "url": "https://vl.expolesdv.ru/catalog/ldsp_fasady_stoleshnitsy/ldsp/ldsp_egger/drevesnye_reproduktsii_egger/46219/",
+    "image": "https://vl.expolesdv.ru/upload/delight.webpconverter/upload/resize_cache/iblock/7be/jxiexlmlxwmxt5hytedzofh0os31wiqm/170_170_2/d48846af-a5cf-11e4-9beb-002590306aff_8722ffd8-52f0-11e6-80da-00155d0d0a2d.jpeg.webp?17488381743652",
+    "price": "7106",
+    "price_text": "7 106 руб. /шт"
+  },
+  {
+    "name": "ЛДСП H1636 Вишня Локарно ST12, 2800 х 2070 х 16 мм, Egger",
+    "url": "https://vl.expolesdv.ru/catalog/ldsp_fasady_stoleshnitsy/ldsp/ldsp_egger/drevesnye_reproduktsii_egger/49454/",
+    "image": "https://vl.expolesdv.ru/upload/delight.webpconverter/upload/resize_cache/iblock/148/c1es60o136lm28gp6l358n3xo2j8tkt1/170_170_2/636672b0-5099-11ea-829d-a4bf013e202f_9dcaa968-6299-11ea-829e-a4bf013e202f.jpeg.webp?17488410351324",
+    "price": "6956",
+    "price_text": "6 956 руб. /шт"
+  },
+  {
+    "name": "ЛДСП H1710 Каштан Кентукки песочный ST10, 2800 х 2070 х 16 мм, Egger",
+    "url": "https://vl.expolesdv.ru/catalog/ldsp_fasady_stoleshnitsy/ldsp/ldsp_egger/drevesnye_reproduktsii_egger/49455/",
+    "image": "https://vl.expolesdv.ru/upload/delight.webpconverter/upload/resize_cache/iblock/0cf/1xf0c102zsondkoo3m449w7fgdz37lt3/170_170_2/b78a0a96-5099-11ea-829d-a4bf013e202f_bea874a7-6299-11ea-829e-a4bf013e202f.jpeg.webp?17488410351894",
+    "price": "7609",
+    "price_text": "7 609 руб. /шт"
+  },
+  {
+    "name": "ЛДСП H1714 Орех Линкольн ST19, 2800 х 2070 х 16 мм, Egger",
+    "url": "https://vl.expolesdv.ru/catalog/ldsp_fasady_stoleshnitsy/ldsp/ldsp_egger/drevesnye_reproduktsii_egger/49456/",
+    "image": "https://vl.expolesdv.ru/upload/delight.webpconverter/upload/resize_cache/iblock/f3d/3300cbjypbcnlz7daycqtcu18n6dyyvb/170_170_2/a9d301a9-509b-11ea-829d-a4bf013e202f_d2d23825-6299-11ea-829e-a4bf013e202f.jpeg.webp?17488410351504",
+    "price": "8000",
+    "price_text": "8 000 руб. /шт"
+  },
+  {
+    "name": "ЛДСП H1715 Орех Парона ST12, 2800 х 2070 х 16 мм, Egger",
+    "url": "https://vl.expolesdv.ru/catalog/ldsp_fasady_stoleshnitsy/ldsp/ldsp_egger/drevesnye_reproduktsii_egger/57286/",
+    "image": "https://vl.expolesdv.ru/upload/delight.webpconverter/upload/resize_cache/iblock/408/jwmmyin7rnafzzp7l56fn12w1hqf151c/170_170_2/d95bede8-be3d-11ee-9b85-005056a415e2_560f43bf-d6a3-11ee-9b85-005056a415e2.jpeg.webp?17488705421674",
+    "price": "7106",
+    "price_text": "7 106 руб. /шт"
+  },
+  {
+    "name": "ЛДСП H1733 Береза Майнау ST9, 2800 х 2070 х 22 мм, Egger",
+    "url": "https://vl.expolesdv.ru/catalog/ldsp_fasady_stoleshnitsy/ldsp/ldsp_egger/drevesnye_reproduktsii_egger/44916/",
+    "image": "https://vl.expolesdv.ru/upload/delight.webpconverter/upload/resize_cache/iblock/733/r6f8u40ydj323y3jh3tf37phgw3ca667/170_170_2/d5e159ff-9077-11e8-8116-00155d0d0a2d_80515b1c-9078-11e8-8116-00155d0d0a2d.jpeg.webp?1766660252382",
+    "price": "6131",
+    "price_text": "6 131 руб. /шт"
+  },
+  {
+    "name": "ЛДСП H2033 Дуб Хантон темный ST10 2800 х 2070 х 16 мм, Egger",
+    "url": "https://vl.expolesdv.ru/catalog/ldsp_fasady_stoleshnitsy/ldsp/ldsp_egger/drevesnye_reproduktsii_egger/50160/",
+    "image": "https://vl.expolesdv.ru/upload/delight.webpconverter/upload/resize_cache/iblock/948/m50j5xb9wovlrrvelrnvxmrq5yw8o1e8/170_170_2/ebc14bad-c1a4-11ea-82a1-a4bf013e202f_6e4de1d1-c1a5-11ea-82a1-a4bf013e202f.jpeg.webp?17488423624402",
+    "price": "7609",
+    "price_text": "7 609 руб. /шт"
+  },
+  {
+    "name": "ЛДСП H3003 Дуб Норидж ST19, 2800 х 2070 х 16 мм, Egger",
+    "url": "https://vl.expolesdv.ru/catalog/ldsp_fasady_stoleshnitsy/ldsp/ldsp_egger/drevesnye_reproduktsii_egger/57328/",
+    "image": "https://vl.expolesdv.ru/upload/delight.webpconverter/upload/resize_cache/iblock/3d5/lyennu0gd1rc36tai8gt8vd034itjfm7/170_170_2/fb876868-ba60-11ee-9b85-005056a415e2_0345b381-dc2c-11ee-9b86-005056a415e2.jpeg.webp?17488705432396",
+    "price": "7824",
+    "price_text": "7 824 руб. /шт"
+  },
+  {
+    "name": "ЛДСП H3043 Эвкалипт темно-коричневый ST12 2800 х 2070 х 16 мм, Egger",
+    "url": "https://vl.expolesdv.ru/catalog/ldsp_fasady_stoleshnitsy/ldsp/ldsp_egger/drevesnye_reproduktsii_egger/58091/",
+    "image": "https://vl.expolesdv.ru/upload/delight.webpconverter/upload/resize_cache/iblock/5dc/hipxmbl0tocgx1qnvnno0bftlhrvr2r8/170_170_2/1761c291-ae8d-11ee-82ec-a4bf013e202f_9eb9af75-39c7-11ef-9b89-005056a415e2.jpeg.webp?17488705431180",
+    "price": "6781",
+    "price_text": "6 781 руб. /шт"
+  },
+  {
+    "name": "ЛДСП H305 Дуб Тонсберг натуральный ST12, 2800 х 2070 х 16 мм, Egger",
+    "url": "https://vl.expolesdv.ru/catalog/ldsp_fasady_stoleshnitsy/ldsp/ldsp_egger/drevesnye_reproduktsii_egger/57775/",
+    "image": "https://vl.expolesdv.ru/upload/delight.webpconverter/upload/resize_cache/iblock/ba1/socm8323xidad9m3sq4utjdsb6fyls5w/170_170_2/10372acb-ae8c-11ee-82ec-a4bf013e202f_96143569-e682-11ee-9b86-005056a415e2.jpeg.webp?17488705432084",
+    "price": "7609",
+    "price_text": "7 609 руб. /шт"
+  },
+  {
+    "name": "ЛДСП H309 Дуб Тонсберг коричневый ST12, 2800 х 2070 х 16 мм, Egger",
+    "url": "https://vl.expolesdv.ru/catalog/ldsp_fasady_stoleshnitsy/ldsp/ldsp_egger/drevesnye_reproduktsii_egger/57279/",
+    "image": "https://vl.expolesdv.ru/upload/delight.webpconverter/upload/resize_cache/iblock/f59/faej8np1w2oojprz4y1wv8a1emdld9pz/170_170_2/93ac1cce-ae8b-11ee-82ec-a4bf013e202f_4a25d7d8-d6a5-11ee-9b85-005056a415e2.jpeg.webp?17488705433084",
+    "price": "7609",
+    "price_text": "7 609 руб. /шт"
+  },
+  {
+    "name": "ЛДСП H3131 Дуб Давос натуральный ST12, 2800 х 2070 х 16 мм, Egger",
+    "url": "https://vl.expolesdv.ru/catalog/ldsp_fasady_stoleshnitsy/ldsp/ldsp_egger/drevesnye_reproduktsii_egger/59193/",
+    "image": "https://vl.expolesdv.ru/upload/delight.webpconverter/upload/resize_cache/iblock/dbb/9ebkpcc6jy2sfk5t8661q9h2t3v8mwhj/170_170_2/01eea774-50f1-11ed-82d0-a4bf013e202f_41f8dfe6-d4a0-11ef-9b96-005056a415e2.jpeg.webp?17488705432400",
+    "price": "6956",
+    "price_text": "6 956 руб. /шт"
+  },
+  {
+    "name": "ЛДСП H3133 Дуб Давос Трюфель ST12, 2800 х 2070 х 16 мм, Egger",
+    "url": "https://vl.expolesdv.ru/catalog/ldsp_fasady_stoleshnitsy/ldsp/ldsp_egger/drevesnye_reproduktsii_egger/50353/",
+    "image": "https://vl.expolesdv.ru/upload/delight.webpconverter/upload/resize_cache/iblock/2f8/pv4c95sn4d09v2xcxec0gqdnq5bk5eh4/170_170_2/abccc72c-0949-11e7-80e6-00155d0d0a2d_58ca723a-dfb4-11ea-82a1-a4bf013e202f.jpeg.webp?17488420863362",
+    "price": "7106",
+    "price_text": "7 106 руб. /шт"
+  },
+  {
+    "name": "ЛДСП H3146 Дуб Лоренцо бежево-серый ST19, 2800 х 2070 х 16 мм, Egger",
+    "url": "https://vl.expolesdv.ru/catalog/ldsp_fasady_stoleshnitsy/ldsp/ldsp_egger/drevesnye_reproduktsii_egger/58452/",
+    "image": "https://vl.expolesdv.ru/upload/delight.webpconverter/upload/resize_cache/iblock/fc6/mqu60cbqwkrs5mmz6jc9pydm6120fpbc/170_170_2/3c8d182a-ae8b-11ee-82ec-a4bf013e202f_734bbce1-68ca-11ef-9b8e-005056a415e2.jpeg.webp?17488705433210",
+    "price": "8000",
+    "price_text": "8 000 руб. /шт"
+  },
+  {
+    "name": "ЛДСП H3156 Дуб Корбридж серый ST12, 2800 х 2070 х 16 мм, Egger",
+    "url": "https://vl.expolesdv.ru/catalog/ldsp_fasady_stoleshnitsy/ldsp/ldsp_egger/drevesnye_reproduktsii_egger/44692/",
+    "image": "https://vl.expolesdv.ru/upload/delight.webpconverter/upload/resize_cache/iblock/e60/o7pb4ywsrbwj7rsdpoa1i9htl7k01kee/170_170_2/e8aee4b9-0196-11e8-8112-00155d0d0a2d_74e8e38c-0197-11e8-8112-00155d0d0a2d.jpeg.webp?17488386763124",
+    "price": "7106",
+    "price_text": "7 106 руб. /шт"
+  },
+  {
+    "name": "ЛДСП H3170 Дуб Кендал натуральный ST12, 2800 х 2070 х 16 мм, Egger",
+    "url": "https://vl.expolesdv.ru/catalog/ldsp_fasady_stoleshnitsy/ldsp/ldsp_egger/drevesnye_reproduktsii_egger/49882/",
+    "image": "https://vl.expolesdv.ru/upload/delight.webpconverter/upload/resize_cache/iblock/89d/oie75vprduec4pph1igp301q0pmexcvm/170_170_2/9443b097-8ffc-11ea-82a1-a4bf013e202f_aea8c7a1-8ffc-11ea-82a1-a4bf013e202f.jpeg.webp?17488410361942",
+    "price": "7095",
+    "price_text": "7 095 руб. /шт"
+  },
+  {
+    "name": "ЛДСП H3178 Дуб Галифакс глазурованный черный ST37 2800 х 2070 х 16 мм, Egger",
+    "url": "https://vl.expolesdv.ru/catalog/ldsp_fasady_stoleshnitsy/ldsp/ldsp_egger/filvud_egger/49484/",
+    "image": "https://vl.expolesdv.ru/upload/delight.webpconverter/upload/resize_cache/iblock/fbf/mh6x4siqt25pdv6v00aweir6ftt8xrmg/170_170_2/7902c4d3-509a-11ea-829d-a4bf013e202f_f24573b9-64c5-11ea-829e-a4bf013e202f.jpeg.webp?17666644566624",
+    "price": "6607",
+    "price_text": "6 607 руб. /шт"
+  },
+  {
+    "name": "ЛДСП H3190 Металлик Файнлайн антрацит ST19, 2800 х 2070 х 16 мм (Egger)",
+    "url": "https://vl.expolesdv.ru/catalog/ldsp_fasady_stoleshnitsy/ldsp/ldsp_egger/drevesnye_reproduktsii_egger/49450/",
+    "image": "https://vl.expolesdv.ru/upload/delight.webpconverter/upload/resize_cache/iblock/a37/spgl70zi73rakln73f3h1zl0cnz0yipk/170_170_2/d8644a04-509a-11ea-829d-a4bf013e202f_fd23f62b-6299-11ea-829e-a4bf013e202f.jpeg.webp?1756693105970",
+    "price": "9150",
+    "price_text": "9 150 руб. /шт"
+  },
+  {
+    "name": "ЛДСП H3195 Файнлайн белый ST19, 2800 х 2070 х 16 мм, Egger",
+    "url": "https://vl.expolesdv.ru/catalog/ldsp_fasady_stoleshnitsy/ldsp/ldsp_egger/drevesnye_reproduktsii_egger/58453/",
+    "image": "https://vl.expolesdv.ru/upload/delight.webpconverter/upload/resize_cache/iblock/fb7/69p2dwhcbyi8djdxuf8riq9me0cz6p96/170_170_2/54ffca33-ae8d-11ee-82ec-a4bf013e202f_4517896a-68c9-11ef-9b8e-005056a415e2.jpeg.webp?1748870543914",
+    "price": "8000",
+    "price_text": "8 000 руб. /шт"
+  },
+  {
+    "name": "ЛДСП H3197 Файнлайн средне-серый ST19 , 2800 х 2070 х 16 мм, Egger",
+    "url": "https://vl.expolesdv.ru/catalog/ldsp_fasady_stoleshnitsy/ldsp/ldsp_egger/drevesnye_reproduktsii_egger/58455/",
+    "image": "https://vl.expolesdv.ru/upload/delight.webpconverter/upload/resize_cache/iblock/0a0/ffjhrazuagzm56zdml6ekad826sjnym9/170_170_2/3b27197b-3911-11ef-9b89-005056a415e2_15ef5c67-68c8-11ef-9b8e-005056a415e2.jpeg.webp?17488712352258",
+    "price": "8000",
+    "price_text": "8 000 руб. /шт"
+  },
+  {
+    "name": "ЛДСП H3198 Файнлайн темно-серый ST19 , 2800 х 2070 х 16 мм, Egger",
+    "url": "https://vl.expolesdv.ru/catalog/ldsp_fasady_stoleshnitsy/ldsp/ldsp_egger/drevesnye_reproduktsii_egger/57686/",
+    "image": "https://vl.expolesdv.ru/upload/delight.webpconverter/upload/resize_cache/iblock/ced/yofg8u46zzf3eguqs068qehpnhs7q2n0/170_170_2/7925f4ca-ae8d-11ee-82ec-a4bf013e202f_10b29acd-f305-11ee-9b86-005056a415e2.jpeg.webp?1748871235902",
+    "price": "8000",
+    "price_text": "8 000 руб. /шт"
+  },
+  {
+    "name": "ЛДСП H3303 Дуб Гамильтон натуральный ST10, 2800 х 2070 х 16 мм, Egger",
+    "url": "https://vl.expolesdv.ru/catalog/ldsp_fasady_stoleshnitsy/ldsp/ldsp_egger/drevesnye_reproduktsii_egger/46061/",
+    "image": "https://vl.expolesdv.ru/upload/delight.webpconverter/upload/resize_cache/iblock/e77/50am5l2bl8f5dc3qp6fi1qr3c7mrp7g8/170_170_2/0ad7be0e-0198-11e8-8112-00155d0d0a2d_6e41d346-0198-11e8-8112-00155d0d0a2d.jpeg.webp?17488386772784",
+    "price": "7095",
+    "price_text": "7 095 руб. /шт"
+  },
+  {
+    "name": "ЛДСП H3331 Дуб Небраска натуральный ST10, 2800 х 2070 х 16 мм, Egger",
+    "url": "https://vl.expolesdv.ru/catalog/ldsp_fasady_stoleshnitsy/ldsp/ldsp_egger/drevesnye_reproduktsii_egger/48031/",
+    "image": "https://vl.expolesdv.ru/upload/delight.webpconverter/upload/resize_cache/iblock/9e9/xojzqcmw6xuhj4gm1s0kvy5ocv5aflwx/170_170_2/8691f8ec-ca6e-11e3-aa67-002590306aff_7b2ba80a-52f0-11e6-80da-00155d0d0a2d.jpeg.webp?17488386773442",
+    "price": "7095",
+    "price_text": "7 095 руб. /шт"
+  },
+  {
+    "name": "ЛДСП H3359 Дуб Давенпорт натуральный светлый ST32, 2800 х 2070 х 16 мм, Egger",
+    "url": "https://vl.expolesdv.ru/catalog/ldsp_fasady_stoleshnitsy/ldsp/ldsp_egger/filvud_egger/58242/",
+    "image": "https://vl.expolesdv.ru/upload/delight.webpconverter/upload/resize_cache/iblock/f34/jdo1uymbabbxa13hfm8napkztscf3b2y/170_170_2/658b42b8-3904-11ef-9b89-005056a415e2_206a18d4-47c0-11ef-9b89-005056a415e2.jpeg.webp?17666644563852",
+    "price": "8894",
+    "price_text": "8 894 руб. /шт"
+  },
+  {
+    "name": "ЛДСП H3395 Дуб Корбридж натуральный ST12, 2800 х 2070 х 16 мм, Egger",
+    "url": "https://vl.expolesdv.ru/catalog/ldsp_fasady_stoleshnitsy/ldsp/ldsp_egger/drevesnye_reproduktsii_egger/44343/",
+    "image": "https://vl.expolesdv.ru/upload/delight.webpconverter/upload/resize_cache/iblock/c60/diaf2xkb7b8j9r3nyjvg8cw1n6bx21kd/170_170_2/eb6c819a-a742-11e8-8118-00155d0d0a2d_489ca8af-c2d6-11e8-8283-a4bf013e202f.jpeg.webp?17488399442942",
+    "price": "6945",
+    "price_text": "6 945 руб. /шт"
+  },
+  {
+    "name": "ЛДСП H3398 Дуб Кендал Коньяк ST12, 2800 х 2070 х 16 мм, Egger",
+    "url": "https://vl.expolesdv.ru/catalog/ldsp_fasady_stoleshnitsy/ldsp/ldsp_egger/drevesnye_reproduktsii_egger/44725/",
+    "image": "https://vl.expolesdv.ru/upload/delight.webpconverter/upload/resize_cache/iblock/cd1/tiy4mz7tnymndd305bfhryvz1r5thswh/170_170_2/46feb0da-55ab-11e9-828a-a4bf013e202f_267dbf9a-629a-11ea-829e-a4bf013e202f.jpeg.webp?17488399543932",
+    "price": "7106",
+    "price_text": "7 106 руб. /шт"
+  },
+  {
+    "name": "ЛДСП H3408 Лиственница горная коричневая термо ST38, 2800 х 2070 х 16 мм, Egger",
+    "url": "https://vl.expolesdv.ru/catalog/ldsp_fasady_stoleshnitsy/ldsp/ldsp_egger/filvud_egger/49451/",
+    "image": "https://vl.expolesdv.ru/upload/delight.webpconverter/upload/resize_cache/iblock/4de/yeg0hfxxp6ppxchw13xe2z94v9c6gf2g/170_170_2/5a08c77c-509b-11ea-829d-a4bf013e202f_fbf55af2-e161-11f0-9bae-005056a415e2.jpg.webp?17666644563816",
+    "price": "8165",
+    "price_text": "8 165 руб. /шт"
+  },
+  {
+    "name": "ЛДСП H3430 Сосна Аланд белая ST22, 2800 х 2070 х 16 мм, Egger",
+    "url": "https://vl.expolesdv.ru/catalog/ldsp_fasady_stoleshnitsy/ldsp/ldsp_egger/drevesnye_reproduktsii_egger/58222/",
+    "image": "https://vl.expolesdv.ru/upload/delight.webpconverter/upload/resize_cache/iblock/425/mk1nvz49mcczd17rpvk8z9qf3hrpmt04/170_170_2/722949ad-2a6a-11ed-82cb-a4bf013e202f_b30498b7-47be-11ef-9b89-005056a415e2.jpeg.webp?17488712573060",
+    "price": "7106",
+    "price_text": "7 106 руб. /шт"
+  },
+  {
+    "name": "ЛДСП H3433 Сосна Аланд полярная ST22, 2800 х 2070 х 16 мм, Egger",
+    "url": "https://vl.expolesdv.ru/catalog/ldsp_fasady_stoleshnitsy/ldsp/ldsp_egger/drevesnye_reproduktsii_egger/42667/",
+    "image": "https://vl.expolesdv.ru/upload/delight.webpconverter/upload/resize_cache/iblock/243/j1qxzr7lhstese4smoy293x2lnrxirpc/170_170_2/01cc3371-2b05-11e7-80e9-00155d0d0a2d_000f53f2-eaa5-11e7-8112-00155d0d0a2d.jpeg.webp?17488386841262",
+    "price": "7106",
+    "price_text": "7 106 руб. /шт"
+  },
+  {
+    "name": "ЛДСП H3710 Орех Карини натуральный ST12, 2800 х 2070 х 16 мм, Egger",
+    "url": "https://vl.expolesdv.ru/catalog/ldsp_fasady_stoleshnitsy/ldsp/ldsp_egger/drevesnye_reproduktsii_egger/53306/",
+    "image": "https://vl.expolesdv.ru/upload/delight.webpconverter/upload/resize_cache/iblock/d7b/g4q3vx1kqvmjyz2sackul6243ltt813u/170_170_2/c671237b-3a2b-11ed-82cc-a4bf013e202f_d70cd12d-3a2b-11ed-82cc-a4bf013e202f.jpeg.webp?17488638552244",
+    "price": "7095",
+    "price_text": "7 095 руб. /шт"
+  },
+  {
+    "name": "ЛДСП H3730 Гикори натуральный ST10, 2800 х 2070 х 16 мм, Egger",
+    "url": "https://vl.expolesdv.ru/catalog/ldsp_fasady_stoleshnitsy/ldsp/ldsp_egger/drevesnye_reproduktsii_egger/42464/",
+    "image": "https://vl.expolesdv.ru/upload/delight.webpconverter/upload/resize_cache/iblock/656/gkgz9bxmn8dgb2cyuwlxsys79k2bvlc3/170_170_2/83c34e35-5277-11e8-8116-00155d0d0a2d_a4c166a1-f518-11e8-8285-a4bf013e202f.jpeg.webp?17488399952534",
+    "price": "7095",
+    "price_text": "7 095 руб. /шт"
+  },
+  {
+    "name": "ЛДСП U113 Коттон бежевый ST9, 2800 х 2070 х 16 мм, Egger",
+    "url": "https://vl.expolesdv.ru/catalog/ldsp_fasady_stoleshnitsy/ldsp/ldsp_egger/odnotonnye_dekory_egger/57375/",
+    "image": "https://vl.expolesdv.ru/upload/delight.webpconverter/upload/resize_cache/iblock/b35/0yozdaiwnqr58h6hkurzd5wlvrmw7i0v/170_170_2/9bc6328a-2f41-11ee-82dc-a4bf013e202f_0c2144d1-e261-11ee-9b86-005056a415e2.jpeg.webp?1748871257130",
+    "price": "6945",
+    "price_text": "6 945 руб. /шт"
+  },
+  {
+    "name": "ЛДСП U115 Карат бежевый ST9, 2800 х 2070 х 16 мм, Egger",
+    "url": "https://vl.expolesdv.ru/catalog/ldsp_fasady_stoleshnitsy/ldsp/ldsp_egger/odnotonnye_dekory_egger/63149/",
+    "image": "https://vl.expolesdv.ru/upload/delight.webpconverter/upload/resize_cache/iblock/d2e/fkr02ec9tr7tfwjts8vsfcf39gdh26k0/170_170_2/4151630d-ae88-11ee-82ec-a4bf013e202f_8f057349-b6bd-11f0-9ba7-005056a415e2.jpg.webp?1766740266142",
+    "price": "7106",
+    "price_text": "7 106 руб. /шт"
+  },
+  {
+    "name": "ЛДСП U125 Желтый песок ST9, 2800 х 2070 х 16 мм, Egger",
+    "url": "https://vl.expolesdv.ru/catalog/ldsp_fasady_stoleshnitsy/ldsp/ldsp_egger/odnotonnye_dekory_egger/58274/",
+    "image": "https://vl.expolesdv.ru/upload/delight.webpconverter/upload/resize_cache/iblock/143/btjl6thmqnhmrhr60i2kkt231bil6m0e/170_170_2/479f602b-38d8-11ef-9b89-005056a415e2_71e34791-4f90-11ef-9b89-005056a415e2.jpeg.webp?1748871257130",
+    "price": "7609",
+    "price_text": "7 609 руб. /шт"
+  },
+  {
+    "name": "ЛДСП U156 Бежевый песок ST9, 2800 х 2070 х 16 мм, Egger",
+    "url": "https://vl.expolesdv.ru/catalog/ldsp_fasady_stoleshnitsy/ldsp/ldsp_egger/odnotonnye_dekory_egger/48380/",
+    "image": "https://vl.expolesdv.ru/upload/delight.webpconverter/upload/resize_cache/iblock/5ba/crnskzd0vyrqdn05j0m4zttrzj22uyql/170_170_2/3dfc76d4-7cc8-11e3-b89c-002590306aff_45541e69-52f0-11e6-80da-00155d0d0a2d.jpeg.webp?1748832791130",
+    "price": "6945",
+    "price_text": "6 945 руб. /шт"
+  },
+  {
+    "name": "ЛДСП U163 Карри желтый ST9, 2800 х 2070 х 16 мм, Egger",
+    "url": "https://vl.expolesdv.ru/catalog/ldsp_fasady_stoleshnitsy/ldsp/ldsp_egger/odnotonnye_dekory_egger/57624/",
+    "image": "https://vl.expolesdv.ru/upload/delight.webpconverter/upload/resize_cache/iblock/5b6/psafu3pc7ukqn88z6zoajs49si0wsaxa/170_170_2/deef2631-b029-11ee-82ec-a4bf013e202f_d09f2419-ed7b-11ee-9b86-005056a415e2.jpeg.webp?1748871257142",
+    "price": "7609",
+    "price_text": "7 609 руб. /шт"
+  },
+  {
+    "name": "ЛДСП U201 Серая галька ST9, 2800 х 2070 х 16 мм, Egger",
+    "url": "https://vl.expolesdv.ru/catalog/ldsp_fasady_stoleshnitsy/ldsp/ldsp_egger/odnotonnye_dekory_egger/53175/",
+    "image": "https://vl.expolesdv.ru/upload/delight.webpconverter/upload/resize_cache/iblock/1fa/h5u6pn8bfv17gn2jyijhjzix7e4g271i/170_170_2/5bfebc3c-158d-11ed-82c9-a4bf013e202f_b74583a9-158e-11ed-82c9-a4bf013e202f.jpeg.webp?1748863041134",
+    "price": "7106",
+    "price_text": "7 106 руб. /шт"
+  },
+  {
+    "name": "ЛДСП U350 Сиена оранж ST9 2800 х 2070 х 16 мм, Egger",
+    "url": "https://vl.expolesdv.ru/catalog/ldsp_fasady_stoleshnitsy/ldsp/ldsp_egger/odnotonnye_dekory_egger/57395/",
+    "image": "https://vl.expolesdv.ru/upload/delight.webpconverter/upload/resize_cache/iblock/ec2/a09p5uxme4iavvem8x85hzbexlo1esw8/170_170_2/2838f023-be3f-11ee-9b85-005056a415e2_7f1b51de-e25d-11ee-9b86-005056a415e2.jpeg.webp?1748867767136",
+    "price": "7609",
+    "price_text": "7 609 руб. /шт"
+  },
+  {
+    "name": "ЛДСП U502 Синий дымчатый ST9 2800 х 2070 х 16 мм, Egger",
+    "url": "https://vl.expolesdv.ru/catalog/ldsp_fasady_stoleshnitsy/ldsp/ldsp_egger/odnotonnye_dekory_egger/58368/",
+    "image": "https://vl.expolesdv.ru/upload/delight.webpconverter/upload/resize_cache/iblock/e2d/g9cew81h77f4z9h23cu3hitdbqtgl5d3/170_170_2/53dba7af-ae89-11ee-82ec-a4bf013e202f_28f7c06e-5a8f-11ef-9b8b-005056a415e2.jpeg.webp?1748871258128",
+    "price": "7609",
+    "price_text": "7 609 руб. /шт"
+  },
+  {
+    "name": "ЛДСП U504 Альпийское озеро ST9, 2800 х 2070 х 16 мм, Egger",
+    "url": "https://vl.expolesdv.ru/catalog/ldsp_fasady_stoleshnitsy/ldsp/ldsp_egger/odnotonnye_dekory_egger/43759/",
+    "image": "https://vl.expolesdv.ru/upload/delight.webpconverter/upload/resize_cache/iblock/41b/z0luji6y1076nh6u2nognj2qsehh5x8l/170_170_2/04a53f55-f50a-11e7-8112-00155d0d0a2d_5efbc407-f50a-11e7-8112-00155d0d0a2d.jpeg.webp?1769144399130",
+    "price": "7095",
+    "price_text": "7 095 руб. /шт"
+  },
+  {
+    "name": "ЛДСП U525 Делфт голубой ST9, 2800 х 2070 х 16 мм, Egger",
+    "url": "https://vl.expolesdv.ru/catalog/ldsp_fasady_stoleshnitsy/ldsp/ldsp_egger/odnotonnye_dekory_egger/41953/",
+    "image": "https://vl.expolesdv.ru/upload/delight.webpconverter/upload/resize_cache/iblock/4b0/xuxkz0676usx2teh17otol9sh6xwrxsy/170_170_2/f85e135f-d988-11e7-8112-00155d0d0a2d_858dd2c0-d989-11e7-8112-00155d0d0a2d.jpeg.webp?1748837121140",
+    "price": "7095",
+    "price_text": "7 095 руб. /шт"
+  },
+  {
+    "name": "ЛДСП U630  Зеленый лимон ST9, 2800 х 2070 х 16 мм, Egger",
+    "url": "https://vl.expolesdv.ru/catalog/ldsp_fasady_stoleshnitsy/ldsp/ldsp_egger/odnotonnye_dekory_egger/43178/",
+    "image": "https://vl.expolesdv.ru/upload/delight.webpconverter/upload/resize_cache/iblock/008/3yn6w7fjisobmmjicylbtrpm0b7nt3wo/170_170_2/b57a77f6-0479-490d-9f54-2b684fa12b29_fd8f644d-52ef-11e6-80da-00155d0d0a2d.jpeg.webp?1748837961156",
+    "price": "6942",
+    "price_text": "6 942 руб. /шт"
+  },
+  {
+    "name": "ЛДСП U636 Фьерд зеленый ST9, 2800 х 2070 х 16 мм, Egger",
+    "url": "https://vl.expolesdv.ru/catalog/ldsp_fasady_stoleshnitsy/ldsp/ldsp_egger/odnotonnye_dekory_egger/58954/",
+    "image": "https://vl.expolesdv.ru/upload/delight.webpconverter/upload/resize_cache/iblock/d88/3mab69yyt3790oyqa1csf2goni5q1zps/170_170_2/f4278315-7f97-11ef-9b8e-005056a415e2_75144289-7f98-11ef-9b8e-005056a415e2.jpeg.webp?1748871258136",
+    "price": "7609",
+    "price_text": "7 609 руб. /шт"
+  },
+  {
+    "name": "ЛДСП U702 Кашемир серый ST9 2800 х 2070 х 8 мм, Egger",
+    "url": "https://vl.expolesdv.ru/catalog/ldsp_fasady_stoleshnitsy/ldsp/ldsp_egger/odnotonnye_dekory_egger/43928/",
+    "image": "https://vl.expolesdv.ru/upload/delight.webpconverter/upload/resize_cache/iblock/012/12z8c3r1j2mp5j6flnainssfc8vy3kpj/170_170_2/6c47b50c-965c-11e6-80e0-00155d0d0a2d_9a7e5227-0649-11e8-8112-00155d0d0a2d.jpeg.webp?1743029148130",
+    "price": "5540",
+    "price_text": "5 540 руб. /шт"
+  },
+  {
+    "name": "ЛДСП U702 Кашемир серый ST9, 2800 х 2070 х 16 мм, Egger",
+    "url": "https://vl.expolesdv.ru/catalog/ldsp_fasady_stoleshnitsy/ldsp/ldsp_egger/odnotonnye_dekory_egger/48316/",
+    "image": "https://vl.expolesdv.ru/upload/delight.webpconverter/upload/resize_cache/iblock/fd9/19iwcpq7q6v203lbpf6xunn94aizmwri/170_170_2/dd340768-0568-11e4-8c58-002590306aff_e4b92fcf-6240-11ee-82e1-a4bf013e202f.jpeg.webp?1743029148146",
+    "price": "6945",
+    "price_text": "6 945 руб. /шт"
+  },
+  {
+    "name": "ЛДСП U705 Ангора серая ST9, 2800 х 2070 х 16 мм, Egger",
+    "url": "https://vl.expolesdv.ru/catalog/ldsp_fasady_stoleshnitsy/ldsp/ldsp_egger/odnotonnye_dekory_egger/54309/",
+    "image": "https://vl.expolesdv.ru/upload/delight.webpconverter/upload/resize_cache/iblock/ad7/pggm2na39e6as9nbaqdoxz0ka94wtxkn/170_170_2/0e54c61e-c730-11ed-82db-a4bf013e202f_85c5b663-c730-11ed-82db-a4bf013e202f.jpeg.webp?1748863993138",
+    "price": "7106",
+    "price_text": "7 106 руб. /шт"
+  },
+  {
+    "name": "ЛДСП U708 Светло-серый ST9, 2800 х 2070 х 16 мм, Egger",
+    "url": "https://vl.expolesdv.ru/catalog/ldsp_fasady_stoleshnitsy/ldsp/ldsp_egger/odnotonnye_dekory_egger/56909/",
+    "image": "https://vl.expolesdv.ru/upload/delight.webpconverter/upload/resize_cache/iblock/f3e/ef7gkgpomhxbgyvtdj7jwbfh5w2w8eu6/170_170_2/9a019f50-768c-11ed-82d8-a4bf013e202f_0d47dbc8-957f-11ee-82eb-a4bf013e202f.jpeg.webp?1748871339132",
+    "price": "6781",
+    "price_text": "6 781 руб. /шт"
+  },
+  {
+    "name": "ЛДСП U727 Серый камень ST9, 2800 х 2070 х 16 мм, Egger",
+    "url": "https://vl.expolesdv.ru/catalog/ldsp_fasady_stoleshnitsy/ldsp/ldsp_egger/odnotonnye_dekory_egger/43699/",
+    "image": "https://vl.expolesdv.ru/upload/delight.webpconverter/upload/resize_cache/iblock/ff4/qp5yvdlpizy619zrt4bix50o07sv1qf7/170_170_2/26418358-74f1-11e8-8116-00155d0d0a2d_20d3ba05-a1d6-11e8-8118-00155d0d0a2d.jpeg.webp?1748839956142",
+    "price": "7106",
+    "price_text": "7 106 руб. /шт"
+  },
+  {
+    "name": "ЛДСП U732  Серый асфальт (Серый пыльный) ST9, 2800 х 2070 х 16 мм, Egger",
+    "url": "https://vl.expolesdv.ru/catalog/ldsp_fasady_stoleshnitsy/ldsp/ldsp_egger/odnotonnye_dekory_egger/43798/",
+    "image": "https://vl.expolesdv.ru/upload/delight.webpconverter/upload/resize_cache/iblock/c34/99v0zj9y97kno715orbzuni1d9itna7u/170_170_2/b6caf0fd-55a8-11e9-828a-a4bf013e202f_d0b61d6a-67de-11e9-828a-a4bf013e202f.jpeg.webp?1748839956124",
+    "price": "6945",
+    "price_text": "6 945 руб. /шт"
+  },
+  {
+    "name": "ЛДСП U740 Серо-коричневый темный ST9 2800 х 2070 х 16 мм, Egger",
+    "url": "https://vl.expolesdv.ru/catalog/ldsp_fasady_stoleshnitsy/ldsp/ldsp_egger/odnotonnye_dekory_egger/57283/",
+    "image": "https://vl.expolesdv.ru/upload/delight.webpconverter/upload/resize_cache/iblock/1e6/uqal9enkubjck149hsboaust4l0j4io0/170_170_2/1f0fe470-ba67-11ee-9b85-005056a415e2_4fffe5b9-d764-11ee-9b85-005056a415e2.jpeg.webp?1748867767122",
+    "price": "7106",
+    "price_text": "7 106 руб. /шт"
+  },
+  {
+    "name": "ЛДСП U741 Лава серая ST9, 2800 х 2070 х 16 мм, Egger",
+    "url": "https://vl.expolesdv.ru/catalog/ldsp_fasady_stoleshnitsy/ldsp/ldsp_egger/odnotonnye_dekory_egger/58316/",
+    "image": "https://vl.expolesdv.ru/upload/delight.webpconverter/upload/resize_cache/iblock/5b2/p69dcxrksdxx7i0je90m6j5x13plzyrs/170_170_2/107c16c5-72d5-11ee-82e9-a4bf013e202f_44801f26-539b-11ef-9b8a-005056a415e2.jpeg.webp?1748871339192",
+    "price": "7106",
+    "price_text": "7 106 руб. /шт"
+  },
+  {
+    "name": "ЛДСП U748 Трюфель коричневый ST9, 2800 х 2070 х 16 мм, Egger",
+    "url": "https://vl.expolesdv.ru/catalog/ldsp_fasady_stoleshnitsy/ldsp/ldsp_egger/odnotonnye_dekory_egger/42578/",
+    "image": "https://vl.expolesdv.ru/upload/delight.webpconverter/upload/resize_cache/iblock/e4d/zu9wtv8weplqayhxa9emuey904d5dnsm/170_170_2/a78a8a62-4ac0-11e5-80e8-00155d0d0a05_99177a8e-52f0-11e6-80da-00155d0d0a2d.jpeg.webp?1748837977128",
+    "price": "7106",
+    "price_text": "7 106 руб. /шт"
+  },
+  {
+    "name": "ЛДСП U750 Ярко-серый ST9, 2800 х 2070 х 16 мм, Egger",
+    "url": "https://vl.expolesdv.ru/catalog/ldsp_fasady_stoleshnitsy/ldsp/ldsp_egger/odnotonnye_dekory_egger/53295/",
+    "image": "https://vl.expolesdv.ru/upload/delight.webpconverter/upload/resize_cache/iblock/94a/987dhpnmi6u1bqjf3hw03juinq8qlbk4/170_170_2/ffc72ebe-33c3-11ed-82cc-a4bf013e202f_cff4c289-33c8-11ed-82cc-a4bf013e202f.jpeg.webp?1748864009128",
+    "price": "7106",
+    "price_text": "7 106 руб. /шт"
+  },
+  {
+    "name": "ЛДСП U763 Серый перламутровый ST9 2800 х 2070 х 10 мм",
+    "url": "https://vl.expolesdv.ru/catalog/ldsp_fasady_stoleshnitsy/ldsp/ldsp_egger/odnotonnye_dekory_egger/58597/",
+    "image": "https://vl.expolesdv.ru/upload/delight.webpconverter/upload/resize_cache/iblock/603/i19cdde4t9vc0w58e4x871fhwrhntwkw/170_170_2/49c86789-6675-11ef-9b8e-005056a415e2_f2751949-7cbb-11ef-9b8e-005056a415e2.jpeg.webp?1756692976124",
+    "price": "5888",
+    "price_text": "5 888 руб. /шт"
+  },
+  {
+    "name": "ЛДСП U763 Серый перламутровый ST9, 2800 х 2070 х 16 мм, Egger",
+    "url": "https://vl.expolesdv.ru/catalog/ldsp_fasady_stoleshnitsy/ldsp/ldsp_egger/odnotonnye_dekory_egger/44018/",
+    "image": "https://vl.expolesdv.ru/upload/delight.webpconverter/upload/resize_cache/iblock/e1a/7r5jyjbystok2haepbmdhtm4vd5s1fuf/170_170_2/aa54a766-2fa5-11e7-80e9-00155d0d0a2d_92514933-2fa6-11e7-80e9-00155d0d0a2d.jpeg.webp?1748837977124",
+    "price": "6945",
+    "price_text": "6 945 руб. /шт"
+  },
+  {
+    "name": "ЛДСП U763 Серый перламутровый ST9, 2800 х 2070 х 22 мм, Egger",
+    "url": "https://vl.expolesdv.ru/catalog/ldsp_fasady_stoleshnitsy/ldsp/ldsp_egger/odnotonnye_dekory_egger/42891/",
+    "image": "https://vl.expolesdv.ru/upload/delight.webpconverter/upload/resize_cache/iblock/694/5ukf406i1t7rmqdk6y50m58eretjjzv8/170_170_2/f30afd5c-c34d-11e7-810e-00155d0d0a2d_31320654-c34e-11e7-810e-00155d0d0a2d.jpeg.webp?1748837977124",
+    "price": "7759",
+    "price_text": "7 759 руб. /шт"
+  },
+  {
+    "name": "ЛДСП U763 Серый перламутровый ВЛАГОСТОЙКИЙ ST9 MR, 2800 х 2070 х 16 мм, Egger",
+    "url": "https://vl.expolesdv.ru/catalog/ldsp_fasady_stoleshnitsy/ldsp/ldsp_egger/odnotonnye_dekory_egger/53163/",
+    "image": "https://vl.expolesdv.ru/upload/delight.webpconverter/upload/resize_cache/iblock/51d/pnashmaxgojl0lhgyo1zulj789e18vk8/170_170_2/14fbba41-233e-11ed-82cb-a4bf013e202f_dc44c2f0-233e-11ed-82cb-a4bf013e202f.jpeg.webp?1748864009124",
+    "price": "7295",
+    "price_text": "7 295 руб. /шт"
+  },
+  {
+    "name": "ЛДСП U767 Кубанит серый ST9, 2800 х 2070 х 16 мм, Egger",
+    "url": "https://vl.expolesdv.ru/catalog/ldsp_fasady_stoleshnitsy/ldsp/ldsp_egger/odnotonnye_dekory_egger/49668/",
+    "image": "https://vl.expolesdv.ru/upload/delight.webpconverter/upload/resize_cache/iblock/52a/tc306u419mhtmnr9obgjt8337xnna3u3/170_170_2/969c52b5-5001-11ea-829d-a4bf013e202f_657bd615-806e-11ea-82a0-a4bf013e202f.jpeg.webp?1748841094122",
+    "price": "7106",
+    "price_text": "7 106 руб. /шт"
+  },
+  {
+    "name": "ЛДСП U775 Серый дымчатый (Бело-серый) ST9, 2800 х 2070 х 16 мм, Egger",
+    "url": "https://vl.expolesdv.ru/catalog/ldsp_fasady_stoleshnitsy/ldsp/ldsp_egger/odnotonnye_dekory_egger/53332/",
+    "image": "https://vl.expolesdv.ru/upload/delight.webpconverter/upload/resize_cache/iblock/c0c/a3kw5axh0pnk4gpsb3re9km5on7k4lsp/170_170_2/298f7cf7-33ca-11ed-82cc-a4bf013e202f_45213bc5-33ca-11ed-82cc-a4bf013e202f.jpeg.webp?1748864009166",
+    "price": "6945",
+    "price_text": "6 945 руб. /шт"
+  },
+  {
+    "name": "ЛДСП U780 Серый монументальный ST9, 2800 х 2070 х 16 мм, Egger",
+    "url": "https://vl.expolesdv.ru/catalog/ldsp_fasady_stoleshnitsy/ldsp/ldsp_egger/odnotonnye_dekory_egger/50496/",
+    "image": "https://vl.expolesdv.ru/upload/delight.webpconverter/upload/resize_cache/iblock/227/inx4o6q21qnso0rt0gtazjcgdq7pv7bw/170_170_2/585232da-fc8c-11ea-82a1-a4bf013e202f_7e203316-fc8c-11ea-82a1-a4bf013e202f.jpeg.webp?1748842222200",
+    "price": "7106",
+    "price_text": "7 106 руб. /шт"
+  },
+  {
+    "name": "ЛДСП U788 Арктика серый ST9, 2800 х 2070 х 16 мм, Egger",
+    "url": "https://vl.expolesdv.ru/catalog/ldsp_fasady_stoleshnitsy/ldsp/ldsp_egger/odnotonnye_dekory_egger/58309/",
+    "image": "https://vl.expolesdv.ru/upload/delight.webpconverter/upload/resize_cache/iblock/fea/4zo5cm41mq1ut5vy0ywk7gplxuwjj0dk/170_170_2/4f231ece-5277-11e8-8116-00155d0d0a2d_2d598807-53ab-11ef-9b8a-005056a415e2.jpeg.webp?1748871339170",
+    "price": "7106",
+    "price_text": "7 106 руб. /шт"
+  },
+  {
+    "name": "ЛДСП U830 Карамель нюд ST9, 2800 х 2070 х 16 мм, Egger",
+    "url": "https://vl.expolesdv.ru/catalog/ldsp_fasady_stoleshnitsy/ldsp/ldsp_egger/odnotonnye_dekory_egger/57287/",
+    "image": "https://vl.expolesdv.ru/upload/delight.webpconverter/upload/resize_cache/iblock/bd3/kzekrhpuzqzwpsmiqiz9lscqksc8c3zd/170_170_2/afa7ea4b-be3e-11ee-9b85-005056a415e2_7ce20a48-d75d-11ee-9b85-005056a415e2.jpeg.webp?1748867621136",
+    "price": "7609",
+    "price_text": "7 609 руб. /шт"
+  },
+  {
+    "name": "ЛДСП U899 Нежный черный ST9, 2800 х 2070 х 16 мм, Egger",
+    "url": "https://vl.expolesdv.ru/catalog/ldsp_fasady_stoleshnitsy/ldsp/ldsp_egger/odnotonnye_dekory_egger/50822/",
+    "image": "https://vl.expolesdv.ru/upload/delight.webpconverter/upload/resize_cache/iblock/eef/8w9q6q7brickfj9rig7zavhc3w8oej7p/170_170_2/e18165cc-6c2c-11eb-82b0-a4bf013e202f_e9a55a8a-80a0-11eb-82b1-a4bf013e202f.jpeg.webp?1748842222124",
+    "price": "7106",
+    "price_text": "7 106 руб. /шт"
+  },
+  {
+    "name": "ЛДСП U960 Оникс серый ST9, 2800 х 2070 х 16 мм, Egger",
+    "url": "https://vl.expolesdv.ru/catalog/ldsp_fasady_stoleshnitsy/ldsp/ldsp_egger/odnotonnye_dekory_egger/53967/",
+    "image": "https://vl.expolesdv.ru/upload/delight.webpconverter/upload/resize_cache/iblock/20c/kjeb37h6xs1oq5avxih94ya2ip5jtrpy/170_170_2/807aabfe-96e1-11ed-82d8-a4bf013e202f_1eb6dc62-96e2-11ed-82d8-a4bf013e202f.jpeg.webp?1748864063118",
+    "price": "7106",
+    "price_text": "7 106 руб. /шт"
+  },
+  {
+    "name": "ЛДСП U961 Черный графит ST7, 2800 х 2070 х 16 мм, Egger",
+    "url": "https://vl.expolesdv.ru/catalog/ldsp_fasady_stoleshnitsy/ldsp/ldsp_egger/odnotonnye_dekory_egger/57148/",
+    "image": "https://vl.expolesdv.ru/upload/delight.webpconverter/upload/resize_cache/iblock/50a/8srqsmwsp7t1wf7lcfw55dr1jzhg2s6r/170_170_2/183f02c4-ae89-11ee-82ec-a4bf013e202f_7ee6391f-c4bb-11ee-9b85-005056a415e2.jpeg.webp?1748867621130",
+    "price": "6781",
+    "price_text": "6 781 руб. /шт"
+  },
+  {
+    "name": "ЛДСП U963 Диамант серый ST9, 2800 х 2070 х 16 мм, Egger",
+    "url": "https://vl.expolesdv.ru/catalog/ldsp_fasady_stoleshnitsy/ldsp/ldsp_egger/odnotonnye_dekory_egger/44476/",
+    "image": "https://vl.expolesdv.ru/upload/delight.webpconverter/upload/resize_cache/iblock/8e2/ks1kyeqyn7wsw6yvyhcp59brl4kk0441/170_170_2/aaed714e-f9b5-11e7-8112-00155d0d0a2d_8b7fa6f6-f9b6-11e7-8112-00155d0d0a2d.jpeg.webp?1748837977118",
+    "price": "6945",
+    "price_text": "6 945 руб. /шт"
+  },
+  {
+    "name": "ЛДСП U968 Серый уголь ST9 2800 х 2070 х 16 мм, Egger",
+    "url": "https://vl.expolesdv.ru/catalog/ldsp_fasady_stoleshnitsy/ldsp/ldsp_egger/odnotonnye_dekory_egger/59239/",
+    "image": "https://vl.expolesdv.ru/upload/delight.webpconverter/upload/resize_cache/iblock/4de/ymdni11nxiy6s4iv6ex5xdl6qowniclu/170_170_2/648e8a71-e70b-11ee-9b86-005056a415e2_83a7a0e2-d36b-11ef-9b96-005056a415e2.jpeg.webp?17703427931470",
+    "price": "7106",
+    "price_text": "7 106 руб. /шт"
+  },
+  {
+    "name": "ЛДСП U999 Черный ST7, 2800 х 2070 х 16 мм, Egger",
+    "url": "https://vl.expolesdv.ru/catalog/ldsp_fasady_stoleshnitsy/ldsp/ldsp_egger/odnotonnye_dekory_egger/57151/",
+    "image": "https://vl.expolesdv.ru/upload/delight.webpconverter/upload/resize_cache/iblock/b27/r5pjvr742gwtw3867olzobrbuvi21d4i/170_170_2/677809a5-b02b-11ee-82ec-a4bf013e202f_1f175ecf-c4b0-11ee-9b85-005056a415e2.jpeg.webp?1748867621124",
+    "price": "6781",
+    "price_text": "6 781 руб. /шт"
+  },
+  {
+    "name": "ЛДСП U999 Черный структурный ST19, 2800 х 2070 х 16 мм, Egger",
+    "url": "https://vl.expolesdv.ru/catalog/ldsp_fasady_stoleshnitsy/ldsp/ldsp_egger/odnotonnye_dekory_egger/49585/",
+    "image": "https://vl.expolesdv.ru/upload/delight.webpconverter/upload/resize_cache/iblock/a6c/pagrrneqep47jo3uwfquvhvjezetsb9f/170_170_2/8e97b98f-4ffd-11ea-829d-a4bf013e202f_a506de85-b4fc-11ea-82a1-a4bf013e202f.png.webp?17488403579520",
+    "price": "7609",
+    "price_text": "7 609 руб. /шт"
+  },
+  {
+    "name": "ЛДСП W1000 Белый премиум ST19 2800 х 2070 х 16 мм, Egger",
+    "url": "https://vl.expolesdv.ru/catalog/ldsp_fasady_stoleshnitsy/ldsp/ldsp_egger/odnotonnye_dekory_egger/58257/",
+    "image": "https://vl.expolesdv.ru/upload/delight.webpconverter/upload/resize_cache/iblock/aa3/kr3l0g1tkt9ct01ru2gps543mvjoti6u/170_170_2/dde246d7-eb16-11ea-82a1-a4bf013e202f_cedeeda7-4edb-11ef-9b89-005056a415e2.jpeg.webp?17516201705054",
+    "price": "7609",
+    "price_text": "7 609 руб. /шт"
+  },
+  {
+    "name": "ЛДСП W1000 Белый премиум ST38, 2800 х 2070 х16 мм, Egger",
+    "url": "https://vl.expolesdv.ru/catalog/ldsp_fasady_stoleshnitsy/ldsp/ldsp_egger/odnotonnye_dekory_egger/42587/",
+    "image": "https://vl.expolesdv.ru/upload/delight.webpconverter/upload/resize_cache/iblock/449/t2wlpzzhe0202mdjfyl0ybcasigkgitc/170_170_2/a2411df9-499e-11e7-80e9-00155d0d0a2d_3346f21c-3ee0-11e8-8116-00155d0d0a2d.jpeg.webp?17666592763592",
+    "price": "8417",
+    "price_text": "8 417 руб. /шт"
+  },
+  {
+    "name": "ЛДСП W1000 Белый премиум ST9, 2800 х 2070 х 16 мм, Egger",
+    "url": "https://vl.expolesdv.ru/catalog/ldsp_fasady_stoleshnitsy/ldsp/ldsp_egger/odnotonnye_dekory_egger/57174/",
+    "image": "data:image/jpeg;base64,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",
+    "price": "6945",
+    "price_text": "6 945 руб. /шт"
+  },
+  {
+    "name": "ЛДСП W1100 Белый Альпийский ST9, 2800 х 2070 х 16 мм, Egger",
+    "url": "https://vl.expolesdv.ru/catalog/ldsp_fasady_stoleshnitsy/ldsp/ldsp_egger/odnotonnye_dekory_egger/49078/",
+    "image": "https://vl.expolesdv.ru/upload/delight.webpconverter/upload/resize_cache/iblock/102/xg58tnmisqd61cg8az3b2d9ra4aufsin/170_170_2/dd682dd4-09c4-11ea-8299-a4bf013e202f_6755d00c-ab8d-11ea-82a1-a4bf013e202f.jpeg.webp?17488404065374",
+    "price": "7106",
+    "price_text": "7 106 руб. /шт"
+  },
+  {
+    "name": "ЛДСП W1200 Фарфор белый ST9, 2800 х 2070 х 16 мм, Egger",
+    "url": "https://vl.expolesdv.ru/catalog/ldsp_fasady_stoleshnitsy/ldsp/ldsp_egger/odnotonnye_dekory_egger/57330/",
+    "image": "https://vl.expolesdv.ru/upload/delight.webpconverter/upload/resize_cache/iblock/a1d/ggymux4m7isfyx7p655sszzwmxne5m67/170_170_2/92171e70-be40-11ee-9b85-005056a415e2_a4171b4c-dc2d-11ee-9b86-005056a415e2.jpeg.webp?1748867622124",
+    "price": "7106",
+    "price_text": "7 106 руб. /шт"
+  },
+  {
+    "name": "ЛДСП W960 Белый классический SM, 2800 х 2070 х 10 мм, Egger",
+    "url": "https://vl.expolesdv.ru/catalog/ldsp_fasady_stoleshnitsy/ldsp/ldsp_egger/odnotonnye_dekory_egger/57941/",
+    "image": "https://vl.expolesdv.ru/upload/delight.webpconverter/upload/resize_cache/iblock/4a4/6vfxc01rr0spwarq6aoi2dji474ci14p/170_170_2/dbdbf75b-0c1d-11ef-9b86-005056a415e2_2e5f1a59-22d8-11ef-9b89-005056a415e2.jpeg.webp?17516219144074",
+    "price": "5458",
+    "price_text": "5 458 руб. /шт"
+  },
+  {
+    "name": "ЛДСП W960 Белый классический SM, 2800 х 2070 х 16 мм, Egger",
+    "url": "https://vl.expolesdv.ru/catalog/ldsp_fasady_stoleshnitsy/ldsp/ldsp_egger/odnotonnye_dekory_egger/57149/",
+    "image": "data:image/jpeg;base64,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",
+    "price": "6488",
+    "price_text": "6 488 руб. /шт"
+  },
+  {
+    "name": "ЛДСП W960 Белый классический SM, 2800 х 2070 х 22 мм, Egger",
+    "url": "https://vl.expolesdv.ru/catalog/ldsp_fasady_stoleshnitsy/ldsp/ldsp_egger/odnotonnye_dekory_egger/58402/",
+    "image": "https://vl.expolesdv.ru/upload/delight.webpconverter/upload/resize_cache/iblock/c84/42d177rrnr411nkch4l0trlif3vdu4rz/170_170_2/1f5ff582-5ddc-11ef-9b8d-005056a415e2_ad31ce95-5f51-11ef-9b8d-005056a415e2.jpeg.webp?17566924084018",
+    "price": "7324",
+    "price_text": "7 324 руб. /шт"
+  },
+  {
+    "name": "ЛДСП W960 Белый классический SM, 2800 х 2070 х 8 мм, Egger",
+    "url": "https://vl.expolesdv.ru/catalog/ldsp_fasady_stoleshnitsy/ldsp/ldsp_egger/odnotonnye_dekory_egger/58484/",
+    "image": "https://vl.expolesdv.ru/upload/delight.webpconverter/upload/resize_cache/iblock/f46/2wwjjyd9dvc1lwtwqohlbuiwxmqsv5hv/170_170_2/5d0db3bc-4d76-11ef-9b89-005056a415e2_b7c6c5a4-7741-11ef-9b8e-005056a415e2.jpeg.webp?17566924084018",
+    "price": "5099",
+    "price_text": "5 099 руб. /шт"
+  },
+  {
+    "name": "ЛДСП W960 Белый классический ST7, 2800 х 2070 х 10 мм, Egger",
+    "url": "https://vl.expolesdv.ru/catalog/ldsp_fasady_stoleshnitsy/ldsp/ldsp_egger/odnotonnye_dekory_egger/57942/",
+    "image": "data:image/jpeg;base64,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",
+    "price": "5458",
+    "price_text": "5 458 руб. /шт"
+  },
+  {
+    "name": "ЛДСП W960 Белый классический ST7, 2800 х 2070 х 16 мм, Egger",
+    "url": "https://vl.expolesdv.ru/catalog/ldsp_fasady_stoleshnitsy/ldsp/ldsp_egger/odnotonnye_dekory_egger/57200/",
+    "image": "https://vl.expolesdv.ru/upload/delight.webpconverter/upload/resize_cache/iblock/155/2st8gygc6cb7vwlyzh3qty5u42b8qf4s/170_170_2/9a5c4133-b02a-11ee-82ec-a4bf013e202f_0d29ad6a-cb9a-11ee-9b85-005056a415e2.jpeg.webp?17574950355184",
+    "price": "6488",
+    "price_text": "6 488 руб. /шт"
+  },
+  {
+    "name": "ЛДСП W960 Белый классический ST7, 2800 х 2070 х 22 мм, Egger",
+    "url": "https://vl.expolesdv.ru/catalog/ldsp_fasady_stoleshnitsy/ldsp/ldsp_egger/odnotonnye_dekory_egger/57943/",
+    "image": "https://vl.expolesdv.ru/upload/delight.webpconverter/upload/resize_cache/iblock/439/52ai3618bacrx7lsq33u4uancimdsekd/170_170_2/02396bd0-0c1f-11ef-9b86-005056a415e2_a16a5afb-22d8-11ef-9b89-005056a415e2.jpeg.webp?17574950354660",
+    "price": "7324",
+    "price_text": "7 324 руб. /шт"
+  },
+  {
+    "name": "ЛДСП W960 Белый классический ST7, 2800 х 2070 х 8 мм, Egger",
+    "url": "https://vl.expolesdv.ru/catalog/ldsp_fasady_stoleshnitsy/ldsp/ldsp_egger/odnotonnye_dekory_egger/58485/",
+    "image": "https://vl.expolesdv.ru/upload/delight.webpconverter/upload/resize_cache/iblock/0dd/lrbg2mek3pqqwuu5cc9tovvfokkv25hy/170_170_2/70119128-4d76-11ef-9b89-005056a415e2_a395aa15-7741-11ef-9b8e-005056a415e2.jpeg.webp?17566924084018",
+    "price": "5099",
+    "price_text": "5 099 руб. /шт"
+  },
+  {
+    "name": "ЛДСП W960 Белый классический ВЛАГОСТОЙКИЙ SM MR, 2800 х 2070 х 16 мм, Egger",
+    "url": "https://vl.expolesdv.ru/catalog/ldsp_fasady_stoleshnitsy/ldsp/ldsp_egger/odnotonnye_dekory_egger/57150/",
+    "image": "https://vl.expolesdv.ru/upload/delight.webpconverter/upload/resize_cache/iblock/9b6/zbfmzzo64i2dya2klxns4m6bg0cipbcd/170_170_2/c80a5654-b02a-11ee-82ec-a4bf013e202f_7a30f3e4-c6de-11ee-9b85-005056a415e2.jpeg.webp?17516221073506",
+    "price": "7105",
+    "price_text": "7 105 руб. /шт"
+  },
+  {
+    "name": "ЛДСП Алебастр белый U104 ST9 2800 х 2070 х 16 мм, Egger",
+    "url": "https://vl.expolesdv.ru/catalog/ldsp_fasady_stoleshnitsy/ldsp/ldsp_egger/odnotonnye_dekory_egger/45589/",
+    "image": "https://vl.expolesdv.ru/upload/delight.webpconverter/upload/resize_cache/iblock/45f/8oap4ewqgvmrhzuxbxzegspc3n2q8l5b/170_170_2/6fa13524-28f3-11e9-8289-a4bf013e202f_621c3a6a-a9c9-11e9-8293-a4bf013e202f.jpeg.webp?1748840456124",
+    "price": "6781",
+    "price_text": "6 781 руб. /шт"
+  },
+  {
+    "name": "ЛДСП Бежевый песок ST9 2800 х 2070 х 8 мм, Egger",
+    "url": "https://vl.expolesdv.ru/catalog/ldsp_fasady_stoleshnitsy/ldsp/ldsp_egger/odnotonnye_dekory_egger/42422/",
+    "image": "https://vl.expolesdv.ru/upload/delight.webpconverter/upload/resize_cache/iblock/297/ezwlowj6mfe7j1ahhmqjjpxfs3y9sywh/170_170_2/099f90b3-9666-11e6-80e0-00155d0d0a2d_6ba48bcd-0a05-11e8-8112-00155d0d0a2d.jpeg.webp?1743030968142",
+    "price": "5454",
+    "price_text": "5 454 руб. /шт"
+  },
+  {
+    "name": "ЛДСП Деним голубой AU540 ST9 2800 х 2070 х 16 мм, Egger",
+    "url": "https://vl.expolesdv.ru/catalog/ldsp_fasady_stoleshnitsy/ldsp/ldsp_egger/odnotonnye_dekory_egger/59294/",
+    "image": "https://vl.expolesdv.ru/upload/delight.webpconverter/upload/resize_cache/iblock/427/36lxg47f49h70v2u8s4ilos7h8zah4rx/170_170_2/9a6a9189-b5c1-11ef-9b96-005056a415e2_4287da65-e17b-11ef-9b98-005056a415e2.jpeg.webp?1748875047132",
+    "price": "7095",
+    "price_text": "7 095 руб. /шт"
+  },
+  {
+    "name": "ЛДСП Дуб Барония светлый H1362 ST12 2800 х 2070 х 16 мм, Egger",
+    "url": "https://vl.expolesdv.ru/catalog/ldsp_fasady_stoleshnitsy/ldsp/ldsp_egger/drevesnye_reproduktsii_egger/58260/",
+    "image": "https://vl.expolesdv.ru/upload/delight.webpconverter/upload/resize_cache/iblock/b92/myvt48sfofw968h286p0z7s5iahjas8o/170_170_2/146d0890-0383-11ef-9b86-005056a415e2_a0ecd296-4eda-11ef-9b89-005056a415e2.jpeg.webp?17488750473518",
+    "price": "7095",
+    "price_text": "7 095 руб. /шт"
+  },
+  {
+    "name": "ЛДСП Желтый песок AU125 ST9 2800 х 2070 х 16 мм",
+    "url": "https://vl.expolesdv.ru/catalog/ldsp_fasady_stoleshnitsy/ldsp/ldsp_egger/odnotonnye_dekory_egger/61407/",
+    "image": "https://vl.expolesdv.ru/upload/delight.webpconverter/upload/resize_cache/iblock/120/ywo2j25mu422ad25dkmgwarokuhknqxp/170_170_2/8e4b7f88-90d7-11ef-9b90-005056a415e2_b18decdb-90d9-11ef-9b90-005056a415e2.jpeg.webp?1766740266130",
+    "price": "7609",
+    "price_text": "7 609 руб. /шт"
+  },
+  {
+    "name": "ЛДСП Зеленый еловый AU699 ST9 2800 х 2070 х 16 мм, Egger",
+    "url": "https://vl.expolesdv.ru/catalog/ldsp_fasady_stoleshnitsy/ldsp/ldsp_egger/odnotonnye_dekory_egger/63148/",
+    "image": "https://vl.expolesdv.ru/upload/delight.webpconverter/upload/resize_cache/iblock/e4f/a03oegr4wbo4cuydyjlj3dadwyn7bivp/170_170_2/bfc15ca6-2efd-11f0-9b9a-005056a415e2_bfc15d25-2efd-11f0-9b9a-005056a415e2.jpg.webp?1762480629132",
+    "price": "7609",
+    "price_text": "7 609 руб. /шт"
+  },
+  {
+    "name": "ЛДСП Зеленый камень AU665 ST9 2800 х 2070 х 16 мм, Egger",
+    "url": "https://vl.expolesdv.ru/catalog/ldsp_fasady_stoleshnitsy/ldsp/ldsp_egger/odnotonnye_dekory_egger/59293/",
+    "image": "https://vl.expolesdv.ru/upload/delight.webpconverter/upload/resize_cache/iblock/821/hhts2d82jzr1352pfrrq3xludlz8v96b/170_170_2/8097e134-b91c-11ef-9b96-005056a415e2_cb0f4f57-095d-11f0-9b9a-005056a415e2.jpg.webp?1753407641126",
+    "price": "7609",
+    "price_text": "7 609 руб. /шт"
+  },
+  {
+    "name": "ЛДСП Зеленый эвкалипт U604 ST9 2800 х 2070 х 16 мм, Egger",
+    "url": "https://vl.expolesdv.ru/catalog/ldsp_fasady_stoleshnitsy/ldsp/ldsp_egger/odnotonnye_dekory_egger/57278/",
+    "image": "https://vl.expolesdv.ru/upload/delight.webpconverter/upload/resize_cache/iblock/ff9/cidxyulo9q585nr2u405ltvadrwegn8p/170_170_2/9942e94c-ae89-11ee-82ec-a4bf013e202f_ba26d6dd-d6a6-11ee-9b85-005056a415e2.jpeg.webp?1748875047126",
+    "price": "7609",
+    "price_text": "7 609 руб. /шт"
+  },
+  {
+    "name": "ЛДСП Камель бежевый U216 ST9 2800 х 2070 х 16 мм, Egger",
+    "url": "https://vl.expolesdv.ru/catalog/ldsp_fasady_stoleshnitsy/ldsp/ldsp_egger/odnotonnye_dekory_egger/49665/",
+    "image": "https://vl.expolesdv.ru/upload/delight.webpconverter/upload/resize_cache/iblock/174/g7x1oa2nh366unv7mf1jebipwltfi544/170_170_2/6ae942c4-2e65-11e9-8289-a4bf013e202f_65ea4562-806f-11ea-82a0-a4bf013e202f.jpeg.webp?1748840510134",
+    "price": "6945",
+    "price_text": "6 945 руб. /шт"
+  },
+  {
+    "name": "ЛДСП Красно-коричневый AU335 ST9 2800 х 2070 х 16 мм, Egger",
+    "url": "https://vl.expolesdv.ru/catalog/ldsp_fasady_stoleshnitsy/ldsp/ldsp_egger/odnotonnye_dekory_egger/61477/",
+    "image": "https://vl.expolesdv.ru/upload/delight.webpconverter/upload/resize_cache/iblock/474/ngun0i1l709tufjyen30elfs752xc2cc/170_170_2/26579ce7-b398-11ef-9b96-005056a415e2_b381b604-d36a-11ef-9b96-005056a415e2.jpeg.webp?1756029233152",
+    "price": "7609",
+    "price_text": "7 609 руб. /шт"
+  },
+  {
+    "name": "ЛДСП Крем бежевый U222 ST9 2800 х 2070 х 16 мм, Egger",
+    "url": "https://vl.expolesdv.ru/catalog/ldsp_fasady_stoleshnitsy/ldsp/ldsp_egger/odnotonnye_dekory_egger/45754/",
+    "image": "https://vl.expolesdv.ru/upload/delight.webpconverter/upload/resize_cache/iblock/121/qer9uf5vl6xzcmdkfzdgrejl4uq06008/170_170_2/66785570-264c-11e7-80e9-00155d0d0a2d_0c8254d9-67ea-11e9-828a-a4bf013e202f.jpeg.webp?1748840183126",
+    "price": "7106",
+    "price_text": "7 106 руб. /шт"
+  },
+  {
+    "name": "ЛДСП Миндаль бежевый U211 ST9 2800 х 2070 х 16 мм, Egger",
+    "url": "https://vl.expolesdv.ru/catalog/ldsp_fasady_stoleshnitsy/ldsp/ldsp_egger/odnotonnye_dekory_egger/57158/",
+    "image": "https://vl.expolesdv.ru/upload/delight.webpconverter/upload/resize_cache/iblock/6a5/w3dldonmc0vuqew2sz20eml5xso4x3kb/170_170_2/ef0cff91-ae88-11ee-82ec-a4bf013e202f_40e863da-cb9e-11ee-9b85-005056a415e2.jpeg.webp?1748893108128",
+    "price": "7095",
+    "price_text": "7 095 руб. /шт"
+  },
+  {
+    "name": "ЛДСП Н1113 Дуб Канзас коричневый ST10 2800 х 2070 х 16 мм, Egger",
+    "url": "https://vl.expolesdv.ru/catalog/ldsp_fasady_stoleshnitsy/ldsp/ldsp_egger/drevesnye_reproduktsii_egger/53171/",
+    "image": "https://vl.expolesdv.ru/upload/delight.webpconverter/upload/resize_cache/iblock/54e/wz0wcbbma7i6poncoebx0wv4nax9599v/170_170_2/3de57745-769b-11e9-828b-a4bf013e202f_68942427-1592-11ed-82c9-a4bf013e202f.jpeg.webp?17488638553542",
+    "price": "7106",
+    "price_text": "7 106 руб. /шт"
+  },
+  {
+    "name": "ЛДСП Н1732 Береза песочная ST9 2800 х 2070 х 16 мм, Egger",
+    "url": "https://vl.expolesdv.ru/catalog/ldsp_fasady_stoleshnitsy/ldsp/ldsp_egger/zakaznye_6/59179/",
+    "image": "https://vl.expolesdv.ru/upload/delight.webpconverter/upload/resize_cache/iblock/817/1jxzkdme7qe8mgss6g0hmlr4y3o4tf9g/170_170_2/c3a7652d-b10b-11ef-9b96-005056a415e2_0b030bdb-d366-11ef-9b96-005056a415e2.jpeg.webp?1748879661902",
+    "price": "6643",
+    "price_text": "6 643 руб. /шт"
+  },
+  {
+    "name": "ЛДСП Н1910 Бук луговой ST9 2800 х 2070 х 16 мм, Egger",
+    "url": "https://vl.expolesdv.ru/catalog/ldsp_fasady_stoleshnitsy/ldsp/ldsp_egger/drevesnye_reproduktsii_egger/59188/",
+    "image": "https://vl.expolesdv.ru/upload/delight.webpconverter/upload/resize_cache/iblock/d4b/4zkobomsger4ey39qqcc2uatj1d4vryn/170_170_2/553f6264-b10d-11ef-9b96-005056a415e2_d8831ebe-d4b6-11ef-9b96-005056a415e2.jpeg.webp?17488796611000",
+    "price": "6643",
+    "price_text": "6 643 руб. /шт"
+  },
+  {
+    "name": "ЛДСП Н3152 Дуб Виченца беленый ST19 2800 х 2070 х 16 мм, Egger",
+    "url": "https://vl.expolesdv.ru/catalog/ldsp_fasady_stoleshnitsy/ldsp/ldsp_egger/drevesnye_reproduktsii_egger/59198/",
+    "image": "https://vl.expolesdv.ru/upload/delight.webpconverter/upload/resize_cache/iblock/0c6/umjb20b3pk0doh1n2isvogofvf90eqvj/170_170_2/94de91af-b2bf-11ef-9b96-005056a415e2_2d9d7079-d367-11ef-9b96-005056a415e2.jpeg.webp?17546283521476",
+    "price": "7824",
+    "price_text": "7 824 руб. /шт"
+  },
+  {
+    "name": "ЛДСП Н3157 Дуб Виченца ST12 2800 х 2070 х 16 мм, Egger",
+    "url": "https://vl.expolesdv.ru/catalog/ldsp_fasady_stoleshnitsy/ldsp/ldsp_egger/drevesnye_reproduktsii_egger/53601/",
+    "image": "https://vl.expolesdv.ru/upload/delight.webpconverter/upload/resize_cache/iblock/77e/wrgeb2ctie712s3c0j309hcob1263lo1/170_170_2/e5926517-6866-11ec-82be-a4bf013e202f_9ff48227-592a-11ed-82d2-a4bf013e202e.jpeg.webp?17488638551924",
+    "price": "6897",
+    "price_text": "6 897 руб. /шт"
+  },
+  {
+    "name": "ЛДСП Н3450 Флитвуд белый ST22, 2800 х 2070 х 16 мм, Egger",
+    "url": "https://vl.expolesdv.ru/catalog/ldsp_fasady_stoleshnitsy/ldsp/ldsp_egger/drevesnye_reproduktsii_egger/43762/",
+    "image": "https://vl.expolesdv.ru/upload/delight.webpconverter/upload/resize_cache/iblock/1a7/qvnk4nywqg9mfojjb1kgreu4y6o0962e/170_170_2/d4b0feb6-04bd-11e8-8112-00155d0d0a2d_7926e848-0643-11e8-8112-00155d0d0a2d.jpeg.webp?17488386121098",
+    "price": "7106",
+    "price_text": "7 106 руб. /шт"
+  },
+  {
+    "name": "ЛДСП Н3450 Флитвуд белый ST22, 2800 х 2070 х 8 мм, Egger",
+    "url": "https://vl.expolesdv.ru/catalog/ldsp_fasady_stoleshnitsy/ldsp/ldsp_egger/drevesnye_reproduktsii_egger/47865/",
+    "image": "https://vl.expolesdv.ru/upload/delight.webpconverter/upload/resize_cache/iblock/c11/2aor1x2lot5uii24jihwzv5od3yvfh1f/170_170_2/26e3d85f-e7c1-11e8-8285-a4bf013e202f_37eb45cb-e7c1-11e8-8285-a4bf013e202f.jpeg.webp?17488409491098",
+    "price": "5576",
+    "price_text": "5 576 руб. /шт"
+  },
+  {
+    "name": "ЛДСП Н3700 Орех Пацифик натуральный ST10, 2800 х 2070 х 16 мм, Egger",
+    "url": "https://vl.expolesdv.ru/catalog/ldsp_fasady_stoleshnitsy/ldsp/ldsp_egger/drevesnye_reproduktsii_egger/45555/",
+    "image": "https://vl.expolesdv.ru/upload/delight.webpconverter/upload/resize_cache/iblock/a3a/avifep3i78vw7c26hrkccl1wgy1t4x6g/170_170_2/09f0c03d-04bd-11e8-8112-00155d0d0a2d_d8da81eb-0645-11e8-8112-00155d0d0a2d.jpeg.webp?17488368941882",
+    "price": "7095",
+    "price_text": "7 095 руб. /шт"
+  },
+  {
+    "name": "ЛДСП Н3702 Орех Пацифик табак ST10, 2800 х 2070 х 16 мм, Egger",
+    "url": "https://vl.expolesdv.ru/catalog/ldsp_fasady_stoleshnitsy/ldsp/ldsp_egger/drevesnye_reproduktsii_egger/43080/",
+    "image": "https://vl.expolesdv.ru/upload/delight.webpconverter/upload/resize_cache/iblock/b5d/7pgwumnvlbhmf7wpcxewyb0z51eujvyz/170_170_2/13895e6a-debc-11e6-80e5-00155d0d0a2d_50bbf947-eaa4-11e7-8112-00155d0d0a2d.jpeg.webp?17503981482870",
+    "price": "7095",
+    "price_text": "7 095 руб. /шт"
+  },
+  {
+    "name": "ЛДСП Н3734 Орех Дижон натуральный ST9, 2800 х 2070 х 10 мм, Egger",
+    "url": "https://vl.expolesdv.ru/catalog/ldsp_fasady_stoleshnitsy/ldsp/ldsp_egger/drevesnye_reproduktsii_egger/44054/",
+    "image": "https://vl.expolesdv.ru/upload/delight.webpconverter/upload/resize_cache/iblock/fd0/mqkayhd6qp31tphac4qnkhjiao8hxugf/170_170_2/bbf5b4c3-0fc4-11e8-8112-00155d0d0a2d_c20fd178-0fc4-11e8-8112-00155d0d0a2d.jpeg.webp?17488368941828",
+    "price": "5617",
+    "price_text": "5 617 руб. /шт"
+  },
+  {
+    "name": "ЛДСП Н3734 Орех Дижон натуральный ST9, 2800 х 2070 х 16 мм, Egger",
+    "url": "https://vl.expolesdv.ru/catalog/ldsp_fasady_stoleshnitsy/ldsp/ldsp_egger/drevesnye_reproduktsii_egger/43934/",
+    "image": "https://vl.expolesdv.ru/upload/delight.webpconverter/upload/resize_cache/iblock/55f/v56l66gkavkscn0p8m2x242lcx4hw9p6/170_170_2/6a558653-c8b3-11e6-80e5-00155d0d0a2d_4059cb0d-0fc4-11e8-8112-00155d0d0a2d.jpeg.webp?17488368941828",
+    "price": "6781",
+    "price_text": "6 781 руб. /шт"
+  },
+  {
+    "name": "ЛДСП Н3840 Клен Мандаль натуральный ST9 2800 х 2070 х 16 мм, Egger",
+    "url": "https://vl.expolesdv.ru/catalog/ldsp_fasady_stoleshnitsy/ldsp/ldsp_egger/drevesnye_reproduktsii_egger/59200/",
+    "image": "https://vl.expolesdv.ru/upload/delight.webpconverter/upload/resize_cache/iblock/06f/y94ucb0oxbn9bg07djl00aa4zgy3g3fx/170_170_2/ecdd2748-b2bf-11ef-9b96-005056a415e2_194fbf2c-d368-11ef-9b96-005056a415e2.jpeg.webp?1756692347828",
+    "price": "6945",
+    "price_text": "6 945 руб. /шт"
+  },
+  {
+    "name": "ЛДСП Н3860 Клен сахарный шампань ST9, 2800 х 2070 х 16 мм, Egger",
+    "url": "https://vl.expolesdv.ru/catalog/ldsp_fasady_stoleshnitsy/ldsp/ldsp_egger/drevesnye_reproduktsii_egger/41931/",
+    "image": "https://vl.expolesdv.ru/upload/delight.webpconverter/upload/resize_cache/iblock/e6d/o3oqlsons19s2bm8gs1svhnecgf0qsgi/170_170_2/506f2160-0208-11e7-80e6-00155d0d0a2d_22959a7d-0209-11e7-80e6-00155d0d0a2d.jpeg.webp?1748836894890",
+    "price": "6956",
+    "price_text": "6 956 руб. /шт"
+  },
+  {
+    "name": "ЛДСП Ясень Наварра ST36 2800 х 2070 х 8 мм, Egger",
+    "url": "https://vl.expolesdv.ru/catalog/ldsp_fasady_stoleshnitsy/ldsp/ldsp_egger/filvud_egger/48800/",
+    "image": "https://vl.expolesdv.ru/upload/delight.webpconverter/upload/resize_cache/iblock/905/vrbjike6m1hc2ozg7b69vynzaech15j2/170_170_2/cda53c03-9661-11e6-80e0-00155d0d0a2d_bebce9b9-f146-11e9-8299-a4bf013e202f.jpeg.webp?17488410702792",
+    "price": "7032",
+    "price_text": "7 032 руб. /шт"
+  },
+  {
+    "name": "ЛМДФ H1142 Дуб Сакраменто коричневый ST36, 2800 х 2070 х 16 мм, Egger",
+    "url": "https://vl.expolesdv.ru/catalog/ldsp_fasady_stoleshnitsy/ldsp/ldsp_egger/filvud_lmdf_egger/62210/",
+    "image": "https://vl.expolesdv.ru/upload/delight.webpconverter/upload/resize_cache/iblock/ddd/cvwnlapmufdhp0n44yj5l1tc1hykg7mk/170_170_2/46b7396e-136c-11f0-9b9a-005056a415e2_48e1187b-136c-11f0-9b9a-005056a415e2.jpg.webp?17566869234092",
+    "price": "9150",
+    "price_text": "9 150 руб. /шт"
+  },
+  {
+    "name": "ЛМДФ H1176 Дуб Галифакс белый ST37, 2800 х 2070 х 16 мм, Egger",
+    "url": "https://vl.expolesdv.ru/catalog/ldsp_fasady_stoleshnitsy/ldsp/ldsp_egger/filvud_lmdf_egger/62060/",
+    "image": "https://vl.expolesdv.ru/upload/delight.webpconverter/upload/resize_cache/iblock/a31/l4hv03hjfzo8eeeeso71ozk03qgjxx37/170_170_2/55b27405-0de7-11f0-9b9a-005056a415e2_3b8d2b6e-0dee-11f0-9b9a-005056a415e2.jpg.webp?17534077923836",
+    "price": "9668",
+    "price_text": "9 668 руб. /шт"
+  },
+  {
+    "name": "ЛМДФ H1176 Дуб Галифакс белый ST37, 2800 х 2070 х 18 мм, Egger",
+    "url": "https://vl.expolesdv.ru/catalog/ldsp_fasady_stoleshnitsy/ldsp/ldsp_egger/filvud_lmdf_egger/63779/",
+    "image": "",
+    "price": "9567",
+    "price_text": "9 567 руб. /шт"
+  },
+  {
+    "name": "ЛМДФ H1180 Дуб Галифакс натуральный ST37, 2800 х 2070 х 16 мм, Egger",
+    "url": "https://vl.expolesdv.ru/catalog/ldsp_fasady_stoleshnitsy/ldsp/ldsp_egger/filvud_lmdf_egger/61679/",
+    "image": "https://vl.expolesdv.ru/upload/delight.webpconverter/upload/resize_cache/iblock/e10/ainm4qanifm0v49mjhg13qxx9y8p9c4q/170_170_2/843235f3-1354-11f0-9b9a-005056a415e2_985dbff9-135f-11f0-9b9a-005056a415e2.jpg.webp?17534077925250",
+    "price": "9668",
+    "price_text": "9 668 руб. /шт"
+  },
+  {
+    "name": "ЛМДФ H1180 Дуб Галифакс натуральный ST37, 2800 х 2070 х 18 мм, Egger",
+    "url": "https://vl.expolesdv.ru/catalog/ldsp_fasady_stoleshnitsy/ldsp/ldsp_egger/filvud_lmdf_egger/61670/",
+    "image": "https://vl.expolesdv.ru/upload/delight.webpconverter/upload/resize_cache/iblock/a36/wihhzrfct5316j79batmaqeheevetmr6/170_170_2/45b85085-135f-11f0-9b9a-005056a415e2_84b55470-135f-11f0-9b9a-005056a415e2.jpg.webp?17566869235250",
+    "price": "9567",
+    "price_text": "9 567 руб. /шт"
+  },
+  {
+    "name": "ЛМДФ H1180 Дуб Галифакс натуральный ST37, 2800 х 2070 х 8 мм, Egger",
+    "url": "https://vl.expolesdv.ru/catalog/ldsp_fasady_stoleshnitsy/ldsp/ldsp_egger/filvud_lmdf_egger/62477/",
+    "image": "https://vl.expolesdv.ru/upload/delight.webpconverter/upload/resize_cache/iblock/3d8/83ikmuklz3qe1f07za3kjm9p2u1r94ee/170_170_2/e2aadd6f-1360-11f0-9b9a-005056a415e2_e2aaddef-1360-11f0-9b9a-005056a415e2.jpg.webp?17606819215250",
+    "price": "8085",
+    "price_text": "8 085 руб. /шт"
+  },
+  {
+    "name": "ЛМДФ H1181 Дуб Галифакс табак ST37, 2800 х 2070 х 16 мм, Egger",
+    "url": "https://vl.expolesdv.ru/catalog/ldsp_fasady_stoleshnitsy/ldsp/ldsp_egger/filvud_lmdf_egger/61671/",
+    "image": "https://vl.expolesdv.ru/upload/delight.webpconverter/upload/resize_cache/iblock/c20/vju1hw3b3hb3up7osega5mftcd2itzv0/170_170_2/ce3ab695-1361-11f0-9b9a-005056a415e2_ce3ab714-1361-11f0-9b9a-005056a415e2.jpg.webp?17552245345438",
+    "price": "9668",
+    "price_text": "9 668 руб. /шт"
+  },
+  {
+    "name": "ЛМДФ H1181 Дуб Галифакс табак ST37, 2800 х 2070 х 18 мм, Egger",
+    "url": "https://vl.expolesdv.ru/catalog/ldsp_fasady_stoleshnitsy/ldsp/ldsp_egger/filvud_lmdf_egger/62038/",
+    "image": "https://vl.expolesdv.ru/upload/delight.webpconverter/upload/resize_cache/iblock/586/45u0fn4z4u0wc3fcp9fj4eefnlk9hn21/170_170_2/034cef6c-1362-11f0-9b9a-005056a415e2_034cefed-1362-11f0-9b9a-005056a415e2.jpg.webp?17566869235438",
+    "price": "9567",
+    "price_text": "9 567 руб. /шт"
+  },
+  {
+    "name": "ЛМДФ H1181 Дуб Галифакс табак ST37, 2800 х 2070 х 25 мм, Egger",
+    "url": "https://vl.expolesdv.ru/catalog/ldsp_fasady_stoleshnitsy/ldsp/ldsp_egger/filvud_lmdf_egger/62132/",
+    "image": "https://vl.expolesdv.ru/upload/delight.webpconverter/upload/resize_cache/iblock/392/yh44fmajls6r5pbc09f14f33l1u63ds2/170_170_2/b7b021b5-3774-11f0-9b9a-005056a415e2_d4d7d69b-3774-11f0-9b9a-005056a415e2.jpg.webp?17566869235438",
+    "price": "11951",
+    "price_text": "11 951 руб. /шт"
+  },
+  {
+    "name": "ЛМДФ H1181 Дуб Галифакс табак ST37, 2800 х 2070 х 8 мм, Egger",
+    "url": "https://vl.expolesdv.ru/catalog/ldsp_fasady_stoleshnitsy/ldsp/ldsp_egger/filvud_lmdf_egger/62745/",
+    "image": "https://vl.expolesdv.ru/upload/delight.webpconverter/upload/resize_cache/iblock/3be/79e6xfedez4q6x91yn7lxo9kupcoknpa/170_170_2/254b49b4-1362-11f0-9b9a-005056a415e2_2c55a975-1362-11f0-9b9a-005056a415e2.jpg.webp?17606816105438",
+    "price": "8085",
+    "price_text": "8 085 руб. /шт"
+  },
+  {
+    "name": "ЛМДФ H1250 Ясень Наварра ST36, 2800 х 2070 х 16 мм, Egger",
+    "url": "https://vl.expolesdv.ru/catalog/ldsp_fasady_stoleshnitsy/ldsp/ldsp_egger/filvud_lmdf_egger/62081/",
+    "image": "https://vl.expolesdv.ru/upload/delight.webpconverter/upload/resize_cache/iblock/7c2/969ugr9l30esbw7ev7xt2v4c33xiht73/170_170_2/5ab4c7ac-136d-11f0-9b9a-005056a415e2_5ab4c82b-136d-11f0-9b9a-005056a415e2.jpg.webp?17618829983156",
+    "price": "9150",
+    "price_text": "9 150 руб. /шт"
+  },
+  {
+    "name": "ЛМДФ H1344 Дуб Шерман коньяк коричневый ST32 2800 х 2070 х 16 мм, Egger",
+    "url": "https://vl.expolesdv.ru/catalog/ldsp_fasady_stoleshnitsy/ldsp/ldsp_egger/filvud_lmdf_egger/62042/",
+    "image": "https://vl.expolesdv.ru/upload/delight.webpconverter/upload/resize_cache/iblock/640/qnzoux2i5kkxpk6n7m45of5ffcjdncy1/170_170_2/11cc26d0-136d-11f0-9b9a-005056a415e2_feae5137-1a8b-11f0-9b9a-005056a415e2.jpg.webp?17546259815086",
+    "price": "9668",
+    "price_text": "9 668 руб. /шт"
+  },
+  {
+    "name": "ЛМДФ H1346 Дуб Шерман антрацит ST32 2800 х 2070 х 16 мм, Egger",
+    "url": "https://vl.expolesdv.ru/catalog/ldsp_fasady_stoleshnitsy/ldsp/ldsp_egger/filvud_lmdf_egger/62211/",
+    "image": "https://vl.expolesdv.ru/upload/delight.webpconverter/upload/resize_cache/iblock/e5f/v92gpwy09i05ym95dnyjmn8pd4594m4i/170_170_2/d72788c8-136c-11f0-9b9a-005056a415e2_4c572e4d-1a8d-11f0-9b9a-005056a415e2.jpg.webp?17606818783050",
+    "price": "9668",
+    "price_text": "9 668 руб. /шт"
+  },
+  {
+    "name": "ЛМДФ H1367 Дуб Каселла натуральный светлый ST40, 2800 х 2070 х 16 мм, Egger",
+    "url": "https://vl.expolesdv.ru/catalog/ldsp_fasady_stoleshnitsy/ldsp/ldsp_egger/filvud_lmdf_egger/61682/",
+    "image": "https://vl.expolesdv.ru/upload/delight.webpconverter/upload/resize_cache/iblock/660/4qph631d7g53ajfgs8d842hsrnd46pcz/170_170_2/e937a086-1e4e-11f0-9b9a-005056a415e2_16753e2b-1e4f-11f0-9b9a-005056a415e2.jpg.webp?17565860642118",
+    "price": "9668",
+    "price_text": "9 668 руб. /шт"
+  },
+  {
+    "name": "ЛМДФ H1385 Дуб Каселла натуральный ST40, 2800 х 2070 х 16 мм, Egger",
+    "url": "https://vl.expolesdv.ru/catalog/ldsp_fasady_stoleshnitsy/ldsp/ldsp_egger/filvud_lmdf_egger/61680/",
+    "image": "https://vl.expolesdv.ru/upload/delight.webpconverter/upload/resize_cache/iblock/1f7/bqhmara585sijejkehx7tf3wm2vlvt97/170_170_2/b7dcd88e-136a-11f0-9b9a-005056a415e2_b7dcda55-136a-11f0-9b9a-005056a415e2.jpg.webp?17515943131906",
+    "price": "9668",
+    "price_text": "9 668 руб. /шт"
+  },
+  {
+    "name": "ЛМДФ H1385 Дуб Каселла натуральный ST40, 2800 х 2070 х 25 мм, Egger",
+    "url": "https://vl.expolesdv.ru/catalog/ldsp_fasady_stoleshnitsy/ldsp/ldsp_egger/filvud_lmdf_egger/62134/",
+    "image": "https://vl.expolesdv.ru/upload/delight.webpconverter/upload/resize_cache/iblock/281/gipigz73qcjpjs0oso5ed0ovfcn0477j/170_170_2/99e94b0b-3776-11f0-9b9a-005056a415e2_ba8e0ee0-3776-11f0-9b9a-005056a415e2.jpg.webp?17566849591906",
+    "price": "11951",
+    "price_text": "11 951 руб. /шт"
+  },
+  {
+    "name": "ЛМДФ H1385 Дуб Каселла натуральный ST40, 2800 х 2070 х 8 мм, Egger",
+    "url": "https://vl.expolesdv.ru/catalog/ldsp_fasady_stoleshnitsy/ldsp/ldsp_egger/filvud_lmdf_egger/62212/",
+    "image": "https://vl.expolesdv.ru/upload/delight.webpconverter/upload/resize_cache/iblock/5e7/avz1v7ox8qli4t3xgqmcf9z1ooiiqraf/170_170_2/269c85ad-3776-11f0-9b9a-005056a415e2_32c57cc8-3776-11f0-9b9a-005056a415e2.jpg.webp?17566849591906",
+    "price": "8085",
+    "price_text": "8 085 руб. /шт"
+  },
+  {
+    "name": "ЛМДФ H1386 Дуб Каселла коричневый ST40, 2800 х 2070 х 16 мм, Egger",
+    "url": "https://vl.expolesdv.ru/catalog/ldsp_fasady_stoleshnitsy/ldsp/ldsp_egger/filvud_lmdf_egger/61683/",
+    "image": "https://vl.expolesdv.ru/upload/delight.webpconverter/upload/resize_cache/iblock/10f/z8oz2l55kja1d77ll8a20s7ki0ei3c2o/170_170_2/78bae33b-136a-11f0-9b9a-005056a415e2_78bae3ba-136a-11f0-9b9a-005056a415e2.jpg.webp?17546283382034",
+    "price": "9668",
+    "price_text": "9 668 руб. /шт"
+  },
+  {
+    "name": "ЛМДФ H1386 Дуб Каселла коричневый ST40, 2800 х 2070 х 25 мм, Egger",
+    "url": "https://vl.expolesdv.ru/catalog/ldsp_fasady_stoleshnitsy/ldsp/ldsp_egger/filvud_lmdf_egger/62174/",
+    "image": "https://vl.expolesdv.ru/upload/delight.webpconverter/upload/resize_cache/iblock/439/3q5ybl62trsmgygqexzxe3i9n5o8x0wu/170_170_2/cf9c82c6-3775-11f0-9b9a-005056a415e2_d5ae9389-3775-11f0-9b9a-005056a415e2.jpg.webp?17566848622034",
+    "price": "11951",
+    "price_text": "11 951 руб. /шт"
+  },
+  {
+    "name": "ЛМДФ H1386 Дуб Каселла коричневый ST40, 2800 х 2070 х 8 мм, Egger",
+    "url": "https://vl.expolesdv.ru/catalog/ldsp_fasady_stoleshnitsy/ldsp/ldsp_egger/filvud_lmdf_egger/62133/",
+    "image": "https://vl.expolesdv.ru/upload/delight.webpconverter/upload/resize_cache/iblock/efd/80x494w3ep5vzoo71jo61azstshc7vup/170_170_2/6568cd91-3775-11f0-9b9a-005056a415e2_6b5f9e25-3775-11f0-9b9a-005056a415e2.jpg.webp?17566869242034",
+    "price": "8085",
+    "price_text": "8 085 руб. /шт"
+  },
+  {
+    "name": "ЛМДФ H3154 Дуб Чарльстон темно-коричневый ST36, 2800 х 2070 х16 мм, Egger",
+    "url": "https://vl.expolesdv.ru/catalog/ldsp_fasady_stoleshnitsy/ldsp/ldsp_egger/filvud_lmdf_egger/61672/",
+    "image": "https://vl.expolesdv.ru/upload/delight.webpconverter/upload/resize_cache/iblock/e56/w6q9q4b33gxaw6jh3htivyqsuxi34ryx/170_170_2/9a3463c3-136c-11f0-9b9a-005056a415e2_ff605891-1a8e-11f0-9b9a-005056a415e2.jpg.webp?17651712193550",
+    "price": "9150",
+    "price_text": "9 150 руб. /шт"
+  },
+  {
+    "name": "ЛМДФ H3176 Дуб Галифакс олово ST37 2800 х 2070 х 16 мм, Egger",
+    "url": "https://vl.expolesdv.ru/catalog/ldsp_fasady_stoleshnitsy/ldsp/ldsp_egger/filvud_lmdf_egger/61684/",
+    "image": "https://vl.expolesdv.ru/upload/delight.webpconverter/upload/resize_cache/iblock/f18/6prceayxpit2hto44s7zy1lkwjl8w6ls/170_170_2/22bce9e4-1361-11f0-9b9a-005056a415e2_29d0c962-1361-11f0-9b9a-005056a415e2.jpg.webp?17515943133548",
+    "price": "9668",
+    "price_text": "9 668 руб. /шт"
+  },
+  {
+    "name": "ЛМДФ H3176 Дуб Галифакс олово ST37 2800 х 2070 х 25 мм, Egger",
+    "url": "https://vl.expolesdv.ru/catalog/ldsp_fasady_stoleshnitsy/ldsp/ldsp_egger/filvud_lmdf_egger/63290/",
+    "image": "",
+    "price": "11951",
+    "price_text": "11 951 руб. /шт"
+  },
+  {
+    "name": "ЛМДФ H3309 Дуб Гладстоун пеcочный ST28, 2800 х 2070 х 16 мм, Egger",
+    "url": "https://vl.expolesdv.ru/catalog/ldsp_fasady_stoleshnitsy/ldsp/ldsp_egger/filvud_lmdf_egger/62040/",
+    "image": "https://vl.expolesdv.ru/upload/delight.webpconverter/upload/resize_cache/iblock/ee0/3z863qn172ulin31mv30al01inrcimu7/170_170_2/53dd9a5d-1369-11f0-9b9a-005056a415e2_53dd9e12-1369-11f0-9b9a-005056a415e2.jpg.webp?17566869244512",
+    "price": "9668",
+    "price_text": "9 668 руб. /шт"
+  },
+  {
+    "name": "ЛМДФ H3309 Дуб Гладстоун песочный ST28, 2800 х 2070 х 8 мм, Egger",
+    "url": "https://vl.expolesdv.ru/catalog/ldsp_fasady_stoleshnitsy/ldsp/ldsp_egger/filvud_lmdf_egger/62039/",
+    "image": "https://vl.expolesdv.ru/upload/delight.webpconverter/upload/resize_cache/iblock/bd0/60wda3vz5vvgrinivm7cx3z0ph4c35w0/170_170_2/6dd39492-1362-11f0-9b9a-005056a415e2_6dd39511-1362-11f0-9b9a-005056a415e2.jpg.webp?17637020524512",
+    "price": "8085",
+    "price_text": "8 085 руб. /шт"
+  },
+  {
+    "name": "ЛМДФ H3317 Дуб Кунео коричневый ST28, 2800 х 2070 х 16 мм, Egger",
+    "url": "https://vl.expolesdv.ru/catalog/ldsp_fasady_stoleshnitsy/ldsp/ldsp_egger/filvud_lmdf_egger/61681/",
+    "image": "https://vl.expolesdv.ru/upload/delight.webpconverter/upload/resize_cache/iblock/651/o0rhv7pvez3xgxlpf14vrehx8x09kkje/170_170_2/941dd891-136b-11f0-9b9a-005056a415e2_941de132-136b-11f0-9b9a-005056a415e2.jpg.webp?17515989522566",
+    "price": "9668",
+    "price_text": "9 668 руб. /шт"
+  },
+  {
+    "name": "ЛМДФ H3325 Дуб Гладстоун табак ST28, 2800 х 2070 х 16 мм, Egger",
+    "url": "https://vl.expolesdv.ru/catalog/ldsp_fasady_stoleshnitsy/ldsp/ldsp_egger/filvud_lmdf_egger/61749/",
+    "image": "https://vl.expolesdv.ru/upload/delight.webpconverter/upload/resize_cache/iblock/856/cf5t6zpr571flhl079hdid1mgnumryti/170_170_2/b69c9c76-1369-11f0-9b9a-005056a415e2_b69c9cf5-1369-11f0-9b9a-005056a415e2.jpg.webp?17534090223984",
+    "price": "9668",
+    "price_text": "9 668 руб. /шт"
+  },
+  {
+    "name": "ЛМДФ H3359 Дуб Давенпорт натуральный светлый ST32, 2800 х 2070 х 16 мм, Egger",
+    "url": "https://vl.expolesdv.ru/catalog/ldsp_fasady_stoleshnitsy/ldsp/ldsp_egger/filvud_lmdf_egger/62041/",
+    "image": "https://vl.expolesdv.ru/upload/delight.webpconverter/upload/resize_cache/iblock/d60/xvkju50x32p2ljlygguonmjj64ittu04/170_170_2/0e963bce-136a-11f0-9b9a-005056a415e2_3a4602bf-136a-11f0-9b9a-005056a415e2.jpg.webp?17566884543872",
+    "price": "9668",
+    "price_text": "9 668 руб. /шт"
+  },
+  {
+    "name": "ЛМДФ U998 Лес черный ST38, 2800 х 2070 х 16 мм, Egger",
+    "url": "https://vl.expolesdv.ru/catalog/ldsp_fasady_stoleshnitsy/ldsp/ldsp_egger/filvud_lmdf_egger/62746/",
+    "image": "https://vl.expolesdv.ru/upload/delight.webpconverter/upload/resize_cache/iblock/dd8/d1rjnfupfvqimej4nv3gonst8wcybrgj/170_170_2/10d04795-3481-11f0-9b9a-005056a415e2_177f80e9-3481-11f0-9b9a-005056a415e2.jpg.webp?1761882887122",
+    "price": "9150",
+    "price_text": "9 150 руб. /шт"
+  },
+  {
+    "name": "ЛМДФ W1000 Белый премиум ST38, 2800 х 2070 х16 мм, Egger",
+    "url": "https://vl.expolesdv.ru/catalog/ldsp_fasady_stoleshnitsy/ldsp/ldsp_egger/filvud_lmdf_egger/62130/",
+    "image": "https://vl.expolesdv.ru/upload/delight.webpconverter/upload/resize_cache/iblock/c8f/jt7zvfjfsndb6r44cvxercc20law3at9/170_170_2/9b2ffbd9-3480-11f0-9b9a-005056a415e2_30b462ac-586a-11f0-9b9c-005056a415e2.jpg.webp?17566887414412",
+    "price": "9150",
+    "price_text": "9 150 руб. /шт"
+  }
+    ]
+
+
+
+
+
+
+
+
+
+
+
+
+
+    const domRaw = [
+  {
+    "name": "ЛДСП Бук бавария светлый, древесные поры 16мм 2750*1830 ЧФМК",
+    "url": "/img/dom/бук бавария.png",
+    "image": "",
+    "price": "4000",
+    "price_text": "4 000 руб. /шт"
+  },
+  {
+    "name": "ЛДСП Тэффи 10мм L Легкий шелк (классика) 2750*1830",
+    "url": "/img/dom/ЛДСП Тэффи.png",
+    "image": "",
+    "price": "4000",
+    "price_text": "4 000 руб. /шт"
+  },
+  {
+    "name": "ЛДСП Белоснежный 10мм L Легкий шелк 01 (классика) 2750*1830",
+    "url": "/img/dom/ЛДСП Белоснежный.png",
+    "image": "",
+    "price": "4000",
+    "price_text": "4 000 руб. /шт"
+  },
+  {
+    "name": "ЛДСП Белый 10мм K Классическое матовое (классика) 2750*1830",
+    "url": "/img/dom/ЛДСП Белый.png",
+    "image": "",
+    "price": "4000",
+    "price_text": "4 000 руб. /шт"
+  },
+  {
+    "name": "ЛДСП Светло-серый, шагрень 16мм 2750*1830 ЧФМК",
+    "url": "/img/dom/ЛДСП Светло-серый.png",
+    "image": "",
+    "price": "4000",
+    "price_text": "4 000 руб. /шт"
+  },
+  {
+    "name": "ЛДСП Белый фон, матовый 16мм 2750*1830, ЧФМК",
+    "url": "/img/dom/ЛДСП Белый фон.png",
+    "image": "",
+    "price": "4000",
+    "price_text": "4 000 руб. /шт"
+  },
+  {
+    "name": "ЛДСП Ольха натуральная, древесные поры 16мм 2750*1830 ЧФМК",
+    "url": "/img/dom/ЛДСП Ольха натуральная.png",
+    "image": "",
+    "price": "4000",
+    "price_text": "4 000 руб. /шт"
+  },
+  {
+    "name": "ЛДСП Дуб Атланта, древесные поры 16мм 2750*1830 ЧФМК",
+    "url": "/img/dom/ЛДСП Дуб Атланта.png",
+    "image": "",
+    "price": "4000",
+    "price_text": "4 000 руб. /шт"
+  },
+  {
+    "name": "ЛДСП Дуб Вотан, древесные поры 16мм 2750*1830, ЧФМК",
+    "url": "/img/dom/ЛДСП Дуб Вотан.png",
+    "image": "",
+    "price": "4000",
+    "price_text": "4 000 руб. /шт"
+  },
+  {
+    "name": "ЛДСП Ясень Шимо светлый, древесные поры 16мм 2750*1830 ЧФМК",
+    "url": "https://xn--90afaebsrddcs1s.xn--p1ai/catalog/ldsp_chfmk/ldsp_yasen_shimo_svetlyy_drevesnye_pory_16mm_2750_1830_chfmk/",
+    "image": "",
+    "price": "4000",
+    "price_text": "4 000 руб. /шт"
+  },
+  {
+    "name": "ЛДСП Венге Цаво, древесные поры16мм 2750*1830 ЧФМК",
+    "url": "https://xn--90afaebsrddcs1s.xn--p1ai/catalog/ldsp_chfmk/ldsp_venge_tsavo_drevesnye_pory16mm_2750_1830_chfmk/",
+    "image": "",
+    "price": "4000",
+    "price_text": "4 000 руб. /шт"
+  },
+  {
+    "name": "ЛДСП Дуб Сонома001, древесные поры 16мм 2750*1830 ЧФМК",
+    "url": "https://xn--90afaebsrddcs1s.xn--p1ai/catalog/ldsp_chfmk/ldsp_dub_sonoma001_drevesnye_pory_16mm_2750_1830_chfmk/",
+    "image": "",
+    "price": "4000",
+    "price_text": "4 000 руб. /шт"
+  },
+  {
+    "name": "ЛДСП Белый фон, шагрень 16мм 2750*1830, ЧФМК",
+    "url": "https://xn--90afaebsrddcs1s.xn--p1ai/catalog/ldsp_chfmk/ldsp_belyy_fon_shagren_16mm_2750_1830_chfmk/",
+    "image": "",
+    "price": "4000",
+    "price_text": "4 000 руб. /шт"
+  },
+  {
+    "name": "ЛДСП Дуб сонома 10мм T Древесные поры (классика) 2750*1830",
+    "url": "https://xn--90afaebsrddcs1s.xn--p1ai/catalog/ldsp_lamarty/ldsp_dub_sonoma_10mm_t_drevesnye_pory_klassika_2750_1830/",
+    "image": "",
+    "price": "4000",
+    "price_text": "4 000 руб. /шт"
+  },
+  {
+    "name": "ЛДСП Дуб Вотан 10мм R Рустикальное (классика) 2750*1830",
+    "url": "https://xn--90afaebsrddcs1s.xn--p1ai/catalog/ldsp_lamarty/ldsp_dub_votan_10mm_r_rustikalnoe_klassika_2750_1830/",
+    "image": "",
+    "price": "4000",
+    "price_text": "4 000 руб. /шт"
+  },
+  {
+    "name": "ЛДСП Цемент 10мм K Классическое матовое (премиум) 2750*1830",
+    "url": "https://xn--90afaebsrddcs1s.xn--p1ai/catalog/ldsp_lamarty/ldsp_tsement_10mm_k_klassicheskoe_matovoe_premium_2750_1830/",
+    "image": "",
+    "price": "4000",
+    "price_text": "4 000 руб. /шт"
+  },
+  {
+    "name": "ЛДСП Вулканический серый 10мм V Венето (премиум) 2750*1830",
+    "url": "https://xn--90afaebsrddcs1s.xn--p1ai/catalog/ldsp_lamarty/ldsp_vulkanicheskiy_seryy_10mm_v_veneto_premium_2750_1830/",
+    "image": "",
+    "price": "4000",
+    "price_text": "4 000 руб. /шт"
+  },
+  {
+    "name": "ЛДСП Дуб галиано 10мм T Древесные поры (классика) 2750*1830",
+    "url": "https://xn--90afaebsrddcs1s.xn--p1ai/catalog/ldsp_lamarty/ldsp_dub_galiano_10mm_t_drevesnye_pory_klassika_2750_1830/",
+    "image": "",
+    "price": "4000",
+    "price_text": "4 000 руб. /шт"
+  },
+  {
+    "name": "ЛДСП Сканди 10мм R Рустикальное (классика) 2750*1830",
+    "url": "https://xn--90afaebsrddcs1s.xn--p1ai/catalog/ldsp_lamarty/ldsp_skandi_10mm_r_rustikalnoe_klassika_2750_1830/",
+    "image": "",
+    "price": "4000",
+    "price_text": "4 000 руб. /шт"
+  },
+  {
+    "name": "ЛДСП Каньон ледяной 10мм R Рустикальное (классика) 2750*1830",
+    "url": "https://xn--90afaebsrddcs1s.xn--p1ai/catalog/ldsp_lamarty/ldsp_kanon_ledyanoy_10mm_r_rustikalnoe_klassika_2750_1830/",
+    "image": "",
+    "price": "4000",
+    "price_text": "4 000 руб. /шт"
+  },
+  {
+    "name": "ЛДСП Выбеленное дерево 10мм R Рустикальное (классика) 2750*1830",
+    "url": "https://xn--90afaebsrddcs1s.xn--p1ai/catalog/ldsp_lamarty/ldsp_vybelennoe_derevo_10mm_r_rustikalnoe_klassika_2750_1830/",
+    "image": "",
+    "price": "4000",
+    "price_text": "4 000 руб. /шт"
+  },
+  {
+    "name": "ЛДСП Бетон пайн белый 10мм R Рустикальное (классика) 2750*1830",
+    "url": "https://xn--90afaebsrddcs1s.xn--p1ai/catalog/ldsp_lamarty/ldsp_beton_payn_belyy_10mm_r_rustikalnoe_klassika_2750_1830/",
+    "image": "",
+    "price": "4000",
+    "price_text": "4 000 руб. /шт"
+  },
+  {
+    "name": "ЛДСП Белый 10мм P Мелкая шагрень (классика) 2750*1830",
+    "url": "https://xn--90afaebsrddcs1s.xn--p1ai/catalog/ldsp_lamarty/ldsp_belyy_10mm_p_melkaya_shagren_klassika_2750_1830/",
+    "image": "",
+    "price": "4000",
+    "price_text": "4 000 руб. /шт"
+  },
+  {
+    "name": "ЛДСП Белый 10мм L Легкий шелк (классика) 2750*1830",
+    "url": "https://xn--90afaebsrddcs1s.xn--p1ai/catalog/ldsp_lamarty/ldsp_belyy_10mm_l_legkiy_shelk_klassika_2750_1830/",
+    "image": "",
+    "price": "4000",
+    "price_text": "4 000 руб. /шт"
+  },
+  {
+    "name": "ЛДСП Дуб кальяри 10мм T Древесные поры  (премиум) 2750*1830",
+    "url": "https://xn--90afaebsrddcs1s.xn--p1ai/catalog/ldsp_lamarty/ldsp_dub_kalyari_10mm_t_drevesnye_pory_premium_2750_1830/",
+    "image": "",
+    "price": "4000",
+    "price_text": "4 000 руб. /шт"
+  },
+  {
+    "name": "ЛДСП Дуб млечный, древесные поры 16мм 2750*1830 ЧФМК",
+    "url": "https://xn--90afaebsrddcs1s.xn--p1ai/catalog/ldsp_chfmk/ldsp_dub_mlechnyy_drevesnye_pory_16mm_2750_1830_chfmk/",
+    "image": "",
+    "price": "4000",
+    "price_text": "4 000 руб. /шт"
+  },
+  {
+    "name": "ЛДСП Графит, матовый 16мм 2750*1830 ВЛД",
+    "url": "https://xn--90afaebsrddcs1s.xn--p1ai/catalog/ldsp_chfmk/ldsp_grafit_matovyy_16mm_2750_1830_vld/",
+    "image": "",
+    "price": "4000",
+    "price_text": "4 000 руб. /шт"
+  },
+  {
+    "name": "ЛДСП Фантом (Серый дымчатый), матовый 16мм 2750*1830 ВЛД",
+    "url": "https://xn--90afaebsrddcs1s.xn--p1ai/catalog/ldsp_chfmk/ldsp_fantom_seryy_dymchatyy_matovyy_16mm_2750_1830_vld/",
+    "image": "",
+    "price": "4000",
+    "price_text": "4 000 руб. /шт"
+  },
+  {
+    "name": "ЛДСП Тэффи (Кашемир), шагрень 16мм 2750*1830 ЧФМК",
+    "url": "https://xn--90afaebsrddcs1s.xn--p1ai/catalog/ldsp_chfmk/ldsp_teffi_kashemir_shagren_16mm_2750_1830_chfmk/",
+    "image": "",
+    "price": "4000",
+    "price_text": "4 000 руб. /шт"
+  },
+  {
+    "name": "ЛДСП Слэйт 10мм  V Венето (премиум) 2750*1830",
+    "url": "https://xn--90afaebsrddcs1s.xn--p1ai/catalog/ldsp_lamarty/ldsp_sleyt_10mm_v_veneto_premium_2750_1830/",
+    "image": "",
+    "price": "4000",
+    "price_text": "4 000 руб. /шт"
+  },
+  {
+    "name": "ЛДСП Ориноко 10мм R Рустикальное (премиум) 2750*1830",
+    "url": "https://xn--90afaebsrddcs1s.xn--p1ai/catalog/ldsp_lamarty/ldsp_orinoko_10mm_r_rustikalnoe_premium_2750_1830/",
+    "image": "",
+    "price": "4000",
+    "price_text": "4 000 руб. /шт"
+  },
+  {
+    "name": "ЛДСП Графит 10мм K классическое матовое (премиум) 2750*1830",
+    "url": "https://xn--90afaebsrddcs1s.xn--p1ai/catalog/ldsp_lamarty/ldsp_grafit_10mm_k_klassicheskoe_matovoe_premium_2750_1830/",
+    "image": "",
+    "price": "4000",
+    "price_text": "4 000 руб. /шт"
+  },
+  {
+    "name": "ЛДСП Винтаж 10мм D Дуб  (люкс) 2750*1830",
+    "url": "https://xn--90afaebsrddcs1s.xn--p1ai/catalog/ldsp_lamarty/ldsp_vintazh_10mm_d_dub_lyuks_2750_1830/",
+    "image": "",
+    "price": "4000",
+    "price_text": "4 000 руб. /шт"
+  },
+  {
+    "name": "ЛДСП Кейптаун 10мм R Рустикальное (люкс) 2750*1830",
+    "url": "https://xn--90afaebsrddcs1s.xn--p1ai/catalog/ldsp_lamarty/ldsp_keyptaun_10mm_r_rustikalnoe_lyuks_2750_1830/",
+    "image": "",
+    "price": "4000",
+    "price_text": "4 000 руб. /шт"
+  },
+  {
+    "name": "ЛДСП Тэффи (Кашемир), матовый 16мм 2750*1830 ЧФМК",
+    "url": "https://xn--90afaebsrddcs1s.xn--p1ai/catalog/ldsp_chfmk/ldsp_teffi_kashemir_matovyy_16mm_2750_1830_chfmk/",
+    "image": "",
+    "price": "4000",
+    "price_text": "4 000 руб. /шт"
+  },
+  {
+    "name": "ЛДСП Цемент светлый шагрень 16мм 2750*1830 ЧФМК",
+    "url": "https://xn--90afaebsrddcs1s.xn--p1ai/catalog/ldsp_chfmk/ldsp_tsement_svetlyy_shagren_16mm_2750_1830_chfmk/",
+    "image": "",
+    "price": "4000",
+    "price_text": "4 000 руб. /шт"
+  },
+  {
+    "name": "ЛДСП Синий (Адриатика) шагрень 16мм 2750*1830 ЧФМК",
+    "url": "https://xn--90afaebsrddcs1s.xn--p1ai/catalog/ldsp_chfmk/ldsp_siniy_adriatika_shagren_16mm_2750_1830_chfmk/",
+    "image": "",
+    "price": "4000",
+    "price_text": "4 000 руб. /шт"
+  },
+  {
+    "name": "ЛДСП Имбирь 10мм G Глянец (классика) 2750*1830",
+    "url": "https://xn--90afaebsrddcs1s.xn--p1ai/catalog/ldsp_lamarty/ldsp_imbir_10mm_g_glyanets_klassika_2750_1830/",
+    "image": "",
+    "price": "4000",
+    "price_text": "4 000 руб. /шт"
+  },
+  {
+    "name": "ЛДСП Белоснежный 10мм G Глянец 01 (классика) 2750*1830",
+    "url": "https://xn--90afaebsrddcs1s.xn--p1ai/catalog/ldsp_lamarty/ldsp_belosnezhnyy_10mm_g_glyanets_01_klassika_2750_1830/",
+    "image": "",
+    "price": "4000",
+    "price_text": "4 000 руб. /шт"
+  },
+  {
+    "name": "ЛДСП Белый 10мм G Глянец (классика) 2750*1830",
+    "url": "https://xn--90afaebsrddcs1s.xn--p1ai/catalog/ldsp_lamarty/ldsp_belyy_10mm_g_glyanets_klassika_2750_1830/",
+    "image": "",
+    "price": "4000",
+    "price_text": "4 000 руб. /шт"
+  },
+  {
+    "name": "ЛДСП Фантом 16мм K Классическое матовое (классика) 2750*1830",
+    "url": "https://xn--90afaebsrddcs1s.xn--p1ai/catalog/ldsp_lamarty/ldsp_fantom_16mm_k_klassicheskoe_matovoe_klassika_2750_1830/",
+    "image": "",
+    "price": "4000",
+    "price_text": "4 000 руб. /шт"
+  },
+  {
+    "name": "ЛДСП Клауд 16мм K Классическое матовое (премиум) 2750*1830",
+    "url": "https://xn--90afaebsrddcs1s.xn--p1ai/catalog/ldsp_lamarty/ldsp_klaud_16mm_k_klassicheskoe_matovoe_premium_2750_1830/",
+    "image": "",
+    "price": "4000",
+    "price_text": "4 000 руб. /шт"
+  },
+  {
+    "name": "ЛДСП Белоснежный 16мм L Легкий шелк 01 (классика) 2750*1830",
+    "url": "https://xn--90afaebsrddcs1s.xn--p1ai/catalog/ldsp_lamarty/ldsp_belosnezhnyy_16mm_l_legkiy_shelk_01_klassika_2750_1830/",
+    "image": "",
+    "price": "4000",
+    "price_text": "4 000 руб. /шт"
+  },
+  {
+    "name": "ЛДСП Тэффи 16мм L Легкий шелк (классика) 2750*1830",
+    "url": "https://xn--90afaebsrddcs1s.xn--p1ai/catalog/ldsp_lamarty/ldsp_teffi_16mm_l_legkiy_shelk_klassika_2750_1830/",
+    "image": "",
+    "price": "4000",
+    "price_text": "4 000 руб. /шт"
+  },
+  {
+    "name": "ЛДСП Ноче мария луиза 16мм T Древесные поры  (классика) 2750*1830",
+    "url": "https://xn--90afaebsrddcs1s.xn--p1ai/catalog/ldsp_lamarty/ldsp_noche_mariya_luiza_16mm_t_drevesnye_pory_klassika_2750_1830/",
+    "image": "",
+    "price": "4000",
+    "price_text": "4 000 руб. /шт"
+  },
+  {
+    "name": "ЛДСП Серый 7810 16мм P Мелкая шагрень (классика) 2750*1830",
+    "url": "https://xn--90afaebsrddcs1s.xn--p1ai/catalog/ldsp_lamarty/ldsp_seryy_7810_16mm_p_melkaya_shagren_klassika_2750_1830/",
+    "image": "",
+    "price": "4000",
+    "price_text": "4 000 руб. /шт"
+  },
+  {
+    "name": "ЛДСП Белый 16мм L Легкий шелк (классика) 2750*1830",
+    "url": "https://xn--90afaebsrddcs1s.xn--p1ai/catalog/ldsp_lamarty/ldsp_belyy_16mm_l_legkiy_shelk_klassika_2750_1830/",
+    "image": "",
+    "price": "4000",
+    "price_text": "4 000 руб. /шт"
+  },
+  {
+    "name": "ЛДСП Хюгге 16мм K Классическое матовое (классика) 2750*1830",
+    "url": "https://xn--90afaebsrddcs1s.xn--p1ai/catalog/ldsp_lamarty/ldsp_khyugge_16mm_k_klassicheskoe_matovoe_klassika_2750_1830/",
+    "image": "",
+    "price": "4000",
+    "price_text": "4 000 руб. /шт"
+  },
+  {
+    "name": "ЛДСП Фантом 16мм L Легкий шелк (классика) 2750*1830",
+    "url": "https://xn--90afaebsrddcs1s.xn--p1ai/catalog/ldsp_lamarty/ldsp_fantom_16mm_l_legkiy_shelk_klassika_2750_1830/",
+    "image": "",
+    "price": "4000",
+    "price_text": "4 000 руб. /шт"
+  },
+  {
+    "name": "ЛДСП Ясень 16мм T Древесные поры  (классика) 2750*1830",
+    "url": "https://xn--90afaebsrddcs1s.xn--p1ai/catalog/ldsp_lamarty/ldsp_yasen_16mm_t_drevesnye_pory_klassika_2750_1830/",
+    "image": "",
+    "price": "4000",
+    "price_text": "4 000 руб. /шт"
+  },
+  {
+    "name": "ЛДСП Ясень темный 16мм T Древесные поры  (классика) 2750*1830",
+    "url": "https://xn--90afaebsrddcs1s.xn--p1ai/catalog/ldsp_lamarty/ldsp_yasen_temnyy_16mm_t_drevesnye_pory_klassika_2750_1830/",
+    "image": "",
+    "price": "4000",
+    "price_text": "4 000 руб. /шт"
+  },
+  {
+    "name": "ЛДСП Черный 16мм P Мелкая шагрень (классика) 2750*1830",
+    "url": "https://xn--90afaebsrddcs1s.xn--p1ai/catalog/ldsp_lamarty/ldsp_chernyy_16mm_p_melkaya_shagren_klassika_2750_1830/",
+    "image": "",
+    "price": "4000",
+    "price_text": "4 000 руб. /шт"
+  },
+  {
+    "name": "ЛДСП Малави 10мм V Венето (люкс) 2750*1830",
+    "url": "https://xn--90afaebsrddcs1s.xn--p1ai/catalog/ldsp_lamarty/ldsp_malavi_10mm_v_veneto_lyuks_2750_1830/",
+    "image": "",
+    "price": "4000",
+    "price_text": "4 000 руб. /шт"
+  },
+  {
+    "name": "ЛДСП Соната 10мм L Легкий шелк (люкс) 2750*1830",
+    "url": "https://xn--90afaebsrddcs1s.xn--p1ai/catalog/ldsp_lamarty/ldsp_sonata_10mm_l_legkiy_shelk_lyuks_2750_1830/",
+    "image": "",
+    "price": "4000",
+    "price_text": "4 000 руб. /шт"
+  },
+  {
+    "name": "ЛДСП Пальмира 16мм W Рейвуд (классика) 2750*1830",
+    "url": "https://xn--90afaebsrddcs1s.xn--p1ai/catalog/ldsp_lamarty/ldsp_palmira_16mm_w_reyvud_klassika_2750_1830/",
+    "image": "",
+    "price": "4000",
+    "price_text": "4 000 руб. /шт"
+  },
+  {
+    "name": "ЛДСП Белый 16мм T Древесные поры  (классика) 2750*1830",
+    "url": "https://xn--90afaebsrddcs1s.xn--p1ai/catalog/ldsp_lamarty/ldsp_belyy_16mm_t_drevesnye_pory_klassika_2750_1830/",
+    "image": "",
+    "price": "4000",
+    "price_text": "4 000 руб. /шт"
+  },
+  {
+    "name": "ЛДСП Белый 16мм P Мелкая шагрень (классика) 2750*1830",
+    "url": "https://xn--90afaebsrddcs1s.xn--p1ai/catalog/ldsp_lamarty/ldsp_belyy_16mm_p_melkaya_shagren_klassika_2750_1830/",
+    "image": "",
+    "price": "4000",
+    "price_text": "4 000 руб. /шт"
+  },
+  {
+    "name": "ЛДСП Кремовый 16мм P Мелкая шагрень 01 (классика)  2750*1830",
+    "url": "https://xn--90afaebsrddcs1s.xn--p1ai/catalog/ldsp_lamarty/ldsp_kremovyy_16mm_p_melkaya_shagren_01_klassika_2750_1830/",
+    "image": "",
+    "price": "4000",
+    "price_text": "4 000 руб. /шт"
+  },
+  {
+    "name": "ЛДСП Имбирь 16мм P Мелкая шагрень 01 (классика) 2750*1830",
+    "url": "https://xn--90afaebsrddcs1s.xn--p1ai/catalog/ldsp_lamarty/ldsp_imbir_16mm_p_melkaya_shagren_01_klassika_2750_1830/",
+    "image": "",
+    "price": "4000",
+    "price_text": "4 000 руб. /шт"
+  },
+  {
+    "name": "ЛДСП Белый 16мм K Классическое матовое (классика) 2750*1830",
+    "url": "https://xn--90afaebsrddcs1s.xn--p1ai/catalog/ldsp_lamarty/ldsp_belyy_16mm_k_klassicheskoe_matovoe_klassika_2750_1830/",
+    "image": "",
+    "price": "4000",
+    "price_text": "4 000 руб. /шт"
+  },
+  {
+    "name": "ЛДСП Аликанте 16мм A Артекс (классика) 2750*1830",
+    "url": "https://xn--90afaebsrddcs1s.xn--p1ai/catalog/ldsp_lamarty/ldsp_alikante_16mm_a_arteks_klassika_2750_1830/",
+    "image": "",
+    "price": "4000",
+    "price_text": "4 000 руб. /шт"
+  },
+  {
+    "name": "ЛДСП Дуб дымчатый 16мм T Древесные поры  (классика) 2750*1830",
+    "url": "https://xn--90afaebsrddcs1s.xn--p1ai/catalog/ldsp_lamarty/ldsp_dub_dymchatyy_16mm_t_drevesnye_pory_klassika_2750_1830/",
+    "image": "",
+    "price": "4000",
+    "price_text": "4 000 руб. /шт"
+  },
+  {
+    "name": "ЛДСП Дуб сонома 16мм T Древесные поры  (классика) 2750*1830",
+    "url": "https://xn--90afaebsrddcs1s.xn--p1ai/catalog/ldsp_lamarty/ldsp_dub_sonoma_16mm_t_drevesnye_pory_klassika_2750_1830/",
+    "image": "",
+    "price": "4000",
+    "price_text": "4 000 руб. /шт"
+  },
+  {
+    "name": "ЛДСП Дуб галиано 16мм T Древесные поры  (классика) 2750*1830",
+    "url": "https://xn--90afaebsrddcs1s.xn--p1ai/catalog/ldsp_lamarty/ldsp_dub_galiano_16mm_t_drevesnye_pory_klassika_2750_1830/",
+    "image": "",
+    "price": "4000",
+    "price_text": "4 000 руб. /шт"
+  },
+  {
+    "name": "ЛДСП Бук натуральный 16мм T Древесные поры (классика) 2750*1830",
+    "url": "https://xn--90afaebsrddcs1s.xn--p1ai/catalog/ldsp_lamarty/ldsp_buk_naturalnyy_16mm_t_drevesnye_pory_klassika_2750_1830/",
+    "image": "",
+    "price": "4000",
+    "price_text": "4 000 руб. /шт"
+  },
+  {
+    "name": "ЛДСП Сканди 16мм R Рустикальное (классика) 2750*1830",
+    "url": "https://xn--90afaebsrddcs1s.xn--p1ai/catalog/ldsp_lamarty/ldsp_skandi_16mm_r_rustikalnoe_klassika_2750_1830/",
+    "image": "",
+    "price": "4000",
+    "price_text": "4 000 руб. /шт"
+  },
+  {
+    "name": "ЛДСП Пальмира 16мм R Рустикальное (классика) 2750*1830",
+    "url": "https://xn--90afaebsrddcs1s.xn--p1ai/catalog/ldsp_lamarty/ldsp_palmira_16mm_r_rustikalnoe_klassika_2750_1830/",
+    "image": "",
+    "price": "4000",
+    "price_text": "4 000 руб. /шт"
+  },
+  {
+    "name": "ЛДСП Каньон ледяной 16мм R Рустикальное (классика)  2750*1830",
+    "url": "https://xn--90afaebsrddcs1s.xn--p1ai/catalog/ldsp_lamarty/ldsp_kanon_ledyanoy_16mm_r_rustikalnoe_klassika_2750_1830/",
+    "image": "",
+    "price": "4000",
+    "price_text": "4 000 руб. /шт"
+  },
+  {
+    "name": "ЛДСП Каньон песчаный 16мм R Рустикальное (классика) 2750*1830",
+    "url": "https://xn--90afaebsrddcs1s.xn--p1ai/catalog/ldsp_lamarty/ldsp_kanon_peschanyy_16mm_r_rustikalnoe_klassika_2750_1830/",
+    "image": "",
+    "price": "4000",
+    "price_text": "4 000 руб. /шт"
+  },
+  {
+    "name": "ЛДСП Интра 16мм R Рустикальное (классика) 2750*1830",
+    "url": "https://xn--90afaebsrddcs1s.xn--p1ai/catalog/ldsp_lamarty/ldsp_intra_16mm_r_rustikalnoe_klassika_2750_1830/",
+    "image": "",
+    "price": "4000",
+    "price_text": "4 000 руб. /шт"
+  },
+  {
+    "name": "ЛДСП Дуб Вотан 16мм R Рустикальное (классика) 2750*1830",
+    "url": "https://xn--90afaebsrddcs1s.xn--p1ai/catalog/ldsp_lamarty/ldsp_dub_votan_16mm_r_rustikalnoe_klassika_2750_1830/",
+    "image": "",
+    "price": "4000",
+    "price_text": "4 000 руб. /шт"
+  },
+  {
+    "name": "ЛДСП Вяз швейцарский 16мм R Рустикальное (классика) 2750*1830",
+    "url": "https://xn--90afaebsrddcs1s.xn--p1ai/catalog/ldsp_lamarty/ldsp_vyaz_shveytsarskiy_16mm_r_rustikalnoe_klassika_2750_1830/",
+    "image": "",
+    "price": "4000",
+    "price_text": "4 000 руб. /шт"
+  },
+  {
+    "name": "ЛДСП Выбеленное дерево 16мм R Рустикальное (классика)  2750*1830",
+    "url": "https://xn--90afaebsrddcs1s.xn--p1ai/catalog/ldsp_lamarty/ldsp_vybelennoe_derevo_16mm_r_rustikalnoe_klassika_2750_1830/",
+    "image": "",
+    "price": "4000",
+    "price_text": "4 000 руб. /шт"
+  },
+  {
+    "name": "ЛДСП Бетон пайн экзотик 16мм R Рустикальное (классика) 2750*1830",
+    "url": "https://xn--90afaebsrddcs1s.xn--p1ai/catalog/ldsp_lamarty/ldsp_beton_payn_ekzotik_16mm_r_rustikalnoe_klassika_2750_1830/",
+    "image": "",
+    "price": "4000",
+    "price_text": "4 000 руб. /шт"
+  },
+  {
+    "name": "ЛДСП Бетон пайн белый 16мм R Рустикальное (классика) 2750*1830",
+    "url": "https://xn--90afaebsrddcs1s.xn--p1ai/catalog/ldsp_lamarty/ldsp_beton_payn_belyy_16mm_r_rustikalnoe_klassika_2750_1830/",
+    "image": "",
+    "price": "4000",
+    "price_text": "4 000 руб. /шт"
+  },
+  {
+    "name": "ЛДСП Арабика 16мм P Мелкая шагрень (классика) 2750*1830",
+    "url": "https://xn--90afaebsrddcs1s.xn--p1ai/catalog/ldsp_lamarty/ldsp_arabika_16mm_p_melkaya_shagren_klassika_2750_1830/",
+    "image": "",
+    "price": "4000",
+    "price_text": "4 000 руб. /шт"
+  },
+  {
+    "name": "ЛДСП Оранж, шагрень 16мм 2750*1830 ЧФМК",
+    "url": "https://xn--90afaebsrddcs1s.xn--p1ai/catalog/ldsp_chfmk/ldsp_oranzh_shagren_16mm_2750_1830_chfmk/",
+    "image": "",
+    "price": "4000",
+    "price_text": "4 000 руб. /шт"
+  },
+  {
+    "name": "ЛДСП Вулканический серый 16мм V Венето (премиум) 2750*1830",
+    "url": "https://xn--90afaebsrddcs1s.xn--p1ai/catalog/ldsp_lamarty/ldsp_vulkanicheskiy_seryy_16mm_v_veneto_premium_2750_1830/",
+    "image": "",
+    "price": "4000",
+    "price_text": "4 000 руб. /шт"
+  },
+  {
+    "name": "ЛДСП Тайга 16мм К Классическое матовое (премиум) 2750*1830",
+    "url": "https://xn--90afaebsrddcs1s.xn--p1ai/catalog/ldsp_lamarty/ldsp_tayga_16mm_k_klassicheskoe_matovoe_premium_2750_1830/",
+    "image": "",
+    "price": "4000",
+    "price_text": "4 000 руб. /шт"
+  },
+  {
+    "name": "ЛДСП Орех неаполь 16мм W Рейвуд  (премиум) 2750*1830",
+    "url": "https://xn--90afaebsrddcs1s.xn--p1ai/catalog/ldsp_lamarty/ldsp_orekh_neapol_16mm_w_reyvud_premium_2750_1830/",
+    "image": "",
+    "price": "4000",
+    "price_text": "4 000 руб. /шт"
+  },
+  {
+    "name": "ЛДСП Ориноко 16мм W Рейвуд (премиум) 2750*1830",
+    "url": "https://xn--90afaebsrddcs1s.xn--p1ai/catalog/ldsp_lamarty/ldsp_orinoko_16mm_w_reyvud_premium_2750_1830/",
+    "image": "",
+    "price": "4000",
+    "price_text": "4 000 руб. /шт"
+  },
+  {
+    "name": "ЛДСП Береза мраморная 16мм W Рейвуд  (премиум) 2750*1830",
+    "url": "https://xn--90afaebsrddcs1s.xn--p1ai/catalog/ldsp_lamarty/ldsp_bereza_mramornaya_16mm_w_reyvud_premium_2750_1830/",
+    "image": "",
+    "price": "4000",
+    "price_text": "4 000 руб. /шт"
+  },
+  {
+    "name": "ЛДСП Луно 16мм К Классическое матовое (премиум) 2750*1830",
+    "url": "https://xn--90afaebsrddcs1s.xn--p1ai/catalog/ldsp_lamarty/ldsp_luno_16mm_k_klassicheskoe_matovoe_premium_2750_1830/",
+    "image": "",
+    "price": "4000",
+    "price_text": "4 000 руб. /шт"
+  },
+  {
+    "name": "ЛДСП Афелия 16мм W Рейвуд (премиум) 2750*1830",
+    "url": "https://xn--90afaebsrddcs1s.xn--p1ai/catalog/ldsp_lamarty/ldsp_afeliya_16mm_w_reyvud_premium_2750_1830/",
+    "image": "",
+    "price": "4000",
+    "price_text": "4 000 руб. /шт"
+  },
+  {
+    "name": "ЛДСП Сиена 16мм К Классическое матовое (премиум) 2750*1830",
+    "url": "https://xn--90afaebsrddcs1s.xn--p1ai/catalog/ldsp_lamarty/ldsp_siena_16mm_k_klassicheskoe_matovoe_premium_2750_1830/",
+    "image": "",
+    "price": "4000",
+    "price_text": "4 000 руб. /шт"
+  },
+  {
+    "name": "ЛДСП Альберо 16мм W Рейвуд (премиум) 2750*1830",
+    "url": "https://xn--90afaebsrddcs1s.xn--p1ai/catalog/ldsp_lamarty/ldsp_albero_16mm_w_reyvud_premium_2750_1830/",
+    "image": "",
+    "price": "4000",
+    "price_text": "4 000 руб. /шт"
+  },
+  {
+    "name": "ЛДСП Вулканический серый 16мм К Классическое матовое (премиум) 2750*1830",
+    "url": "https://xn--90afaebsrddcs1s.xn--p1ai/catalog/ldsp_lamarty/ldsp_vulkanicheskiy_seryy_16mm_k_klassicheskoe_matovoe_premium_2750_1830/",
+    "image": "",
+    "price": "4000",
+    "price_text": "4 000 руб. /шт"
+  },
+  {
+    "name": "ЛДСП Орех Флория 16мм W Рейвуд (премиум) 2750*1830",
+    "url": "https://xn--90afaebsrddcs1s.xn--p1ai/catalog/ldsp_lamarty/ldsp_orekh_floriya_16mm_w_reyvud_premium_2750_1830/",
+    "image": "",
+    "price": "4000",
+    "price_text": "4 000 руб. /шт"
+  },
+  {
+    "name": "ЛДСП Марципан 16мм K Классическое матовое (премиум) 2750*1830",
+    "url": "https://xn--90afaebsrddcs1s.xn--p1ai/catalog/ldsp_lamarty/ldsp_martsipan_16mm_k_klassicheskoe_matovoe_premium_2750_1830/",
+    "image": "",
+    "price": "4000",
+    "price_text": "4 000 руб. /шт"
+  },
+  {
+    "name": "ЛДСП Цемент 16мм K Классическое матовое (премиум) 2750*1830",
+    "url": "https://xn--90afaebsrddcs1s.xn--p1ai/catalog/ldsp_lamarty/ldsp_tsement_16mm_k_klassicheskoe_matovoe_premium_2750_1830/",
+    "image": "",
+    "price": "4000",
+    "price_text": "4 000 руб. /шт"
+  },
+  {
+    "name": "ЛДСП Орех кария 16мм K Классическое матовое (премиум) 2750*1830",
+    "url": "https://xn--90afaebsrddcs1s.xn--p1ai/catalog/ldsp_lamarty/ldsp_orekh_kariya_16mm_k_klassicheskoe_matovoe_premium_2750_1830/",
+    "image": "",
+    "price": "4000",
+    "price_text": "4 000 руб. /шт"
+  },
+  {
+    "name": "ЛДСП Калима 16мм K Классическое матовое (премиум) 2750*1830",
+    "url": "https://xn--90afaebsrddcs1s.xn--p1ai/catalog/ldsp_lamarty/ldsp_kalima_16mm_k_klassicheskoe_matovoe_premium_2750_1830/",
+    "image": "",
+    "price": "4000",
+    "price_text": "4 000 руб. /шт"
+  },
+  {
+    "name": "ЛДСП Орегано 16мм L Легкий шелк (премиум) 2750*1830",
+    "url": "https://xn--90afaebsrddcs1s.xn--p1ai/catalog/ldsp_lamarty/ldsp_oregano_16mm_l_legkiy_shelk_premium_2750_1830/",
+    "image": "",
+    "price": "4000",
+    "price_text": "4 000 руб. /шт"
+  },
+  {
+    "name": "ЛДСП Плэйн 16мм K Классическое матовое (премиум) 2750*1830",
+    "url": "https://xn--90afaebsrddcs1s.xn--p1ai/catalog/ldsp_lamarty/ldsp_pleyn_16mm_k_klassicheskoe_matovoe_premium_2750_1830/",
+    "image": "",
+    "price": "4000",
+    "price_text": "4 000 руб. /шт"
+  },
+  {
+    "name": "ЛДСП Фрост 16мм K Классическое матовое (премиум) 2750*1830",
+    "url": "https://xn--90afaebsrddcs1s.xn--p1ai/catalog/ldsp_lamarty/ldsp_frost_16mm_k_klassicheskoe_matovoe_premium_2750_1830/",
+    "image": "",
+    "price": "4000",
+    "price_text": "4 000 руб. /шт"
+  },
+  {
+    "name": "ЛДСП Нейро 16мм K Классическое матовое (премиум) 2750*1830",
+    "url": "https://xn--90afaebsrddcs1s.xn--p1ai/catalog/ldsp_lamarty/ldsp_neyro_16mm_k_klassicheskoe_matovoe_premium_2750_1830/",
+    "image": "",
+    "price": "4000",
+    "price_text": "4 000 руб. /шт"
+  },
+  {
+    "name": "ЛДСП Дуо 16мм K Классическое матовое (премиум) 2750*1830",
+    "url": "https://xn--90afaebsrddcs1s.xn--p1ai/catalog/ldsp_lamarty/ldsp_duo_16mm_k_klassicheskoe_matovoe_premium_2750_1830/",
+    "image": "",
+    "price": "4000",
+    "price_text": "4 000 руб. /шт"
+  },
+  {
+    "name": "ЛДСП Аура 16мм K Классическое матовое (премиум) 2750*1830",
+    "url": "https://xn--90afaebsrddcs1s.xn--p1ai/catalog/ldsp_lamarty/ldsp_aura_16mm_k_klassicheskoe_matovoe_premium_2750_1830/",
+    "image": "",
+    "price": "4000",
+    "price_text": "4 000 руб. /шт"
+  },
+  {
+    "name": "ЛДСП Рейн 16мм K Классическое матовое (премиум) 2750*1830",
+    "url": "https://xn--90afaebsrddcs1s.xn--p1ai/catalog/ldsp_lamarty/ldsp_reyn_16mm_k_klassicheskoe_matovoe_premium_2750_1830/",
+    "image": "",
+    "price": "4000",
+    "price_text": "4 000 руб. /шт"
+  },
+  {
+    "name": "ЛДСП Муза 16мм К Классическое матовое (премиум) 2750*1830",
+    "url": "https://xn--90afaebsrddcs1s.xn--p1ai/catalog/ldsp_lamarty/ldsp_muza_16mm_k_klassicheskoe_matovoe_premium_2750_1830/",
+    "image": "",
+    "price": "4000",
+    "price_text": "4 000 руб. /шт"
+  },
+  {
+    "name": "ЛДСП Лило 16мм К Классическое матовое (премиум) 2750*1830",
+    "url": "https://xn--90afaebsrddcs1s.xn--p1ai/catalog/ldsp_lamarty/ldsp_lilo_16mm_k_klassicheskoe_matovoe_premium_2750_1830/",
+    "image": "",
+    "price": "4000",
+    "price_text": "4 000 руб. /шт"
+  },
+  {
+    "name": "ЛДСП Бохо 16мм К Классическое матовое (премиум) 2750*1830",
+    "url": "https://xn--90afaebsrddcs1s.xn--p1ai/catalog/ldsp_lamarty/ldsp_bokho_16mm_k_klassicheskoe_matovoe_premium_2750_1830/",
+    "image": "",
+    "price": "4000",
+    "price_text": "4 000 руб. /шт"
+  },
+  {
+    "name": "ЛДСП Клауд 16мм L Легкий шелк (премиум) 2750*1830",
+    "url": "https://xn--90afaebsrddcs1s.xn--p1ai/catalog/ldsp_lamarty/ldsp_klaud_16mm_l_legkiy_shelk_premium_2750_1830/",
+    "image": "",
+    "price": "4000",
+    "price_text": "4 000 руб. /шт"
+  },
+  {
+    "name": "ЛДСП Бохо 16мм L легкий шелк (премиум) 2750*1830",
+    "url": "https://xn--90afaebsrddcs1s.xn--p1ai/catalog/ldsp_lamarty/ldsp_bokho_16mm_l_legkiy_shelk_premium_2750_1830/",
+    "image": "",
+    "price": "4000",
+    "price_text": "4 000 руб. /шт"
+  },
+  {
+    "name": "ЛДСП Хаки 16мм L Легкий шелк (премиум) 2750*1830",
+    "url": "https://xn--90afaebsrddcs1s.xn--p1ai/catalog/ldsp_lamarty/ldsp_khaki_16mm_l_legkiy_shelk_premium_2750_1830/",
+    "image": "",
+    "price": "4000",
+    "price_text": "4 000 руб. /шт"
+  },
+  {
+    "name": "ЛДСП Флекс 16мм L Легкий шелк (премиум) 2750*1830",
+    "url": "https://xn--90afaebsrddcs1s.xn--p1ai/catalog/ldsp_lamarty/ldsp_fleks_16mm_l_legkiy_shelk_premium_2750_1830/",
+    "image": "",
+    "price": "4000",
+    "price_text": "4 000 руб. /шт"
+  },
+  {
+    "name": "ЛДСП Серый Камень 16мм P Мелкая шагрень (премиум) 2750*1830",
+    "url": "https://xn--90afaebsrddcs1s.xn--p1ai/catalog/ldsp_lamarty/ldsp_seryy_kamen_16mm_p_melkaya_shagren_premium_2750_1830/",
+    "image": "",
+    "price": "4000",
+    "price_text": "4 000 руб. /шт"
+  },
+  {
+    "name": "ЛДСП Береза нордик 16мм T Древесные поры (премиум) 2750*1830",
+    "url": "https://xn--90afaebsrddcs1s.xn--p1ai/catalog/ldsp_lamarty/ldsp_bereza_nordik_16mm_t_drevesnye_pory_premium_2750_1830/",
+    "image": "",
+    "price": "4000",
+    "price_text": "4 000 руб. /шт"
+  },
+  {
+    "name": "ЛДСП Маренго 16мм L Легкий шелк (премиум) 2750*1830",
+    "url": "https://xn--90afaebsrddcs1s.xn--p1ai/catalog/ldsp_lamarty/ldsp_marengo_16mm_l_legkiy_shelk_premium_2750_1830/",
+    "image": "",
+    "price": "4000",
+    "price_text": "4 000 руб. /шт"
+  },
+  {
+    "name": "ЛДСП Графит 16мм K классическое матовое (премиум) 2750*1830",
+    "url": "https://xn--90afaebsrddcs1s.xn--p1ai/catalog/ldsp_lamarty/ldsp_grafit_16mm_k_klassicheskoe_matovoe_premium_2750_1830/",
+    "image": "",
+    "price": "4000",
+    "price_text": "4 000 руб. /шт"
+  },
+  {
+    "name": "ЛДСП Дельмар 16мм K Классическое матовое (премиум) 2750*1830",
+    "url": "https://xn--90afaebsrddcs1s.xn--p1ai/catalog/ldsp_lamarty/ldsp_delmar_16mm_k_klassicheskoe_matovoe_premium_2750_1830/",
+    "image": "",
+    "price": "4000",
+    "price_text": "4 000 руб. /шт"
+  },
+  {
+    "name": "ЛДСП Софт 16мм K Классическое матовое (премиум) 2750*1830",
+    "url": "https://xn--90afaebsrddcs1s.xn--p1ai/catalog/ldsp_lamarty/ldsp_soft_16mm_k_klassicheskoe_matovoe_premium_2750_1830/",
+    "image": "",
+    "price": "4000",
+    "price_text": "4 000 руб. /шт"
+  },
+  {
+    "name": "ЛДСП Терраццо 16мм L Легкий шелк (премиум) 2750*1830",
+    "url": "https://xn--90afaebsrddcs1s.xn--p1ai/catalog/ldsp_lamarty/ldsp_terratstso_16mm_l_legkiy_shelk_premium_2750_1830/",
+    "image": "",
+    "price": "4000",
+    "price_text": "4 000 руб. /шт"
+  },
+  {
+    "name": "ЛДСП Орион 16мм L Легкий шелк (премиум) 2750*1830",
+    "url": "https://xn--90afaebsrddcs1s.xn--p1ai/catalog/ldsp_lamarty/ldsp_orion_16mm_l_legkiy_shelk_premium_2750_1830/",
+    "image": "",
+    "price": "4000",
+    "price_text": "4 000 руб. /шт"
+  },
+  {
+    "name": "ЛДСП Слэйт 16мм  V Венето (премиум) 2750*1830",
+    "url": "https://xn--90afaebsrddcs1s.xn--p1ai/catalog/ldsp_lamarty/ldsp_sleyt_16mm_v_veneto_premium_2750_1830/",
+    "image": "",
+    "price": "4000",
+    "price_text": "4 000 руб. /шт"
+  },
+  {
+    "name": "ЛДСП Цемент 16мм V Венето (премиум) 2750*1830",
+    "url": "https://xn--90afaebsrddcs1s.xn--p1ai/catalog/ldsp_lamarty/ldsp_tsement_16mm_v_veneto_premium_2750_1830/",
+    "image": "",
+    "price": "4000",
+    "price_text": "4 000 руб. /шт"
+  },
+  {
+    "name": "ЛДСП Альберо 16мм R Рустикальное (премиум) 2750*1830",
+    "url": "https://xn--90afaebsrddcs1s.xn--p1ai/catalog/ldsp_lamarty/ldsp_albero_16mm_r_rustikalnoe_premium_2750_1830/",
+    "image": "",
+    "price": "4000",
+    "price_text": "4 000 руб. /шт"
+  },
+  {
+    "name": "ЛДСП Терра 16мм K Классическое матовое (премиум) 2750*1830",
+    "url": "https://xn--90afaebsrddcs1s.xn--p1ai/catalog/ldsp_lamarty/ldsp_terra_16mm_k_klassicheskoe_matovoe_premium_2750_1830/",
+    "image": "",
+    "price": "4000",
+    "price_text": "4 000 руб. /шт"
+  },
+  {
+    "name": "ЛДСП Дуб кальяри 16мм T Древесные поры (премиум) 2750*1830",
+    "url": "https://xn--90afaebsrddcs1s.xn--p1ai/catalog/ldsp_lamarty/ldsp_dub_kalyari_16mm_t_drevesnye_pory_premium_2750_1830/",
+    "image": "",
+    "price": "4000",
+    "price_text": "4 000 руб. /шт"
+  },
+  {
+    "name": "ЛДСП Вишня гамильтон 16мм T Древесные поры  (премиум) 2750*1830",
+    "url": "https://xn--90afaebsrddcs1s.xn--p1ai/catalog/ldsp_lamarty/ldsp_vishnya_gamilton_16mm_t_drevesnye_pory_premium_2750_1830/",
+    "image": "",
+    "price": "4000",
+    "price_text": "4 000 руб. /шт"
+  },
+  {
+    "name": "ЛДСП Береза мраморная 16мм T Древесные поры  (премиум) 2750*1830",
+    "url": "https://xn--90afaebsrddcs1s.xn--p1ai/catalog/ldsp_lamarty/ldsp_bereza_mramornaya_16mm_t_drevesnye_pory_premium_2750_1830/",
+    "image": "",
+    "price": "4000",
+    "price_text": "4 000 руб. /шт"
+  },
+  {
+    "name": "ЛДСП Элит баттл рок 16мм R Рустикальное  (премиум) 2750*1830",
+    "url": "https://xn--90afaebsrddcs1s.xn--p1ai/catalog/ldsp_lamarty/ldsp_elit_battl_rok_16mm_r_rustikalnoe_premium_2750_1830/",
+    "image": "",
+    "price": "4000",
+    "price_text": "4 000 руб. /шт"
+  },
+  {
+    "name": "ЛДСП Сосна санторини 16мм R Рустикальное (премиум)  2750*1830",
+    "url": "https://xn--90afaebsrddcs1s.xn--p1ai/catalog/ldsp_lamarty/ldsp_sosna_santorini_16mm_r_rustikalnoe_premium_2750_1830/",
+    "image": "",
+    "price": "4000",
+    "price_text": "4 000 руб. /шт"
+  },
+  {
+    "name": "ЛДСП Ориноко 16мм R Рустикальное (премиум) 2750*1830",
+    "url": "https://xn--90afaebsrddcs1s.xn--p1ai/catalog/ldsp_lamarty/ldsp_orinoko_16mm_r_rustikalnoe_premium_2750_1830/",
+    "image": "",
+    "price": "4000",
+    "price_text": "4 000 руб. /шт"
+  },
+  {
+    "name": "ЛДСП Рамбла 16мм K Классическое матовое (премиум) 2750*1830",
+    "url": "https://xn--90afaebsrddcs1s.xn--p1ai/catalog/ldsp_lamarty/ldsp_rambla_16mm_k_klassicheskoe_matovoe_premium_2750_1830/",
+    "image": "",
+    "price": "4000",
+    "price_text": "4 000 руб. /шт"
+  },
+  {
+    "name": "ЛДСП Гамбия 16мм K Классическое матовое (премиум) 2750*1830",
+    "url": "https://xn--90afaebsrddcs1s.xn--p1ai/catalog/ldsp_lamarty/ldsp_gambiya_16mm_k_klassicheskoe_matovoe_premium_2750_1830/",
+    "image": "",
+    "price": "4000",
+    "price_text": "4 000 руб. /шт"
+  },
+  {
+    "name": "ЛДСП Рускеала 16мм V Венето (премиум) 2750*1830",
+    "url": "https://xn--90afaebsrddcs1s.xn--p1ai/catalog/ldsp_lamarty/ldsp_ruskeala_16mm_v_veneto_premium_2750_1830/",
+    "image": "",
+    "price": "4000",
+    "price_text": "4 000 руб. /шт"
+  },
+  {
+    "name": "ЛДСП Титан 16мм P Мелкая шагрень (премиум) 2750*1830",
+    "url": "https://xn--90afaebsrddcs1s.xn--p1ai/catalog/ldsp_lamarty/ldsp_titan_16mm_p_melkaya_shagren_premium_2750_1830/",
+    "image": "",
+    "price": "4000",
+    "price_text": "4 000 руб. /шт"
+  },
+  {
+    "name": "ЛДСП Алюминий 16мм P Мелкая шагрень (премиум) 2750*1830",
+    "url": "https://xn--90afaebsrddcs1s.xn--p1ai/catalog/ldsp_lamarty/ldsp_alyuminiy_16mm_p_melkaya_shagren_premium_2750_1830/",
+    "image": "",
+    "price": "4000",
+    "price_text": "4 000 руб. /шт"
+  },
+  {
+    "name": "ЛДСП Белоснежный 16мм G Глянец 01 (классика) 2750*1830",
+    "url": "https://xn--90afaebsrddcs1s.xn--p1ai/catalog/ldsp_lamarty/ldsp_belosnezhnyy_16mm_g_glyanets_01_klassika_2750_1830/",
+    "image": "",
+    "price": "4000",
+    "price_text": "4 000 руб. /шт"
+  },
+  {
+    "name": "ЛДСП Кремовый 16мм G Глянец (классика) 2750*1830",
+    "url": "https://xn--90afaebsrddcs1s.xn--p1ai/catalog/ldsp_lamarty/ldsp_kremovyy_16mm_g_glyanets_klassika_2750_1830/",
+    "image": "",
+    "price": "4000",
+    "price_text": "4 000 руб. /шт"
+  },
+  {
+    "name": "ЛДСП Имбирь 16мм G Глянец (классика) 2750*1830",
+    "url": "https://xn--90afaebsrddcs1s.xn--p1ai/catalog/ldsp_lamarty/ldsp_imbir_16mm_g_glyanets_klassika_2750_1830/",
+    "image": "",
+    "price": "4000",
+    "price_text": "4 000 руб. /шт"
+  },
+  {
+    "name": "ЛДСП Белый 16мм G Глянец (классика) 2750*1830",
+    "url": "https://xn--90afaebsrddcs1s.xn--p1ai/catalog/ldsp_lamarty/ldsp_belyy_16mm_g_glyanets_klassika_2750_1830/",
+    "image": "",
+    "price": "4000",
+    "price_text": "4 000 руб. /шт"
+  },
+  {
+    "name": "ЛДСП Белый 16мм D Дуб (классика) 2750*1830",
+    "url": "https://xn--90afaebsrddcs1s.xn--p1ai/catalog/ldsp_lamarty/ldsp_belyy_16mm_d_dub_klassika_2750_1830/",
+    "image": "",
+    "price": "4000",
+    "price_text": "4 000 руб. /шт"
+  },
+  {
+    "name": "ЛДСП Ноче мария луиза 22мм T Древесные поры  (классика) 2750*1830",
+    "url": "https://xn--90afaebsrddcs1s.xn--p1ai/catalog/ldsp_lamarty/ldsp_noche_mariya_luiza_22mm_t_drevesnye_pory_klassika_2750_1830/",
+    "image": "",
+    "price": "4000",
+    "price_text": "4 000 руб. /шт"
+  },
+  {
+    "name": "ЛДСП Феникс 10мм D Дуб (премиум) 2750*1830",
+    "url": "https://xn--90afaebsrddcs1s.xn--p1ai/catalog/ldsp_lamarty/ldsp_feniks_10mm_d_dub_premium_2750_1830/",
+    "image": "",
+    "price": "4000",
+    "price_text": "4 000 руб. /шт"
+  },
+  {
+    "name": "ЛДСП Дуб сэнди 16мм D Дуб (премиум) 2750*1830",
+    "url": "https://xn--90afaebsrddcs1s.xn--p1ai/catalog/ldsp_lamarty/ldsp_dub_sendi_16mm_d_dub_premium_2750_1830/",
+    "image": "",
+    "price": "4000",
+    "price_text": "4 000 руб. /шт"
+  },
+  {
+    "name": "ЛДСП Солнечный 16мм P Мелкая шагрень  (люкс) 2750*1830",
+    "url": "https://xn--90afaebsrddcs1s.xn--p1ai/catalog/ldsp_lamarty/ldsp_solnechnyy_16mm_p_melkaya_shagren_lyuks_2750_1830/",
+    "image": "",
+    "price": "4000",
+    "price_text": "4 000 руб. /шт"
+  },
+  {
+    "name": "ЛДСП Винтаж 16мм R Рустикальное (люкс) 2750*1830",
+    "url": "https://xn--90afaebsrddcs1s.xn--p1ai/catalog/ldsp_lamarty/ldsp_vintazh_16mm_r_rustikalnoe_lyuks_2750_1830/",
+    "image": "",
+    "price": "4000",
+    "price_text": "4 000 руб. /шт"
+  },
+  {
+    "name": "ЛДСП Серенити 16мм К Классическое матовое (люкс) 2750*1830",
+    "url": "https://xn--90afaebsrddcs1s.xn--p1ai/catalog/ldsp_lamarty/ldsp_sereniti_16mm_k_klassicheskoe_matovoe_lyuks_2750_1830/",
+    "image": "",
+    "price": "4000",
+    "price_text": "4 000 руб. /шт"
+  },
+  {
+    "name": "ЛДСП Флай 16мм L Легкий шелк (люкс) 2750*1830",
+    "url": "https://xn--90afaebsrddcs1s.xn--p1ai/catalog/ldsp_lamarty/ldsp_flay_16mm_l_legkiy_shelk_lyuks_2750_1830/",
+    "image": "",
+    "price": "4000",
+    "price_text": "4 000 руб. /шт"
+  },
+  {
+    "name": "ЛДСП Серенити 16мм L Легкий шелк (люкс) 2750*1830",
+    "url": "https://xn--90afaebsrddcs1s.xn--p1ai/catalog/ldsp_lamarty/ldsp_sereniti_16mm_l_legkiy_shelk_lyuks_2750_1830/",
+    "image": "",
+    "price": "4000",
+    "price_text": "4 000 руб. /шт"
+  },
+  {
+    "name": "ЛДСП Гринери 16мм P Мелкая шагрень (люкс) 2750*1830",
+    "url": "https://xn--90afaebsrddcs1s.xn--p1ai/catalog/ldsp_lamarty/ldsp_grineri_16mm_p_melkaya_shagren_lyuks_2750_1830/",
+    "image": "",
+    "price": "4000",
+    "price_text": "4 000 руб. /шт"
+  },
+  {
+    "name": "ЛДСП Муссон 16мм L Легкий шелк (люкс) 2750*1830",
+    "url": "https://xn--90afaebsrddcs1s.xn--p1ai/catalog/ldsp_lamarty/ldsp_musson_16mm_l_legkiy_shelk_lyuks_2750_1830/",
+    "image": "",
+    "price": "4000",
+    "price_text": "4 000 руб. /шт"
+  },
+  {
+    "name": "ЛДСП Соната 16мм L Легкий шелк (люкс) 2750*1830",
+    "url": "https://xn--90afaebsrddcs1s.xn--p1ai/catalog/ldsp_lamarty/ldsp_sonata_16mm_l_legkiy_shelk_lyuks_2750_1830/",
+    "image": "",
+    "price": "4000",
+    "price_text": "4 000 руб. /шт"
+  },
+  {
+    "name": "ЛДСП Кейптаун 16мм R Рустикальное (люкс) 2750*1830",
+    "url": "https://xn--90afaebsrddcs1s.xn--p1ai/catalog/ldsp_lamarty/ldsp_keyptaun_16mm_r_rustikalnoe_lyuks_2750_1830/",
+    "image": "",
+    "price": "4000",
+    "price_text": "4 000 руб. /шт"
+  },
+  {
+    "name": "ЛДСП Дуб марсала 16мм T Древесные поры (люкс) 2750*1830",
+    "url": "https://xn--90afaebsrddcs1s.xn--p1ai/catalog/ldsp_lamarty/ldsp_dub_marsala_16mm_t_drevesnye_pory_lyuks_2750_1830/",
+    "image": "",
+    "price": "4000",
+    "price_text": "4 000 руб. /шт"
+  },
+  {
+    "name": "ЛДСП Парма 16мм K Классическое матовое (люкс) 2750*1830",
+    "url": "https://xn--90afaebsrddcs1s.xn--p1ai/catalog/ldsp_lamarty/ldsp_parma_16mm_k_klassicheskoe_matovoe_lyuks_2750_1830/",
+    "image": "",
+    "price": "4000",
+    "price_text": "4 000 руб. /шт"
+  },
+  {
+    "name": "ЛДСП Малави 16мм V Венето (люкс) 2750*1830",
+    "url": "https://xn--90afaebsrddcs1s.xn--p1ai/catalog/ldsp_lamarty/ldsp_malavi_16mm_v_veneto_lyuks_2750_1830/",
+    "image": "",
+    "price": "4000",
+    "price_text": "4 000 руб. /шт"
+  },
+  {
+    "name": "ЛДСП Розовый жемчуг 16мм P Мелкая шагрень (люкс) 2750*1830",
+    "url": "https://xn--90afaebsrddcs1s.xn--p1ai/catalog/ldsp_lamarty/ldsp_rozovyy_zhemchug_16mm_p_melkaya_shagren_lyuks_2750_1830/",
+    "image": "",
+    "price": "4000",
+    "price_text": "4 000 руб. /шт"
+  },
+  {
+    "name": "ЛДСП Коралл 16мм P Мелкая шагрень (люкс) 2750*1830",
+    "url": "https://xn--90afaebsrddcs1s.xn--p1ai/catalog/ldsp_lamarty/ldsp_korall_16mm_p_melkaya_shagren_lyuks_2750_1830/",
+    "image": "",
+    "price": "4000",
+    "price_text": "4 000 руб. /шт"
+  },
+  {
+    "name": "ЛДСП Ирис 16мм P Мелкая шагрень (люкс) 2750*1830",
+    "url": "https://xn--90afaebsrddcs1s.xn--p1ai/catalog/ldsp_lamarty/ldsp_iris_16mm_p_melkaya_shagren_lyuks_2750_1830_1/",
+    "image": "",
+    "price": "4000",
+    "price_text": "4 000 руб. /шт"
+  },
+  {
+    "name": "ЛДСП Черный 16мм U Глянец в пленке  (классика) 2750*1830",
+    "url": "https://xn--90afaebsrddcs1s.xn--p1ai/catalog/ldsp_lamarty/ldsp_chernyy_16mm_u_glyanets_v_plenke_klassika_2750_1830/",
+    "image": "",
+    "price": "4000",
+    "price_text": "4 000 руб. /шт"
+  },
+  {
+    "name": "ЛДСП Черный 16мм D* Дуб (классика) 2750*1830",
+    "url": "https://xn--90afaebsrddcs1s.xn--p1ai/catalog/ldsp_lamarty/ldsp_chernyy_16mm_d_dub_klassika_2750_1830/",
+    "image": "",
+    "price": "4000",
+    "price_text": "4 000 руб. /шт"
+  },
+  {
+    "name": "ЛДСП Аврора 16мм D Дуб (премиум) 2750*1830",
+    "url": "https://xn--90afaebsrddcs1s.xn--p1ai/catalog/ldsp_lamarty/ldsp_avrora_16mm_d_dub_premium_2750_1830/",
+    "image": "",
+    "price": "4000",
+    "price_text": "4 000 руб. /шт"
+  },
+  {
+    "name": "ЛДСП Либерти 16мм D дуб (премиум) 2750*1830",
+    "url": "https://xn--90afaebsrddcs1s.xn--p1ai/catalog/ldsp_lamarty/ldsp_liberti_16mm_d_dub_premium_2750_1830/",
+    "image": "",
+    "price": "4000",
+    "price_text": "4 000 руб. /шт"
+  },
+  {
+    "name": "ЛДСП Айронвуд 16мм N Некст (премиум) 2750*1830",
+    "url": "https://xn--90afaebsrddcs1s.xn--p1ai/catalog/ldsp_lamarty/ldsp_ayronvud_16mm_n_nekst_premium_2750_1830/",
+    "image": "",
+    "price": "4000",
+    "price_text": "4 000 руб. /шт"
+  },
+  {
+    "name": "ЛДСП Небула 16 мм D Дуб (премиум) 2750*1830",
+    "url": "https://xn--90afaebsrddcs1s.xn--p1ai/catalog/ldsp_lamarty/ldsp_nebula_16_mm_d_dub_premium_2750_1830/",
+    "image": "",
+    "price": "4000",
+    "price_text": "4 000 руб. /шт"
+  },
+  {
+    "name": "ЛДСП Феникс 16мм D Дуб (премиум) 2750*1830",
+    "url": "https://xn--90afaebsrddcs1s.xn--p1ai/catalog/ldsp_lamarty/ldsp_feniks_16mm_d_dub_premium_2750_1830/",
+    "image": "",
+    "price": "4000",
+    "price_text": "4 000 руб. /шт"
+  },
+  {
+    "name": "ЛДСП Хронос 10мм D* Дуб (премиум) 2750*1830",
+    "url": "https://xn--90afaebsrddcs1s.xn--p1ai/catalog/ldsp_lamarty/ldsp_khronos_10mm_d_dub_premium_2750_1830/",
+    "image": "",
+    "price": "4000",
+    "price_text": "4 000 руб. /шт"
+  },
+  {
+    "name": "ЛДСП Блэквуд 10мм D* Дуб (премиум) 2750*1830",
+    "url": "https://xn--90afaebsrddcs1s.xn--p1ai/catalog/ldsp_lamarty/ldsp_blekvud_10mm_d_dub_premium_2750_1830/",
+    "image": "",
+    "price": "4000",
+    "price_text": "4 000 руб. /шт"
+  },
+  {
+    "name": "ЛДСП Бук натуральный 22 мм T Древесные поры (классика) 2750*1830",
+    "url": "https://xn--90afaebsrddcs1s.xn--p1ai/catalog/ldsp_lamarty/ldsp_buk_naturalnyy_22_mm_t_drevesnye_pory_klassika_2750_1830_dubl/",
+    "image": "",
+    "price": "4000",
+    "price_text": "4 000 руб. /шт"
+  },
+  {
+    "name": "ЛДСП Выбеленное дерево 22мм R Рустикальное (классика)  2750*1830",
+    "url": "https://xn--90afaebsrddcs1s.xn--p1ai/catalog/ldsp_lamarty/ldsp_vybelennoe_derevo_22mm_r_rustikalnoe_klassika_2750_1830/",
+    "image": "",
+    "price": "4000",
+    "price_text": "4 000 руб. /шт"
+  },
+  {
+    "name": "ЛДСП Руанда 16мм D Дуб (премиум) 2750*1830",
+    "url": "https://xn--90afaebsrddcs1s.xn--p1ai/catalog/ldsp_lamarty/ldsp_ruanda_16mm_d_dub_premium_2750_1830/",
+    "image": "",
+    "price": "4000",
+    "price_text": "4 000 руб. /шт"
+  },
+  {
+    "name": "ЛДСП Кейптаун 16мм D Дуб (люкс) 2750*1830",
+    "url": "https://xn--90afaebsrddcs1s.xn--p1ai/catalog/ldsp_lamarty/ldsp_keyptaun_16mm_d_dub_lyuks_2750_1830/",
+    "image": "",
+    "price": "4000",
+    "price_text": "4 000 руб. /шт"
+  },
+  {
+    "name": "ЛДСП Винтаж 16мм D Дуб  (люкс) 2750*1830",
+    "url": "https://xn--90afaebsrddcs1s.xn--p1ai/catalog/ldsp_lamarty/ldsp_vintazh_16mm_d_dub_lyuks_2750_1830/",
+    "image": "",
+    "price": "4000",
+    "price_text": "4 000 руб. /шт"
+  },
+  {
+    "name": "ЛДСП Орех Бруно 16мм D* Дуб (премиум)  2750*1830",
+    "url": "https://xn--90afaebsrddcs1s.xn--p1ai/catalog/ldsp_lamarty/ldsp_orekh_bruno_16mm_d_dub_premium_2750_1830/",
+    "image": "",
+    "price": "4000",
+    "price_text": "4 000 руб. /шт"
+  },
+  {
+    "name": "ЛДСП Дуб Нейво 16мм D* Дуб (премиум) 2750*1830",
+    "url": "https://xn--90afaebsrddcs1s.xn--p1ai/catalog/ldsp_lamarty/ldsp_dub_neyvo_16mm_d_dub_premium_2750_1830/",
+    "image": "",
+    "price": "4000",
+    "price_text": "4 000 руб. /шт"
+  },
+  {
+    "name": "ЛДСП Блэквуд 16мм D* Дуб (премиум) 2750*1830",
+    "url": "https://xn--90afaebsrddcs1s.xn--p1ai/catalog/ldsp_lamarty/ldsp_blekvud_16mm_d_dub_premium_2750_1830/",
+    "image": "",
+    "price": "4000",
+    "price_text": "4 000 руб. /шт"
+  },
+  {
+    "name": "ЛДСП Хронос 16мм D* Дуб (премиум) 2750*1830",
+    "url": "https://xn--90afaebsrddcs1s.xn--p1ai/catalog/ldsp_lamarty/ldsp_khronos_16mm_d_dub_premium_2750_1830/",
+    "image": "",
+    "price": "4000",
+    "price_text": "4 000 руб. /шт"
+  },
+  {
+    "name": "ЛДСП Намибия 16мм D* Дуб (премиум)  2750*1830",
+    "url": "https://xn--90afaebsrddcs1s.xn--p1ai/catalog/ldsp_lamarty/ldsp_namibiya_16mm_d_dub_premium_2750_1830/",
+    "image": "",
+    "price": "4000",
+    "price_text": "4 000 руб. /шт"
+  },
+  {
+    "name": "ЛДСП влагостойкая Серый 16мм P Мелкая шагрень (классика) 2750*1830",
+    "url": "https://xn--90afaebsrddcs1s.xn--p1ai/catalog/ldsp_lamarty/ldsp_vlagostoykaya_seryy_16mm_p_melkaya_shagren_klassika_2750_1830/",
+    "image": "",
+    "price": "4000",
+    "price_text": "4 000 руб. /шт"
+  },
+  {
+    "name": "ЛДСП влагостойкая Белый 16мм P Мелкая шагрень (классика) 2750*1830",
+    "url": "https://xn--90afaebsrddcs1s.xn--p1ai/catalog/ldsp_lamarty/ldsp_vlagostoykaya_belyy_16mm_p_melkaya_shagren_klassika_2750_1830/",
+    "image": "",
+    "price": "4000",
+    "price_text": "4 000 руб. /шт"
+  },
+  {
+    "name": "ЛДСП влагостойкая Белый 16мм L Легкий шелк (классика) 2750*1830",
+    "url": "https://xn--90afaebsrddcs1s.xn--p1ai/catalog/ldsp_lamarty/ldsp_vlagostoykaya_belyy_16mm_l_legkiy_shelk_klassika_2750_1830/",
+    "image": "",
+    "price": "4000",
+    "price_text": "4 000 руб. /шт"
+  },
+  {
+    "name": "ЛДСП влагостойкая Маренго 16мм L Легкий шелк (премиум) 2750*1830",
+    "url": "https://xn--90afaebsrddcs1s.xn--p1ai/catalog/ldsp_lamarty/ldsp_vlagostoykaya_marengo_16mm_l_legkiy_shelk_premium_2750_1830/",
+    "image": "",
+    "price": "4000",
+    "price_text": "4 000 руб. /шт"
+  },
+  {
+    "name": "ЛДСП влагостойкая Белый 16мм G Глянец (классика) 2750*1830",
+    "url": "https://xn--90afaebsrddcs1s.xn--p1ai/catalog/ldsp_lamarty/ldsp_vlagostoykaya_belyy_16mm_g_glyanets_klassika_2750_1830/",
+    "image": "",
+    "price": "4000",
+    "price_text": "4 000 руб. /шт"
+  },
+  {
+    "name": "ЛДСП Венге Цаво 22мм древесные поры 2750*1830 ВЛД",
+    "url": "https://xn--90afaebsrddcs1s.xn--p1ai/catalog/ldsp_chfmk/ldsp_venge_tsavo_22mm_drevesnye_pory_2750_1830_vld/",
+    "image": "",
+    "price": "4000",
+    "price_text": "4 000 руб. /шт"
+  },
+  {
+    "name": "Плита МДФ AGT, серый камень супермат 728, 1220*18*2800мм односторонняя,  инд. упаковка, AGT4560/728",
+    "url": "https://xn--90afaebsrddcs1s.xn--p1ai/catalog/mdf_lmdf/plita_mdf_agt_seryy_kamen_supermat_728_1220_18_2800mm_odnostoronnyaya_ind_upakovka_agt4560_728/",
+    "image": "",
+    "price": "4000",
+    "price_text": "4 000 руб. /шт"
+  },
+  {
+    "name": "Плита МДФ AGT, белый туман глянец 670 , 1220*18*2800мм односторонняя,  инд. упаковка, AGT4560/670",
+    "url": "https://xn--90afaebsrddcs1s.xn--p1ai/catalog/mdf_lmdf/plita_mdf_agt_belyy_tuman_glyanets_670_1220_18_2800mm_odnostoronnyaya_ind_upakovka_agt4560_670/",
+    "image": "",
+    "price": "4000",
+    "price_text": "4 000 руб. /шт"
+  },
+  {
+    "name": "Плита МДФ AGT, серый кашемир матовый 387, 1220*18*2800мм односторонняя,  инд. упаковка, AGT4560/387",
+    "url": "https://xn--90afaebsrddcs1s.xn--p1ai/catalog/mdf_lmdf/plita_mdf_agt_seryy_kashemir_matovyy_387_1220_18_2800mm_odnostoronnyaya_ind_upakovka_agt4560_387/",
+    "image": "",
+    "price": "4000",
+    "price_text": "4 000 руб. /шт"
+  },
+  {
+    "name": "ЛДСП Венге темный 16мм T Древесные поры  (классика)  2750*1830",
+    "url": "https://xn--90afaebsrddcs1s.xn--p1ai/catalog/ldsp_lamarty/ldsp_venge_temnyy_16mm_t_drevesnye_pory_klassika_2750_1830/",
+    "image": "",
+    "price": "4000",
+    "price_text": "4 000 руб. /шт"
+  },
+  {
+    "name": "ЛДСП Лайм 16мм P Мелкая шагрень (премиум) 2750*1830",
+    "url": "https://xn--90afaebsrddcs1s.xn--p1ai/catalog/ldsp_lamarty/ldsp_laym_16mm_p_melkaya_shagren_premium_2750_1830/",
+    "image": "",
+    "price": "4000",
+    "price_text": "4 000 руб. /шт"
+  },
+  {
+    "name": "Плита МДФ AGT, бьянко глянец 647 , 1220*18*2800мм односторонняя,  инд. упаковка, AGT4560/647",
+    "url": "https://xn--90afaebsrddcs1s.xn--p1ai/catalog/mdf_lmdf/plita_mdf_agt_byanko_glyanets_647_1220_18_2800mm_odnostoronnyaya_ind_upakovka_agt4560_647/",
+    "image": "",
+    "price": "4000",
+    "price_text": "4 000 руб. /шт"
+  }
+];
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+const eggerItems = eggerRaw.map((item, index) => ({
+  id: `egger-${index}`,
+  name: item.name,
+  image: item.image || '/images/placeholder-egger.jpg', // все пути локальные
+  price: item.price,
+  price_text: item.price_text,
+  url: item.url,
+
+  type: 'ldsp',
+  use: 'corpus',
+  source: 'expoles',
+  category: 'ldsp_egger'
+}));
+
+const blissItems = blissRaw.map((item, index) => ({
+  id: `bliss-${index}`,
+  name: item.name,
+  // если image в JSON пустое, берём url
+  image: item.image || item.url || 'https://via.placeholder.com/400x300?text=BLISS',
+  price: item.price,
+  price_text: item.price_text,
+  url: item.url,
+
+  type: 'mdf_bliss',
+  use: 'facade',
+  source: 'moer',
+  category: 'mdf_bliss',
+}));
+
+const domItems = domRaw.map((item, index) => ({
+  id: `dom-${index}`,
+  name: item.name,
+  image: item.image ||  item.url || '/images/placeholder-dom.jpg',
+  price: item.price,
+  price_text: item.price_text,
+  url: item.url,
+
+  type: 'ldsp',          // тип материала
+  use: 'corpus',         // как и у egger для корпусов
+  source: 'dom',         // откуда данные
+  category: 'ldsp_dom'   // новая вкладка каталога
+}));
+
+const catalogItems = [
+  ...blissItems,
+  ...eggerItems,
+  ...domItems 
+];
+
+
+    // ====== СОСТОЯНИЕ ======
+    let activeSource = "";
+    let searchQuery = "";
+    let filterType = "";
+    let filterSource = "";
+    let filterUse = "";
+    let pageSize = 9;
+    let currentPage = 1;
+    const selected = [];
+
+    // ====== ЭЛЕМЕНТЫ ======
+    const categoryRow = document.getElementById("categoryRow");
+    // const pvhSubcategories = document.getElementById("pvhSubcategories");
+    const cardsGrid = document.getElementById("cardsGrid");
+    const searchInput = document.getElementById("searchInput");
+    const filterTypeEl = document.getElementById("filterType");
+    const filterSourceEl = document.getElementById("filterSource");
+    const filterUseEl = document.getElementById("filterUse");
+    const resetFiltersBtn = document.getElementById("resetFilters");
+    const loadMoreBtn = document.getElementById("loadMore");
+    const selectedList = document.getElementById("selectedList");
+    const selectedEmpty = document.getElementById("selectedEmpty");
+    const goToCalcBtn = document.getElementById("goToCalc");
+
+    // Модалка
+    const modalBackdrop = document.getElementById("modalBackdrop");
+    const modalImage = document.getElementById("modalImage");
+    const modalBadge = document.getElementById("modalBadge");
+    const modalTitle = document.getElementById("modalTitle");
+    const modalMeta = document.getElementById("modalMeta");
+    const modalPrice = document.getElementById("modalPrice");
+    const modalParams = document.getElementById("modalParams");
+    const btnSelectCorpus = document.getElementById("btnSelectCorpus");
+    const btnSelectFacade = document.getElementById("btnSelectFacade");
+    const btnOpenSource = document.getElementById("btnOpenSource");
+
+    let modalItem = null;
+
+    // ====== УТИЛИТЫ ======
+  function applyFilters() {
+  let items = catalogItems;
+
+  if (activeSource) {
+    items = items.filter((item) => item.source === activeSource);
+  }
+
+  if (searchQuery) {
+    const q = searchQuery.toLowerCase();
+    items = items.filter((item) => item.name.toLowerCase().includes(q));
+  }
+
+  if (filterType) {
+    items = items.filter((item) => item.type === filterType);
+  }
+
+  if (filterSource) {
+    items = items.filter((item) => item.source === filterSource);
+  }
+
+  if (filterUse) {
+    items = items.filter((item) => item.use === filterUse);
+  }
+
+  return items;
+}
+
+
+
+    function renderCards() {
+      const all = applyFilters();
+      const start = 0;
+      const end = pageSize * currentPage;
+      const slice = all.slice(start, end);
+
+      cardsGrid.innerHTML = "";
+
+      if (slice.length === 0) {
+        const empty = document.createElement("div");
+        empty.textContent =
+          "По вашему запросу ничего не найдено. Попробуйте изменить фильтры.";
+        empty.style.fontSize = "14px";
+        empty.style.color = "#777";
+        empty.style.padding = "16px";
+        cardsGrid.appendChild(empty);
+        loadMoreBtn.style.display = "none";
+        return;
+      }
+
+      slice.forEach((item) => {
+        const card = document.createElement("article");
+        card.className = "card";
+        card.dataset.id = item.id;
+
+        card.innerHTML = `
+          <div class="card-image">
+            <img src="${item.image}" alt="${item.name}" loading="lazy">
+          </div>
+          <div class="card-body">
+            <div class="card-name">${item.name}</div>
+            <div class="card-price">${item.price_text}</div>
+            <div class="card-meta">
+              ${item.source.toUpperCase()} • ${
+          item.use === "corpus"
+            ? "Корпус"
+            : item.use === "facade"
+            ? "Фасады"
+            : "Корпус + фасады"
+        }
+            </div>
+            <div class="card-cta">Нажмите, чтобы посмотреть крупно</div>
+          </div>
+        `;
+
+        card.addEventListener("click", () => openModal(item.id));
+        cardsGrid.appendChild(card);
+      });
+
+      loadMoreBtn.style.display = all.length > end ? "inline-flex" : "none";
+    }
+
+    function renderSelected() {
+      if (selected.length === 0) {
+        selectedEmpty.style.display = "block";
+        selectedList.innerHTML = "";
+        return;
+      }
+      selectedEmpty.style.display = "none";
+      selectedList.innerHTML = "";
+      selected.forEach((item) => {
+        const li = document.createElement("div");
+        li.className = "selected-item";
+        li.textContent = `${item.name} — ${item.price_text}`;
+        selectedList.appendChild(li);
+      });
+    }
+
+    // function setActiveCategory(cat) {
+    //   activeCategory = cat;
+    //   currentPage = 1;
+
+    //   categoryRow.querySelectorAll(".category-chip").forEach((chip) => {
+    //     chip.classList.toggle("active", chip.dataset.category === cat);
+    //   });
+
+    //   if (cat === "pvh_fasade") {
+    //     pvhSubcategories.classList.add("visible");
+    //   } else {
+    //     pvhSubcategories.classList.remove("visible");
+    //   }
+
+    //   renderCards();
+    // }
+
+    // function setActivePvhSubtype(sub) {
+    //   activePvhSubtype = sub;
+    //   currentPage = 1;
+    //   pvhSubcategories.querySelectorAll(".pvh-chip").forEach((chip) => {
+    //     chip.classList.toggle("active", chip.dataset.subtype === sub);
+    //   });
+    //   renderCards();
+    // }
+
+    function openModal(id) {
+      modalItem = catalogItems.find((it) => it.id === id);
+      if (!modalItem) return;
+
+      modalImage.src = modalItem.image;
+      modalTitle.textContent = modalItem.name;
+      modalBadge.textContent = modalItem.source.toUpperCase();
+      modalPrice.textContent = modalItem.price_text;
+      modalMeta.textContent =
+        modalItem.use === "corpus"
+          ? "Материал для корпуса"
+          : modalItem.use === "facade"
+          ? "Материал для фасадов"
+          : "Подходит для корпуса и фасадов";
+
+      modalParams.textContent = `Тип: ${
+        modalItem.type
+      }. Категория: ${modalItem.category}${
+        modalItem.subtype ? " / " + modalItem.subtype : ""
+      }.`;
+
+      modalBackdrop.classList.add("visible");
+    }
+
+    function closeModal() {
+      modalBackdrop.classList.remove("visible");
+      modalItem = null;
+    }
+
+    function addSelected(role) {
+      if (!modalItem) return;
+      selected.push({
+        ...modalItem,
+        role,
+      });
+      renderSelected();
+      closeModal();
+    }
+
+    if (categoryRow) {
+  categoryRow.addEventListener("click", (e) => {
+    const btn = e.target.closest(".category-chip");
+    if (!btn) return;
+
+    activeSource = btn.dataset.source || "";
+    currentPage = 1;
+
+    categoryRow.querySelectorAll(".category-chip").forEach((chip) => {
+      chip.classList.toggle("active", chip === btn);
+    });
+
+    renderCards();
+  });
+}
+    // ====== СЛУШАТЕЛИ ======
+    // categoryRow.addEventListener("click", (e) => {
+    //   const btn = e.target.closest(".category-chip");
+    //   if (!btn) return;
+    //   setActiveCategory(btn.dataset.category);
+    // });
+
+    // pvhSubcategories.addEventListener("click", (e) => {
+    //   const btn = e.target.closest(".pvh-chip");
+    //   if (!btn) return;
+    //   setActivePvhSubtype(btn.dataset.subtype);
+    // });
+
+    searchInput.addEventListener("input", (e) => {
+      searchQuery = e.target.value.trim();
+      currentPage = 1;
+      renderCards();
+    });
+
+    filterTypeEl.addEventListener("change", (e) => {
+      filterType = e.target.value;
+      currentPage = 1;
+      renderCards();
+    });
+
+    filterSourceEl.addEventListener("change", (e) => {
+      filterSource = e.target.value;
+      currentPage = 1;
+      renderCards();
+    });
+
+    filterUseEl.addEventListener("change", (e) => {
+      filterUse = e.target.value;
+      currentPage = 1;
+      renderCards();
+    });
+
+    resetFiltersBtn.addEventListener("click", () => {
+      searchQuery = "";
+      filterType = "";
+      filterSource = "";
+      filterUse = "";
+      searchInput.value = "";
+      filterTypeEl.value = "";
+      filterSourceEl.value = "";
+      filterUseEl.value = "";
+      currentPage = 1;
+      renderCards();
+    });
+
+    loadMoreBtn.addEventListener("click", () => {
+      currentPage++;
+      renderCards();
+    });
+
+    // modalBackdrop.addEventListener("click", (e) => {
+    //   if (e.target === modalBackdrop) closeModal();
+    // });
+
+    // btnSelectCorpus.addEventListener("click", () => addSelected("corpus"));
+    // btnSelectFacade.addEventListener("click", () => addSelected("facade"));
+
+    // btnOpenSource.addEventListener("click", () => {
+    //   if (modalItem && modalItem.url) {
+    //     window.open(modalItem.url, "_blank");
+    //   }
+    // });
+
+    // goToCalcBtn.addEventListener("click", () => {
+     
+    //   alert(
+    //     "Здесь будет переход в калькулятор с заранее выбранными материалами."
+    //   );
+    // });
+
+
+
+
+
+
+    // ====== ИНИЦИАЛИЗАЦИЯ ======
+    renderCards();
+    renderSelected();

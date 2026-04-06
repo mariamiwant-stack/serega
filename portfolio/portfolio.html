@@ -1,0 +1,381 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <title>Реализованные проекты кухонь и шкафов</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="/styles.css" />
+  <link rel="stylesheet" href="portfolio.css" />
+  <link rel="icon" href="/browser.png" sizes="32x32" type="image/png">
+</head>
+<body>
+<header class="site-header">
+  <div class="container header-inner">
+    <a href="/" class="logo">
+      <span class="logo-mark"></span>
+      <span class="logo-text"></span>
+    </a>
+
+    <nav class="main-nav">
+      <a href="/catalog/catalog.html" class="nav-link">Каталог</a>
+      <a href="/calc/calc.html" class="nav-link">Калькулятор</a>
+      <a href="/portfolio/portfolio.html" class="nav-link">Портфолио</a>
+      <a href="/about/about2.html" class="nav-link">О нас</a>
+    </nav>
+
+    <a href="https://t.me/Remont_2000" class="phone-pill">
+      <span class="phone-number">+7 (999) 655-58-87</span>
+      <span class="phone-caption">Перезвонить вам?</span>
+    </a>
+
+    <button class="burger" aria-label="Открыть меню">
+      <span></span><span></span><span></span>
+    </button>
+  </div>
+</header>
+
+<main class="page">
+
+  <!-- HERO -->
+  <section class="hero">
+    <div class="hero-inner">
+      <div class="hero-content">
+        <h1>Реализованные проекты кухонь и шкафов</h1>
+        <p>Посмотрите наши выполненные проекты — от лаконичных кухонь до встроенных шкафов. Все решения изготовлены по индивидуальным размерам, с установкой и гарантией.</p>
+        <a href="/calc/calc.html" class="hero-cta-main" id="heroToFormBtn">
+  Рассчитать подобный проект
+</a>
+        <div class="hero-cta-caption">Уточните стоимость аналогичной кухни или шкафа под ваш размер.</div>
+      </div>
+      <div class="hero-side">
+        <div class="hero-stats">
+          <div class="hero-stats-title">Наш опыт</div>
+          <div class="hero-stats-main">
+            <div class="hero-stat">
+              <span>150+</span>
+              <span>реализованных проектов</span>
+            </div>
+            <div class="hero-stat">
+              <span>5 лет</span>
+              <span>гарантия на мебель</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- FILTER BAR -->
+  <section class="filter-bar">
+    <div class="filter-group">
+      <span class="filter-label">Тип мебели</span>
+      <select class="filter-select" id="filterType">
+        <option value="all">Все</option>
+        <option value="kitchen">Кухни</option>
+        <option value="wardrobe-coupe">Шкафы-купе</option>
+        <option value="wardrobe-swing">Распашные шкафы</option>
+        <option value="closet">Гардеробные</option>
+        <option value="other">Комоды и другое</option>
+      </select>
+    </div>
+    <div class="filter-group">
+      <span class="filter-label">Стиль</span>
+      <select class="filter-select" id="filterStyle">
+        <option value="all">Любой</option>
+        <option value="modern">Современный</option>
+        <option value="classic">Классика</option>
+        <option value="minimal">Минимализм</option>
+        <option value="loft">Лофт</option>
+      </select>
+    </div>
+    <div class="filter-group">
+      <span class="filter-label">Материал</span>
+      <select class="filter-select" id="filterMaterial">
+        <option value="all">Любой</option>
+        <option value="ldsp">ЛДСП</option>
+        <option value="mdf">МДФ</option>
+        <option value="premium">Премиум</option>
+      </select>
+    </div>
+    <div class="filter-group">
+      <span class="filter-label">Размер</span>
+      <select class="filter-select" id="filterSize">
+        <option value="all">Любой</option>
+        <option value="2-4">2–4 м</option>
+        <option value="4-6">4–6 м</option>
+        <option value="6plus">6+ м</option>
+      </select>
+    </div>
+    <div class="filter-group filter-sort">
+      <span class="filter-label">Сортировка</span>
+      <select class="filter-select" id="filterSort">
+        <option value="date">По дате</option>
+        <option value="popular">По популярности</option>
+        <option value="price">По цене</option>
+      </select>
+    </div>
+  </section>
+
+  <!-- PROJECTS -->
+  <section class="projects-section">
+    <div class="projects-grid" id="projectsGrid">
+      <!-- Карточки будут добавляться JS -->
+    </div>
+    <div class="projects-more">
+      <button id="loadMoreBtn">Показать ещё</button>
+    </div>
+  </section>
+
+  <!-- TRUST / REVIEWS -->
+  <section class="trust-section">
+    <h2 class="section-title">Реальные фото, реальные клиенты</h2>
+    <p class="section-subtitle">Отзывы заказчиков, которые уже получили свою кухню или шкаф под ключ.</p>
+    <div class="reviews-grid">
+      <article class="review-card">
+        <div class="review-header">
+          <div class="review-avatar"></div>
+          <div class="review-meta">
+            <div class="review-name">Мария, ЖК «Солнечный город»</div>
+            <div class="review-location">Кухня, 2025 год</div>
+          </div>
+        </div>
+        <div class="review-text">Быстро, чётко, кухня получилась как на визуализации. Учли все пожелания по хранению и технике, монтаж занял всего один день.</div>
+      </article>
+      <article class="review-card">
+        <div class="review-header">
+          <div class="review-avatar"></div>
+          <div class="review-meta">
+            <div class="review-name">Алексей, Васильевский остров</div>
+            <div class="review-location">Шкаф-купе, 2024 год</div>
+          </div>
+        </div>
+        <div class="review-text">Собрали встроенный шкаф по стене, все размеры совпали до миллиметра. Очень аккуратный монтаж, за собой всё убрали.</div>
+      </article>
+      <article class="review-card">
+        <div class="review-header">
+          <div class="review-avatar"></div>
+          <div class="review-meta">
+            <div class="review-name">Екатерина, Купчино</div>
+            <div class="review-location">Гардеробная, 2024 год</div>
+          </div>
+        </div>
+        <div class="review-text">Помогли продумать хранение для всей семьи, сделали несколько вариантов планировки. Фурнитура работает мягко, ничего не люфтит.</div>
+      </article>
+    </div>
+  </section>
+
+  <!-- CTA FORM -->
+  <section class="cta-section" id="calcForm">
+    <div class="cta-card">
+      <h2>Хотите похожую кухню или шкаф?</h2>
+      <p>Заполните короткую форму — рассчитаем стоимость за 1 день.</p>
+      <form id="ctaForm">
+        <div class="form-grid">
+          <div class="form-field">
+            <label class="form-label" for="name">Имя</label>
+            <input class="form-input" id="name" name="name" type="text" placeholder="Ваше имя">
+          </div>
+          <div class="form-field">
+            <label class="form-label" for="phone">Телефон</label>
+            <input class="form-input" id="phone" name="phone" type="tel" placeholder="+7 (___) ___-__-__">
+          </div>
+          <div class="form-field">
+            <label class="form-label" for="type">Тип мебели</label>
+            <select class="form-select" id="type" name="type">
+              <option value="">Не выбрано</option>
+              <option>Кухня</option>
+              <option>Шкаф-купе</option>
+              <option>Распашной шкаф</option>
+              <option>Гардеробная</option>
+              <option>Другое</option>
+            </select>
+          </div>
+          <div class="form-field">
+            <label class="form-label" for="comment">Комментарий</label>
+            <textarea class="form-textarea" id="comment" name="comment" placeholder="Размеры или ссылка на понравившийся проект"></textarea>
+          </div>
+        </div>
+        <div class="cta-submit">
+          <button type="submit" class="btn-primary">Получить расчёт</button>
+          <div class="form-caption">Отправляя форму, вы соглашаетесь с политикой конфиденциальности.</div>
+        </div>
+      </form>
+    </div>
+    <aside class="cta-aside">
+      <div class="cta-aside-title">Что вы получите после заявки</div>
+      <div class="cta-aside-row">
+        Бесплатный замер и консультацию.<span>Замерщик приедет в удобное время и подскажет по планировке.</span>
+      </div>
+      <div class="cta-aside-row">
+        Детальную смету с вариантами материалов.<span>От эконом‑решений до премиум‑комплектов.</span>
+      </div>
+      <div class="cta-aside-row">
+        Сроки производства и монтажа.<span>Обычно от 20 до 40 дней — в зависимости от сложности.</span>
+      </div>
+    </aside>
+  </section>
+
+  <!-- BOTTOM OFFER -->
+  <section class="bottom-offer">
+    <div class="bottom-offer-inner">
+      <div class="bottom-offer-text">
+        <h3>Любая кухня или шкаф под ваши размеры — с гарантией до 5 лет.</h3>
+        <p>Начните с бесплатного замера и расчёта, чтобы понимать бюджет и сроки уже на первом этапе.</p>
+      </div>
+      <div class="bottom-offer-buttons">
+        <button class="btn-primary" id="bottomToFormBtn">Оставить заявку</button>
+        <a href="/catalog/catalog.html" class="btn btn-outline-light">
+  Перейти в каталог материалов
+</a>
+      </div>
+    </div>
+  </section>
+
+  
+
+</main>
+
+<!-- FIXED CTA -->
+<div class="fixed-cta" id="fixedCta">
+  <button id="fixedToFormBtn"><span>↗</span> Рассчитать проект</button>
+</div>
+
+<!-- MODAL PROJECT -->
+<div class="modal-backdrop" id="projectModalBackdrop">
+  <div class="modal" role="dialog" aria-modal="true">
+    <button class="modal-close" id="modalCloseBtn" aria-label="Закрыть">×</button>
+    <div class="modal-gallery" id="modalGallery">
+      <!-- Картинки подставит JS -->
+    </div>
+    <div class="modal-main-info">
+      <h2 id="modalTitle">Название проекта</h2>
+      <p id="modalInfo">Тип мебели · размеры · материалы фасадов и корпуса · фурнитура</p>
+      <div class="modal-section-title">Что сделано</div>
+      <ul class="modal-list" id="modalDoneList">
+        <li>Проектирование и 3D‑визуализация</li>
+        <li>Изготовление корпуса и фасадов</li>
+        <li>Монтаж и подключение техники</li>
+      </ul>
+      <div class="modal-price" id="modalPrice">Проект выполнен под ключ от 198 000 ₽</div>
+      <div class="modal-price-caption">Цена указана для комплектации в ЛДСП EGGER. Возможны другие материалы и конфигурации.</div>
+      <div class="modal-cta">
+        <button class="btn-primary" id="modalCtaBtn">Хочу похожий проект</button>
+      </div>
+      <div class="modal-related">
+        <div class="modal-section-title">Похожие работы</div>
+        <div class="modal-related-list" id="modalRelated">
+          <!-- Мини-карточки подставит JS -->
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+<footer class="site-footer" id="contacts">
+  <div class="container footer-top">
+    <div class="footer-col footer-col-wide">
+      <h3 class="footer-heading">Связаться с нами</h3>
+      <a href="tel:+78005555555" class="footer-phone">8 (999) 655-58-87</a>
+      <p class="footer-note">Бесплатно по России</p>
+
+      <div class="footer-subblock">
+        <p class="footer-label">Написать руководству:</p>
+        <a href="mailto:2207120@gmail.com" class="footer-link">2207120@gmail.com</a>
+      </div>
+
+      <div class="footer-subblock">
+        <p class="footer-label">Написать отделу маркетинга и PR:</p>
+        <a href="mailto:marketing@alterstroy.ru" class="footer-link">marketing@alterstroy.ru</a>
+      </div>
+
+      <div class="footer-subblock">
+        <a href="#" class="footer-link">Обратный звонок</a><br>
+        <a href="#" class="footer-link">Шоурумы</a>
+      </div>
+    </div>
+
+    <div class="footer-col">
+      <h3 class="footer-heading">Режим работы</h3>
+      <p class="footer-text">ежедневно с 10:00 до 22:00</p>
+
+      <h3 class="footer-heading footer-heading-spaced">Способы оплаты</h3>
+      <div class="footer-pay">
+        <span class="pay-card">VISA</span>
+        <span class="pay-card">Mastercard</span>
+        <span class="pay-card">МИР</span>
+      </div>
+      <ul class="footer-list">
+        <li>Наличные</li>
+        <li>Безналичный перевод</li>
+        <li>Рассрочка без %</li>
+      </ul>
+    </div>
+
+    <div class="footer-col">
+      <h3 class="footer-heading">Покупателю</h3>
+      <ul class="footer-list">
+        <li><a href="#" class="footer-link">О компании</a></li>
+        <li><a href="#" class="footer-link">Проекты</a></li>
+        <li><a href="#" class="footer-link">Новости и статьи</a></li>
+        <li><a href="#" class="footer-link">Вакансии</a></li>
+        <li><a href="#" class="footer-link">Гарантия и возврат</a></li>
+        <li><a href="#" class="footer-link">Доставка и оплата</a></li>
+        <li><a href="#" class="footer-link">Карта сайта</a></li>
+        <li><a href="#" class="footer-link">Скачать каталог</a></li>
+      </ul>
+    </div>
+
+    <div class="footer-col">
+      <h3 class="footer-heading">Мебель</h3>
+      <ul class="footer-list">
+        <li><a href="#" class="footer-link">Кухни</a></li>
+        <li><a href="#" class="footer-link">Шкафы‑купе</a></li>
+        <li><a href="#" class="footer-link">Распашные шкафы</a></li>
+        <li><a href="#" class="footer-link">Гардеробные</a></li>
+        <li><a href="#" class="footer-link">Комоды и тумбы</a></li>
+        <li><a href="#" class="footer-link">Мебель для гостиных</a></li>
+        <li><a href="#" class="footer-link">Мебель для детских</a></li>
+      </ul>
+    </div>
+
+    <div class="footer-col">
+      <h3 class="footer-heading">Отзывы покупателей</h3>
+      <ul class="footer-list">
+        <li>Яндекс ★★★★★</li>
+        <li>Google ★★★★★</li>
+      </ul>
+
+      <h3 class="footer-heading footer-heading-spaced">Мы в соцсетях</h3>
+      <ul class="footer-list">
+        <li><a href="#" class="footer-link">ВКонтакте</a></li>
+        <li><a href="#" class="footer-link">Telegram</a></li>
+        <li><a href="#" class="footer-link">YouTube</a></li>
+      </ul>
+    </div>
+  </div>
+
+  <div class="container footer-bottom">
+    <div class="footer-bottom-left">
+      <div class="footer-logo">
+        <span class="logo-mark"></span>
+        <span class="logo-text"></span>
+      </div>
+      <a href="#" class="footer-link footer-privacy">
+        Политика конфиденциальности
+      </a>
+    </div>
+
+    <div class="footer-bottom-right">
+      <p class="footer-copy">
+        © 2026 « ». Все права защищены.
+      </p>
+      <p class="footer-copy">
+        г. Владивосток, ул. Харьковская, д. 4
+      </p>
+    </div>
+  </div>
+</footer>
+<script src="/fonts.js"></script>
+<script src="/portfolio/portfolio.js"></script>
+<script src="/server/script.js"></script>
+</body>
+</html>

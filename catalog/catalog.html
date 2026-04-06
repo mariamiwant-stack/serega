@@ -1,0 +1,186 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+<meta charset="UTF-8" />
+<title>Каталог материалов</title>
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Manrope:wght@500;600;700;800&family=DM+Sans:wght@400;500;600&display=swap" rel="stylesheet">
+  <!-- Вот здесь подключаем стили -->
+<link rel="stylesheet" href="/catalog/catalog.css" />
+<link rel="stylesheet" href="/styles.css" />
+<link rel="icon" href="/browser.png" sizes="32x32" type="image/png">
+</head>
+
+<body>
+  
+<header class="site-header">
+  <div class="container header-inner">
+    <a href="/" class="logo">
+      <span class="logo-mark"></span>
+      <span class="logo-text"></span>
+    </a>
+
+    <nav class="main-nav">
+      <a href="/catalog/catalog.html" class="nav-link">Каталог</a>
+      <a href="/calc/calc.html" class="nav-link">Калькулятор</a>
+      <a href="/portfolio/portfolio.html" class="nav-link">Портфолио</a>
+      <a href="/about/about2.html" class="nav-link">О нас</a>
+    </nav>
+
+    <a href="https://t.me/Remont_2000" class="phone-pill">
+      <span class="phone-number">+7 (999) 655-58-87</span>
+      <span class="phone-caption">Перезвонить вам?</span>
+    </a>
+
+    <button class="burger" aria-label="Открыть меню">
+      <span></span><span></span><span></span>
+    </button>
+  </div>
+</header>
+<div class="page">
+    <h1>Каталог материалов</h1>
+    <p class="subtitle">
+      Здесь собраны основные материалы для корпусов и фасадов: ЛДСП, МДФ,
+      фасады ПВХ, а также фрезеровки. Цены и декоры используются в калькуляторе
+      при расчёте стоимости изделий.
+    </p>
+
+    <!-- Верхний уровень: категории -->
+<div class="category-row" id="categoryRow">
+  <!-- ВСЕ источники -->
+  <button class="category-chip active" data-source="">
+    Все товары
+  </button>
+
+  <!-- Только EGGER -->
+  <button class="category-chip" data-source="expoles">
+    ЛДСП / ЛМДФ EGGER
+  </button>
+
+  <!-- Только DOM -->
+  <button class="category-chip" data-source="dom">
+    ЛДСП Lamarty
+  </button>
+
+  <!-- Только BLISS -->
+  <button class="category-chip" data-source="moer">
+    МДФ фасады BLISS
+  </button>
+</div>
+
+
+    <!-- Второй уровень для фасадов ПВХ -->
+    <div class="pvh-subcategories" id="pvhSubcategories">
+      <button class="pvh-chip active" data-subtype="frez">
+        Фрезеровки
+      </button>
+      <button class="pvh-chip" data-subtype="decor">
+        Декоративные элементы
+      </button>
+      <button class="pvh-chip" data-subtype="cover">
+        Покрытия
+      </button>
+      <button class="pvh-chip" data-subtype="patina">
+        Патина
+      </button>
+      <button class="pvh-chip" data-subtype="door">
+        Двери для шкафов
+      </button>
+    </div>
+
+    Фильтры и поиск
+    <div class="filters">
+      <div class="filters-main">
+        <div class="field">
+        
+          <input
+            type="text"
+            id="searchInput"
+            placeholder="Название или артикул"
+          />
+        </div>
+        <div class="field">
+       
+          <select id="filterType">
+            <option value="">Любой</option>
+            <option value="ldsp">ЛДСП / ЛМДФ</option>
+            <option value="mdf">МДФ</option>
+            <option value="pvh_fasade">Фасады ПВХ</option>
+          </select>
+        </div>
+        <div class="field">
+          
+          <select id="filterSource">
+            <option value="">Любой</option>
+            <option value="expoles">EGGER</option>
+            <option value="moer">Bliss (MOER)</option>
+            <option value="dom">Дом</option>
+            <option value="f3online">ЭФТРИ</option>
+          </select>
+        </div>
+        <div class="field">
+          
+          <select id="filterUse">
+            <option value="">Любое</option>
+            <option value="corpus">Корпус</option>
+            <option value="facade">Фасады</option>
+            <option value="both">Корпус + фасады</option>
+          </select>
+        </div>
+      </div>
+
+      <div class="filters-actions">
+        <button class="btn secondary" id="resetFilters">Сбросить</button>
+        
+      </div>
+    </div>
+
+    <!-- Макет: сетка + выбранные материалы -->
+    <div class="catalog-layout">
+      <!-- Сетка карточек -->
+      <div>
+        <div class="cards-grid" id="cardsGrid"></div>
+
+        <div class="pagination">
+          <button class="btn secondary" id="loadMore">Показать ещё</button>
+        </div>
+      </div>
+
+    </div>
+ </div>
+
+  <!-- Модалка "Подробнее" -->
+  <div class="modal-backdrop" id="modalBackdrop">
+    <div class="modal" id="modal">
+      <div class="modal-image">
+        <img src="" alt="" id="modalImage" />
+      </div>
+      <div class="modal-body">
+        <div class="badge" id="modalBadge"></div>
+        <h2 class="modal-title" id="modalTitle"></h2>
+        <div class="modal-meta" id="modalMeta"></div>
+        <div class="modal-price" id="modalPrice"></div>
+        <div class="modal-params" id="modalParams"></div>
+        <div class="modal-actions">
+          <button class="btn secondary" id="btnSelectCorpus">
+            Выбрать для корпуса
+          </button>
+          <button class="btn secondary" id="btnSelectFacade">
+            Выбрать для фасадов
+          </button>
+          <button class="btn secondary" id="btnOpenSource" type="button">
+            Открыть на сайте поставщика
+          </button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+<script src="fonts.js"></script>
+<script src="wardrobe-configurator.js"></script>
+<script src="catalog.js"></script>
+</body>
+</html>

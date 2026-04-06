@@ -1,0 +1,472 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Калькулятор мебели под ключ — Владивосток</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  
+  <link rel="icon" href="/browser.png" sizes="32x32" type="image/png">
+  <link rel="stylesheet" href="/styles.css">
+  <link rel="stylesheet" href="/calc/calc.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/html2pdf.js/0.10.1/html2pdf.bundle.min.js"
+        integrity="sha512-GsLlZN/3F2ErC5ifS5QtgpiJtWd43JWSuIgh7mbzZ8zBps+dvLusV+eNQATqgA/HdeKFVgA5v3S/cIrLF7QnIg=="
+        crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+   <script src="/calc/calc.js"></script>
+</head>
+<body class="min-h-screen">
+<header class="site-header">
+  <div class="container header-inner">
+    <a href="/" class="logo">
+      <span class="logo-mark"></span>
+      <span class="logo-text"></span>
+    </a>
+
+    <nav class="main-nav">
+      <a href="/catalog/catalog.html" class="nav-link">Каталог</a>
+      <a href="/calc/calc.html" class="nav-link">Калькулятор</a>
+      <a href="/portfolio/portfolio.html" class="nav-link">Портфолио</a>
+      <a href="/about/about2.html" class="nav-link">О нас</a>
+    </nav>
+
+    <a href="https://t.me/Remont_2000" class="phone-pill">
+      <span class="phone-number">+7 (999) 655-58-87</span>
+      <span class="phone-caption">Перезвонить вам?</span>
+    </a>
+
+    <button class="burger" aria-label="Открыть меню">
+      <span></span><span></span><span></span>
+    </button>
+  </div>
+</header>
+
+
+
+<!-- <div class="shell mx-auto px-4 sm:px-6 lg:px-4 py-10 sm:py-14">
+  
+      <div>
+        <p class="uppercase tracking-[0.2em] text-xs text-neutral-500 mb-3">Владивосток • изготовление под ключ</p>
+        <h1 class="text-3xl sm:text-4xl md:text-5xl font-semibold tracking-tight mb-4">
+          Калькулятор<br class="hidden sm:block">
+          с точным расчётом<br class="hidden sm:block">
+           стоимости
+        </h1>
+        <p class="text-sm sm:text-base text-neutral-400 max-w-md">
+          Введите размеры, выберите уровень исполнения и получите аккуратный расчёт «под ключ» — без скрытых доплат.
+        </p>
+      </div>
+  </div> -->
+
+
+
+
+
+
+
+  <section class="furniture-ambient">
+  <div class="fa-layer fa-layer-1"></div>
+  <div class="fa-layer fa-layer-2"></div>
+  <div class="fa-layer fa-layer-3"></div>
+  <div class="fa-layer fa-layer-4"></div>
+
+  <div class="fa-content">
+    <p class="fa-label">Владивосток • изготовление под ключ</p>
+    <h2 class="fa-title">Калькулятор<br class="hidden sm:block">
+          </h2>
+    <p class="fa-subtitle">
+       Введите размеры, выберите уровень исполнения и получите аккуратный расчёт «под ключ» — без скрытых доплат.
+    </p>
+  </div>
+</section>
+
+
+
+
+
+
+
+
+
+
+
+    <div class="containner_padd">
+    <!-- Тип мебели -->
+    <div class="flex flex-wrap gap-2 mb-9">
+      <button id="type0" onclick="selectType(0)"
+              class="type-pill type-pill-active px-5 py-2 text-sm flex items-center gap-2">
+        <span class="h-6 w-6 rounded-full bg-neutral-900 flex items-center justify-center text-[11px]">
+          <i class="fas fa-utensils"></i>
+        </span>
+        <span>Кухня</span>
+      </button>
+      <button id="type1" onclick="selectType(1)"
+              class="type-pill px-5 py-2 text-sm flex items-center gap-2 text-neutral-300">
+        <span class="h-6 w-6 rounded-full bg-neutral-900 flex items-center justify-center text-[11px]">
+          <i class="fas fa-door-closed"></i>
+        </span>
+        <span>Шкаф-купе</span>
+      </button>
+      <button id="type2" onclick="selectType(2)"
+              class="type-pill px-5 py-2 text-sm flex items-center gap-2 text-neutral-300">
+        <span class="h-6 w-6 rounded-full bg-neutral-900 flex items-center justify-center text-[11px]">
+          <i class="fas fa-door-open"></i>
+        </span>
+        <span>Распашной шкаф</span>
+      </button>
+    </div>
+
+    <div class="grid lg:grid-cols-12 gap-8 lg:gap-10 items-start">
+      <!-- Фото / превью -->
+      <section class="lg:col-span-7 card-elevated overflow-hidden">
+        <div class="preview-frame p-4 sm:p-6">
+          <div class="aspect-[4/3] sm:aspect-[16/10] overflow-hidden rounded-3xl bg-black/40">
+            <img id="preview" src="" alt="Пример мебели"
+                 class="w-full h-full object-cover grayscale-[65%] contrast-110" />
+          </div>
+        </div>
+        <div class="preview-meta px-6 py-4 flex flex-col sm:flex-row sm:items-center justify-between gap-3 text-xs sm:text-sm text-neutral-400">
+          <div class="flex items-center gap-3">
+            <span class="inline-flex h-6 w-6 items-center justify-center rounded-full bg-neutral-900 text-[11px]">
+              <i class="fas fa-layer-group"></i>
+            </span>
+            <span>Пример выбранного уровня исполнения «под ключ»</span>
+          </div>
+          <div class="flex items-center gap-3">
+            <span class="h-px w-10 bg-neutral-700 hidden sm:block"></span>
+            <span class="uppercase tracking-[0.18em] text-[10px] text-neutral-500">
+              изготовление • монтаж • доставка
+            </span>
+          </div>
+        </div>
+      </section>
+
+      <!-- Расчёт -->
+      <section class="lg:col-span-5 card-elevated px-4 sm:px-6 md:px-7 py-6 sm:py-7">
+        <h2 id="calc-title" class="text-xl sm:text-2xl font-semibold tracking-tight mb-6">
+          Рассчитать кухню под ключ
+        </h2>
+
+        <!-- Длина -->
+        <div class="mb-6">
+          <label id="length-label" class="block text-xs uppercase tracking-[0.18em] text-neutral-500 mb-2">
+            Длина по фасадам, пог. м
+          </label>
+          <div class="flex items-center gap-3">
+            <input id="length" type="number" step="0.1" min="0.5" value="3.2"
+                   class="field w-full px-6 py-3 text-lg sm:text-xl" />
+            <span class="text-xs text-neutral-500 uppercase tracking-[0.18em]">м.п.</span>
+          </div>
+        </div>
+
+        <!-- Вкладки фасадов -->
+        <div id="facade-tabs" class="flex gap-6 border-b border-neutral-800 mb-6 hidden">
+          <button id="tab0" onclick="switchFacadeTab(0)"
+                  class="pill-tab pill-tab-active text-xs">
+            ЛДСП
+          </button>
+          <button id="tab1" onclick="switchFacadeTab(1)"
+                  class="pill-tab text-xs">
+            МДФ
+          </button>
+        </div>
+
+        <!-- Уровни исполнения -->
+        <div id="cards" class="grid grid-cols-1 sm:grid-cols-3 gap-4 mb-7"></div>
+
+        <!-- Столешница -->
+        <div id="countertop-block" class="mb-6 hidden">
+          <label class="block text-xs uppercase tracking-[0.18em] text-neutral-500 mb-2">
+            Столешница
+          </label>
+          <select id="countertop"
+                  class="select-field w-full px-5 py-3 text-sm sm:text-base">
+            <option value="5000">ЛДСП — 5 000 ₽/пог.м</option>
+            <option value="29000" selected>Кварц — 29 000 ₽/пог.м</option>
+            <option value="35000">Компакт-плита — 35 000 ₽/пог.м</option>
+          </select>
+        </div>
+
+        <!-- Доставка + срок -->
+        <div class="grid sm:grid-cols-2 gap-4 mb-6">
+          <div>
+            <label class="block text-xs uppercase tracking-[0.18em] text-neutral-500 mb-2">
+              Доставка
+            </label>
+            <select id="delivery"
+                    class="select-field w-full px-5 py-3 text-sm sm:text-base">
+              <option value="5000">Владивосток — 5 000 ₽</option>
+              <option value="5000">Пригород — 5 000 ₽</option>
+            </select>
+          </div>
+          <div>
+            <label class="block text-xs uppercase tracking-[0.18em] text-neutral-500 mb-2">
+              Срок изготовления
+            </label>
+            <select id="term"
+                    class="select-field w-full px-5 py-3 text-sm sm:text-base">
+              <option value="0">Стандарт — 5 дней</option>
+              <option value="10000">Срочно — 3–4 дня (+10 000 ₽)</option>
+            </select>
+          </div>
+        </div>
+
+        <!-- Дополнительно -->
+        <div class="mb-7">
+          <label class="block text-xs uppercase tracking-[0.18em] text-neutral-500 mb-3">
+            Дополнительно
+          </label>
+          <label class="flex items-center gap-3 text-sm sm:text-base text-neutral-200 cursor-pointer">
+            <input type="checkbox" id="plinth"
+                   class="h-4 w-4 rounded border-neutral-600 bg-neutral-900 text-white focus:ring-0">
+            <span>Плинтус (+800 ₽/пог.м)</span>
+          </label>
+        </div>
+
+        <!-- Итог -->
+        <div class="rounded-3xl border border-neutral-800 bg-gradient-to-tr from-neutral-900 via-black to-neutral-950 px-5 py-5 mb-6">
+          <div class="flex items-center justify-between mb-3">
+            <p class="text-xs uppercase tracking-[0.18em] text-neutral-500">
+              Итого под ключ
+            </p>
+            <p class="text-[10px] uppercase tracking-[0.18em] text-neutral-600">
+              изготовление • монтаж • доставка
+            </p>
+          </div>
+          <div id="total" class="text-3xl sm:text-4xl md:text-5xl font-semibold tracking-tight">
+            —
+          </div>
+        </div>
+
+        <!-- Кнопки -->
+        <div class="grid gap-3">
+          <button onclick="openForm()"
+                  class="btn-primary w-full py-3 sm:py-3.5 text-sm sm:text-base font-medium flex items-center justify-center gap-2">
+            <i class="fas fa-paper-plane text-xs"></i>
+            <span>Оформить заявку в один клик</span>
+          </button>
+          <button onclick="savePDF()"
+                  class="btn-secondary w-full py-3 sm:py-3.5 text-sm sm:text-base font-medium flex items-center justify-center gap-2">
+            <i class="fas fa-file-pdf text-xs"></i>
+            <span>Скачать расчёт в PDF</span>
+          </button>
+        </div>
+      </section>
+    </div>
+  </div>
+
+ 
+<div id="modal" class="hidden fixed inset-0 bg-black/60 flex items-center justify-center z-50 px-4">
+  <div class="bg-white rounded-3xl p-8 max-w-lg w-full">
+    <h3 class="text-3xl font-bold mb-8 text-center text-black">Заявка на мебель под ключ</h3>
+    <input id="name" placeholder="Ваше имя" class="w-full border-2 border-gray-300 rounded-2xl px-6 py-5 text-xl mb-6 focus:outline-none focus:border-emerald-600">
+    <input id="phone" type="tel" placeholder="+7 (___) ___-__-__" class="w-full border-2 border-gray-300 rounded-2xl px-6 py-5 text-xl mb-8 focus:outline-none focus:border-emerald-600">
+    
+    <!-- Кнопка Max (используем твою invite-ссылку) -->
+    <a href="https://max.ru/u/f9LHodD0cOIIU1RNN_04C1asgarK9nG__NwubhfYVMMXC7JKHGa9l16v9Us" target="_blank" 
+       onclick="sendOrder()" 
+       class="w-full bg-indigo-600 hover:bg-indigo-700 text-white text-xl font-bold py-6 rounded-2xl flex items-center justify-center gap-3">
+      <i class="fas fa-paper-plane text-3xl"></i> Написать в Max
+    </a>
+    
+    <button onclick="closeModal()" class="w-full mt-4 text-gray-600 text-lg hover:text-gray-800">Закрыть</button>
+  </div>
+</div>
+
+
+
+<script>
+  // Плавающая кнопка Max
+  document.body.insertAdjacentHTML('beforeend', `
+    <a href="https://max.ru/u/f9LHodD0cOIIU1RNN_04C1asgarK9nG__NwubhfYVMMXC7JKHGa9l16v9Us" target="_blank"
+       style="position: fixed; bottom: 20px; right: 20px; background: #6366f1; color: white; padding: 15px; border-radius: 50%; box-shadow: 0 4px 10px rgba(0,0,0,0.3); z-index: 9999;">
+      <i class="fas fa-comment-dots text-2xl"></i>
+    </a>
+  `);
+</script>
+
+
+
+
+</div>
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+  <footer class="site-footer" id="contacts">
+  <div class="container footer-top">
+    <div class="footer-col footer-col-wide">
+      <h3 class="footer-heading">Связаться с нами</h3>
+      <a href="tel:+78005555555" class="footer-phone">8 (999) 655-58-87</a>
+      <p class="footer-note">Бесплатно по России</p>
+
+      <div class="footer-subblock">
+        <p class="footer-label">Написать руководству:</p>
+        <a href="mailto:2207120@gmail.com" class="footer-link">2207120@gmail.com</a>
+      </div>
+
+      <div class="footer-subblock">
+        <p class="footer-label">Написать отделу маркетинга и PR:</p>
+        <a href="mailto:marketing@alterstroy.ru" class="footer-link">marketing@alterstroy.ru</a>
+      </div>
+
+      <div class="footer-subblock">
+        <a href="#" class="footer-link">Обратный звонок</a><br>
+        <a href="#" class="footer-link">Шоурумы</a>
+      </div>
+    </div>
+
+    <div class="footer-col">
+      <h3 class="footer-heading">Режим работы</h3>
+      <p class="footer-text">ежедневно с 10:00 до 22:00</p>
+
+      <h3 class="footer-heading footer-heading-spaced">Способы оплаты</h3>
+      <div class="footer-pay">
+        <span class="pay-card">VISA</span>
+        <span class="pay-card">Mastercard</span>
+        <span class="pay-card">МИР</span>
+      </div>
+      <ul class="footer-list">
+        <li>Наличные</li>
+        <li>Безналичный перевод</li>
+        <li>Рассрочка без %</li>
+      </ul>
+    </div>
+
+    <div class="footer-col">
+      <h3 class="footer-heading">Покупателю</h3>
+      <ul class="footer-list">
+        <li><a href="#" class="footer-link">О компании</a></li>
+        <li><a href="#" class="footer-link">Проекты</a></li>
+        <li><a href="#" class="footer-link">Новости и статьи</a></li>
+        <li><a href="#" class="footer-link">Вакансии</a></li>
+        <li><a href="#" class="footer-link">Гарантия и возврат</a></li>
+        <li><a href="#" class="footer-link">Доставка и оплата</a></li>
+        <li><a href="#" class="footer-link">Карта сайта</a></li>
+        <li><a href="#" class="footer-link">Скачать каталог</a></li>
+      </ul>
+    </div>
+
+    <div class="footer-col">
+      <h3 class="footer-heading">Мебель</h3>
+      <ul class="footer-list">
+        <li><a href="#" class="footer-link">Кухни</a></li>
+        <li><a href="#" class="footer-link">Шкафы‑купе</a></li>
+        <li><a href="#" class="footer-link">Распашные шкафы</a></li>
+        <li><a href="#" class="footer-link">Гардеробные</a></li>
+        <li><a href="#" class="footer-link">Комоды и тумбы</a></li>
+        <li><a href="#" class="footer-link">Мебель для гостиных</a></li>
+        <li><a href="#" class="footer-link">Мебель для детских</a></li>
+      </ul>
+    </div>
+
+    <div class="footer-col">
+      <h3 class="footer-heading">Отзывы покупателей</h3>
+      <ul class="footer-list">
+        <li>Яндекс ★★★★★</li>
+        <li>Google ★★★★★</li>
+      </ul>
+
+      <h3 class="footer-heading footer-heading-spaced">Мы в соцсетях</h3>
+      <ul class="footer-list">
+        <li><a href="#" class="footer-link">ВКонтакте</a></li>
+        <li><a href="#" class="footer-link">Telegram</a></li>
+        <li><a href="#" class="footer-link">YouTube</a></li>
+      </ul>
+    </div>
+  </div>
+
+  <div class="container footer-bottom">
+    <div class="footer-bottom-left">
+      <div class="footer-logo">
+        <span class="logo-mark"></span>
+        <span class="logo-text"> </span>
+      </div>
+      <a href="#" class="footer-link footer-privacy">
+        Политика конфиденциальности
+      </a>
+    </div>
+
+    <div class="footer-bottom-right">
+      <p class="footer-copy">
+        © 2026 « ». Все права защищены.
+      </p>
+      <p class="footer-copy">
+        г. Владивосток, ул. Харьковская, д. 4
+      </p>
+    </div>
+  </div>
+</footer>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div id="calc-pdf-root" class="pdf-sheet">
+    
+
+  
+
+  <h2 style="font-size:38px;margin-bottom:6mm;text-align:center;">Расчёт мебели под ключ</h2>
+
+
+  
+<img src="/foto_44.png"
+     alt="Пример проекта"
+     style="display:block;margin:0 auto 10mm auto;max-width:100%;max-height:110mm;object-fit:cover;border-radius:8px;">
+
+  <p id="pdf-type"></p>
+  <p id="pdf-level"></p>
+  <p id="pdf-length"></p>
+  <p id="pdf-countertop"></p>
+  <p id="pdf-delivery"></p>
+  <p id="pdf-term"></p>
+  <p id="pdf-plinth"></p>
+
+  <h3 style="margin-top:8mm;">Итого под ключ:</h3>
+  <p id="pdf-total" style="font-size:22px;font-weight:bold;"></p>
+</div>
+
+
+
+
+
+</body>
+</html>

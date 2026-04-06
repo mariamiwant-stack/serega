@@ -1,0 +1,719 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+  <title>XLM→XRP Bridge | Арбитражный протокол</title>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:opsz,wght@14..32,300;14..32,400;14..32,500;14..32,600;14..32,700;14..32,800&family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      background-color: #070b14;
+      font-family: 'Inter', sans-serif;
+      color: #f0f4ff;
+      line-height: 1.4;
+      overflow-x: hidden;
+      scroll-behavior: smooth;
+    }
+
+    /* Animated gradient background */
+    .bg-animation {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      z-index: -2;
+      background: radial-gradient(circle at 20% 30%, #0b1120, #03050b);
+    }
+
+    .moving-light {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: radial-gradient(circle at 40% 50%, rgba(0, 255, 200, 0.08), transparent 60%);
+      animation: moveLight 18s infinite alternate;
+      z-index: -1;
+      pointer-events: none;
+    }
+
+    @keyframes moveLight {
+      0% { transform: translate(-10%, -10%) scale(1); opacity: 0.4; }
+      100% { transform: translate(15%, 15%) scale(1.3); opacity: 0.7; }
+    }
+
+    .noise {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background-image: url('data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIzMDAiIGhlaWdodD0iMzAwIj48ZmlsdGVyIGlkPSJmIj48ZmVUdXJidWxlbmNlIHR5cGU9ImZyYWN0YWxOb2lzZSIgYmFzZUZyZXF1ZW5jeT0iLjUiIG51bU9jdGF2ZXM9IjMiLz48L2ZpbHRlcj48cmVjdCB3aWR0aD0iMTAwJSIgaGVpZ2h0PSIxMDAlIiBmaWx0ZXI9InVybCgjZikiIG9wYWNpdHk9IjAuMDQiLz48L3N2Zz4=');
+      background-repeat: repeat;
+      pointer-events: none;
+      z-index: -1;
+      opacity: 0.3;
+    }
+
+    .container {
+      max-width: 1300px;
+      margin: 0 auto;
+      padding: 0 2rem;
+    }
+
+    section {
+      position: relative;
+      padding: 6rem 0;
+      border-bottom: 1px solid rgba(0, 255, 200, 0.1);
+    }
+
+    /* Hero с анимационным фоном */
+    .hero-section {
+      position: relative;
+      overflow: hidden;
+    }
+
+    #hero-canvas {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      z-index: 0;
+      pointer-events: none;
+      opacity: 0.4;
+    }
+
+    .hero-content {
+      position: relative;
+      z-index: 2;
+    }
+
+    h1, h2, h3 {
+      font-family: 'Space Grotesk', monospace;
+      font-weight: 600;
+      letter-spacing: -0.02em;
+    }
+
+    h1 {
+      font-size: clamp(2.8rem, 7vw, 5rem);
+      line-height: 1.2;
+      background: linear-gradient(135deg, #ffffff 0%, #a0f0ff 50%, #70ffc0 100%);
+      background-clip: text;
+      -webkit-background-clip: text;
+      color: transparent;
+      margin-bottom: 1rem;
+    }
+
+    h2 {
+      font-size: clamp(2rem, 4.5vw, 3rem);
+      margin-bottom: 1.5rem;
+      background: linear-gradient(120deg, #fff, #7ae9ff);
+      background-clip: text;
+      -webkit-background-clip: text;
+      color: transparent;
+    }
+
+    .badge {
+      background: rgba(0, 230, 150, 0.12);
+      backdrop-filter: blur(4px);
+      border: 1px solid rgba(0, 255, 200, 0.4);
+      border-radius: 60px;
+      padding: 0.4rem 1rem;
+      font-size: 0.75rem;
+      font-weight: 500;
+      display: inline-block;
+      margin-bottom: 1.5rem;
+      letter-spacing: 1px;
+    }
+
+    .glass-card {
+      background: rgba(18, 28, 40, 0.65);
+      backdrop-filter: blur(12px);
+      border-radius: 2rem;
+      border: 1px solid rgba(0, 255, 200, 0.25);
+      transition: all 0.3s ease;
+      box-shadow: 0 20px 35px -12px rgba(0,0,0,0.4);
+    }
+
+    .glass-card:hover {
+      transform: translateY(-5px);
+      border-color: rgba(0, 255, 200, 0.6);
+      box-shadow: 0 25px 40px -12px rgba(0,255,200,0.15);
+    }
+
+    .btn-primary {
+      background: linear-gradient(100deg, #00c3a0, #0a70ff);
+      border: none;
+      padding: 1rem 2.2rem;
+      border-radius: 60px;
+      font-weight: 700;
+      font-size: 1rem;
+      color: white;
+      cursor: pointer;
+      transition: 0.25s;
+      box-shadow: 0 5px 15px rgba(0,195,160,0.3);
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+    }
+
+    .btn-primary:hover {
+      transform: scale(1.02);
+      box-shadow: 0 10px 25px rgba(0,255,200,0.4);
+      background: linear-gradient(100deg, #00e0b8, #2a80ff);
+    }
+
+    .btn-outline {
+      background: transparent;
+      border: 2px solid #0ff;
+      padding: 0.9rem 2rem;
+      border-radius: 60px;
+      color: #0ff;
+      font-weight: 600;
+      transition: 0.2s;
+    }
+
+    .btn-outline:hover {
+      background: rgba(0,255,200,0.1);
+      box-shadow: 0 0 12px cyan;
+    }
+
+    .hero-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 3rem;
+      align-items: center;
+    }
+
+    @media (max-width: 900px) {
+      .hero-grid {
+        grid-template-columns: 1fr;
+        text-align: center;
+      }
+      .container {
+        padding: 0 1.5rem;
+      }
+    }
+
+    .bridge-viz {
+      background: rgba(0, 20, 30, 0.5);
+      border-radius: 2rem;
+      padding: 1.5rem;
+      backdrop-filter: blur(4px);
+      text-align: center;
+    }
+
+    .bridge-flow {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      flex-wrap: wrap;
+      gap: 1rem;
+      margin: 1.5rem 0;
+    }
+
+    .bridge-node {
+      background: #0f1a24;
+      border-radius: 1.5rem;
+      padding: 0.8rem 1rem;
+      flex: 1;
+      min-width: 100px;
+      font-weight: 600;
+    }
+
+    .bridge-arrow {
+      font-size: 2rem;
+      color: cyan;
+      animation: pulseArrow 1.2s infinite;
+    }
+
+    @keyframes pulseArrow {
+      0% { opacity: 0.4; transform: translateX(0); }
+      50% { opacity: 1; transform: translateX(5px); }
+      100% { opacity: 0.4; transform: translateX(0); }
+    }
+
+    .profit-badge {
+      background: #0a2f2a;
+      border-radius: 2rem;
+      padding: 0.5rem 1rem;
+      font-size: 1.2rem;
+      font-weight: 800;
+      color: #2effb0;
+    }
+
+    .exchanges {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.8rem;
+      margin: 2rem 0;
+    }
+
+    .exchange-pill {
+      background: #0f1a24;
+      border-radius: 40px;
+      padding: 0.5rem 1.2rem;
+      font-weight: 500;
+      font-size: 0.9rem;
+      border: 1px solid rgba(0,255,200,0.3);
+      transition: 0.2s;
+    }
+
+    .exchange-pill i {
+      margin-right: 6px;
+      color: cyan;
+    }
+
+    .steps {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 1.5rem;
+      margin-top: 2rem;
+    }
+
+    .step-card {
+      flex: 1;
+      background: rgba(18, 28, 40, 0.7);
+      backdrop-filter: blur(8px);
+      border-radius: 1.5rem;
+      padding: 1.5rem;
+      border-left: 4px solid cyan;
+    }
+
+    .calculator {
+      background: rgba(10, 20, 30, 0.7);
+      border-radius: 2rem;
+      padding: 2rem;
+    }
+
+    input[type="range"] {
+      width: 100%;
+      background: #1f3a44;
+      height: 4px;
+      border-radius: 10px;
+    }
+
+    input[type="range"]:focus {
+      outline: none;
+    }
+
+    input[type="range"]::-webkit-slider-thumb {
+      -webkit-appearance: none;
+      width: 20px;
+      height: 20px;
+      background: cyan;
+      border-radius: 50%;
+      cursor: pointer;
+      box-shadow: 0 0 6px cyan;
+    }
+
+    .floating-stats {
+      display: flex;
+      justify-content: space-between;
+      gap: 1rem;
+      margin: 2rem 0;
+      flex-wrap: wrap;
+    }
+
+    .stat {
+      background: #07131c;
+      padding: 1rem;
+      border-radius: 1.5rem;
+      text-align: center;
+      flex: 1;
+    }
+
+    .footer {
+      text-align: center;
+      padding: 3rem 0;
+      opacity: 0.7;
+      font-size: 0.75rem;
+    }
+
+    .fade-up {
+      opacity: 0;
+      transform: translateY(25px);
+      transition: all 0.7s ease;
+    }
+
+    .fade-up.visible {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  </style>
+</head>
+<body>
+<div class="bg-animation"></div>
+<div class="moving-light"></div>
+<div class="noise"></div>
+
+<main>
+  <!-- HERO с анимацией транзакций -->
+  <section class="hero-section" style="padding-top: 7rem;">
+    <canvas id="hero-canvas"></canvas>
+    <div class="container hero-content">
+      <div class="hero-grid">
+        <div class="fade-up">
+          <div class="badge"><i class="fas fa-chart-line"></i> LIVING STRATEGY • CROSS-CHAIN ARBITRAGE</div>
+          <h1>XLM → XRP <span style="color: cyan;">Спред-мост</span><br>до +2% за сделку</h1>
+          <p style="font-size: 1.2rem; margin: 1.5rem 0; color: #c6e0ff;">3–5 циклов в день → до 10% к депозиту ежедневно. Полный некастодиальный контроль. Работает на топ-биржах.</p>
+          <div style="display: flex; gap: 1rem; flex-wrap: wrap;">
+            <button class="btn-primary" id="ctaBtn"><i class="fab fa-telegram"></i> Получить стратегию</button>
+            <button class="btn-outline" id="calcScroll"><i class="fas fa-chart-simple"></i> Калькулятор доходности</button>
+          </div>
+          <div class="exchanges" style="margin-top: 2rem;">
+            <span class="exchange-pill"><i class="fab fa-bitcoin"></i> Binance</span>
+            <span class="exchange-pill"><i class="fas fa-chart-line"></i> Bybit</span>
+            <span class="exchange-pill"><i class="fas fa-coins"></i> MEXC</span>
+            <span class="exchange-pill"><i class="fas fa-fire"></i> HTX</span>
+            <span class="exchange-pill"><i class="fas fa-database"></i> KuCoin</span>
+            <span class="exchange-pill"><i class="fab fa-bitcoin"></i> Bitget</span>
+            <span class="exchange-pill"><i class="fas fa-wallet"></i> Trust Wallet</span>
+          </div>
+        </div>
+        <div class="fade-up">
+          <div class="glass-card" style="padding: 1.8rem;">
+            <h3 style="margin-bottom: 1rem;"><i class="fas fa-route"></i> Как выглядит сделка</h3>
+            <div class="bridge-flow">
+              <div class="bridge-node"><i class="fas fa-coins"></i> XLM<br><small>на бирже</small></div>
+              <div class="bridge-arrow"><i class="fas fa-arrow-right"></i></div>
+              <div class="bridge-node"><i class="fas fa-wallet"></i> Trust Wallet<br><small>XLM (BEP2/Stellar)</small></div>
+              <div class="bridge-arrow"><i class="fas fa-arrow-right"></i></div>
+              <div class="bridge-node"><i class="fas fa-exchange-alt"></i> XRP адрес<br><small>(на бирже)</small></div>
+            </div>
+            <div style="text-align: center; margin: 1rem 0;">
+              <span class="profit-badge"><i class="fas fa-percent"></i> Авто-конвертация +2% спред</span>
+            </div>
+            <p style="font-size: 0.85rem; margin-top: 1rem;"><i class="fas fa-shield-alt"></i> Вы ничего не передаёте третьим лицам — только ваш кошелёк и биржи.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- HOW IT WORKS (шаги) -->
+  <section>
+    <div class="container">
+      <div class="fade-up" style="text-align: center;">
+        <div class="badge"><i class="fas fa-play-circle"></i> МЕХАНИКА ПРОТОКОЛА</div>
+        <h2>3 простых шага к прибыли</h2>
+      </div>
+      <div class="steps">
+        <div class="step-card fade-up"><i class="fas fa-chart-line" style="font-size: 2rem; color: cyan;"></i><h3 style="margin: 0.8rem 0;">1. Покупка XLM</h3><p>На Binance, Bybit или любой из списка покупаете XLM за USDT.</p></div>
+        <div class="step-card fade-up"><i class="fas fa-wallet" style="font-size: 2rem; color: cyan;"></i><h3 style="margin: 0.8rem 0;">2. Trust Wallet → мост</h3><p>Переводите XLM на свой Trust Wallet, затем отправляете на свой XRP-адрес (той же биржи).</p></div>
+        <div class="step-card fade-up"><i class="fas fa-charging-station" style="font-size: 2rem; color: cyan;"></i><h3 style="margin: 0.8rem 0;">3. Фиксация +2%</h3><p>Децентрализованный мост автоматически конвертирует XLM в XRP с премией. Продаёте XRP → USDT, цикл завершён.</p></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- EXCHANGES + TRUST SECTION -->
+  <section>
+    <div class="container">
+      <div class="hero-grid" style="gap: 2rem;">
+        <div class="fade-up">
+          <div class="badge"><i class="fas fa-building"></i> ПРОВЕРЕННЫЕ ПЛОЩАДКИ</div>
+          <h2>Работаем с лидерами рынка</h2>
+          <p>Binance, Bybit, KuCoin, MEXC, HTX, Bitget — любые биржи с ликвидными парами XLM/USDT и XRP/USDT. Для отправки используем Trust Wallet (некастодиальный кошелёк).</p>
+          <div class="exchanges" style="margin-top: 1.5rem;">
+            <span class="exchange-pill"><i class="fab fa-bitcoin"></i> Binance</span>
+            <span class="exchange-pill"><i class="fas fa-chart-line"></i> Bybit</span>
+            <span class="exchange-pill"><i class="fas fa-coins"></i> MEXC</span>
+            <span class="exchange-pill"><i class="fas fa-fire"></i> HTX</span>
+            <span class="exchange-pill"><i class="fas fa-database"></i> KuCoin</span>
+            <span class="exchange-pill"><i class="fab fa-bitcoin"></i> Bitget</span>
+          </div>
+          <div style="margin-top: 1rem;"><i class="fas fa-check-circle" style="color: cyan;"></i> <strong>Безопасность:</strong> вы не передаёте API, все средства под вашим полным контролем.</div>
+        </div>
+        <div class="fade-up glass-card" style="padding: 1.8rem;">
+          <i class="fas fa-chart-line" style="font-size: 2rem;"></i>
+          <h3 style="margin: 0.5rem 0;">Стартовый капитал</h3>
+          <p>Для обучения и первых сделок достаточно <strong style="color: cyan;">20–50 USDT</strong>. Каждая сделка приносит ~2% от объёма.</p>
+          <div class="profit-badge" style="margin-top: 1rem; display: inline-block;">до 10% в день при реинвестировании</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- PROFIT CALCULATOR + LIVE SPREAD -->
+  <section id="calcSection">
+    <div class="container">
+      <div class="fade-up" style="text-align: center;">
+        <div class="badge"><i class="fas fa-calculator"></i> ВАШ ПОТЕНЦИАЛ</div>
+        <h2>Симулятор дохода</h2>
+      </div>
+      <div class="calculator glass-card fade-up" style="padding: 2rem;">
+        <div style="display: flex; justify-content: space-between; flex-wrap: wrap; gap: 1.5rem;">
+          <div style="flex: 1;">
+            <label>Капитал (USDT): <strong id="capitalVal">200</strong></label>
+            <input type="range" id="capitalRange" min="20" max="5000" step="10" value="200">
+            <div class="floating-stats" style="margin-top: 1.5rem;">
+              <div class="stat"><i class="fas fa-chart-line"></i> Доход за сделку (+2%)<br><strong id="perTrade">4.00</strong> USDT</div>
+              <div class="stat"><i class="fas fa-clock"></i> Дневной доход (4 сделки)<br><strong id="dailyTotal">16.00</strong> USDT</div>
+              <div class="stat"><i class="fas fa-calendar-week"></i> За месяц (30 дней)<br><strong id="monthTotal">480.00</strong> USDT</div>
+            </div>
+          </div>
+          <div style="flex: 1; text-align: center;">
+            <div class="badge" style="font-size: 1rem;"><i class="fas fa-chart-simple"></i> Текущий спред XLM→XRP</div>
+            <div style="font-size: 3rem; font-weight: 800; font-family: monospace; color: #2effb0;" id="liveSpread">+1.98%</div>
+            <p style="margin-top: 0.5rem;">*средний показатель за последние 24ч</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- TRUST + SECURITY HIGHLIGHTS -->
+  <section>
+    <div class="container">
+      <div class="hero-grid">
+        <div class="fade-up">
+          <div class="badge"><i class="fas fa-shield-heart"></i> ПОЛНЫЙ КОНТРОЛЬ</div>
+          <h2>Никаких посредников</h2>
+          <ul style="list-style: none; margin-top: 1rem;">
+            <li style="margin-bottom: 1rem;"><i class="fas fa-check-circle" style="color: cyan;"></i> Вы совершаете все операции самостоятельно</li>
+            <li style="margin-bottom: 1rem;"><i class="fas fa-check-circle" style="color: cyan;"></i> Деньги не передаются третьим лицам или "ботам"</li>
+            <li style="margin-bottom: 1rem;"><i class="fas fa-check-circle" style="color: cyan;"></i> Мы даём алгоритм, настройки и сопровождение</li>
+            <li style="margin-bottom: 1rem;"><i class="fas fa-check-circle" style="color: cyan;"></i> Прозрачность каждого шага — вы видите спред в реальном времени</li>
+          </ul>
+        </div>
+        <div class="fade-up glass-card" style="padding: 2rem; text-align: center;">
+          <i class="fas fa-chalkboard-user" style="font-size: 2.5rem; color: cyan;"></i>
+          <h3 style="margin: 1rem 0;">Обучение и поддержка</h3>
+          <p>Полный гайд, видео-инструкции, личный куратор. Для старта достаточно 20 USDT, чтобы протестировать механику.</p>
+          <button class="btn-primary" id="ctaFooterBtn" style="margin-top: 1.5rem;"><i class="fab fa-telegram"></i> Получить доступ</button>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- LEAD FORM -->
+  <section>
+    <div class="container">
+      <div class="fade-up glass-card" style="padding: 2.5rem; text-align: center; background: rgba(0, 30, 35, 0.6);">
+        <h2 style="margin-bottom: 0.5rem;">Начните зарабатывать сегодня</h2>
+        <p>Оставьте заявку, и мы пришлем подробный мануал, чек-лист по сделкам и приглашение в закрытый канал с мониторингом спреда.</p>
+        <form id="leadForm" style="display: flex; flex-wrap: wrap; justify-content: center; gap: 1rem; margin-top: 2rem;">
+          <input type="text" placeholder="Ваше имя / Telegram" id="userName" style="background: #0a1722; border: 1px solid cyan; border-radius: 60px; padding: 1rem 1.5rem; width: 260px; color: white;">
+          <input type="email" placeholder="Email (необязательно)" id="userEmail" style="background: #0a1722; border: 1px solid cyan; border-radius: 60px; padding: 1rem 1.5rem; width: 260px; color: white;">
+          <button type="submit" class="btn-primary"><i class="fab fa-telegram"></i> Получить стратегию</button>
+        </form>
+        <p style="font-size: 0.7rem; margin-top: 1.5rem;"><i class="fas fa-lock"></i> Никакого спама. Только обучающие материалы и поддержка.</p>
+      </div>
+    </div>
+  </section>
+
+  <footer class="footer">
+    <div class="container">
+      <p>© 2026 XRP Bridge Arbitrage — децентрализованный арбитражный протокол. Информация носит образовательный характер. Криптовалютные операции связаны с риском. Все действия вы совершаете самостоятельно.</p>
+      <p style="margin-top: 0.5rem;">Дизайн: Илья Олегович | Стратегия предоставлена Dmitry Chernov</p>
+    </div>
+  </footer>
+</main>
+
+<script>
+  // ==================== CANVAS АНИМАЦИЯ "ЛЕТАЮЩИЕ ТРАНЗАКЦИИ" ====================
+  const canvas = document.getElementById('hero-canvas');
+  let ctx = canvas.getContext('2d');
+  let width, height;
+  let particles = [];
+  let lines = [];
+  let animationId;
+
+  function initCanvas() {
+    const heroSection = document.querySelector('.hero-section');
+    const rect = heroSection.getBoundingClientRect();
+    width = rect.width;
+    height = rect.height;
+    canvas.width = width;
+    canvas.height = height;
+
+    // Создаём частицы (узлы транзакций)
+    const PARTICLE_COUNT = 35;
+    particles = [];
+    for (let i = 0; i < PARTICLE_COUNT; i++) {
+      particles.push({
+        x: Math.random() * width,
+        y: Math.random() * height,
+        vx: (Math.random() - 0.5) * 0.4,
+        vy: (Math.random() - 0.5) * 0.4,
+        radius: Math.random() * 3 + 1.5,
+        alpha: Math.random() * 0.5 + 0.2
+      });
+    }
+
+    // Создаём линии между ближайшими частицами (динамические)
+    updateLines();
+  }
+
+  function updateLines() {
+    lines = [];
+    for (let i = 0; i < particles.length; i++) {
+      for (let j = i + 1; j < particles.length; j++) {
+        const dx = particles[i].x - particles[j].x;
+        const dy = particles[i].y - particles[j].y;
+        const dist = Math.hypot(dx, dy);
+        if (dist < 150) {
+          lines.push({
+            p1: i,
+            p2: j,
+            dist: dist,
+            opacity: 1 - dist / 150
+          });
+        }
+      }
+    }
+  }
+
+  function animateCanvas() {
+    if (!ctx) return;
+    ctx.clearRect(0, 0, width, height);
+    
+    // Обновляем позиции частиц
+    for (let p of particles) {
+      p.x += p.vx;
+      p.y += p.vy;
+      if (p.x < -20) p.x = width + 20;
+      if (p.x > width + 20) p.x = -20;
+      if (p.y < -20) p.y = height + 20;
+      if (p.y > height + 20) p.y = -20;
+    }
+    
+    // Обновляем линии (пересчитываем расстояния и создаём новые соединения)
+    updateLines();
+    
+    // Рисуем линии (транзакции)
+    for (let line of lines) {
+      const p1 = particles[line.p1];
+      const p2 = particles[line.p2];
+      ctx.beginPath();
+      ctx.moveTo(p1.x, p1.y);
+      ctx.lineTo(p2.x, p2.y);
+      ctx.strokeStyle = `rgba(0, 255, 200, ${line.opacity * 0.4})`;
+      ctx.lineWidth = 1.2;
+      ctx.stroke();
+    }
+    
+    // Рисуем частицы (узлы)
+    for (let p of particles) {
+      ctx.beginPath();
+      ctx.arc(p.x, p.y, p.radius, 0, Math.PI * 2);
+      ctx.fillStyle = `rgba(0, 255, 200, ${p.alpha})`;
+      ctx.fill();
+      ctx.shadowBlur = 6;
+      ctx.shadowColor = '#0ff';
+      ctx.fill();
+      ctx.shadowBlur = 0;
+    }
+    
+    animationId = requestAnimationFrame(animateCanvas);
+  }
+
+  function resizeCanvas() {
+    const heroSection = document.querySelector('.hero-section');
+    const rect = heroSection.getBoundingClientRect();
+    width = rect.width;
+    height = rect.height;
+    canvas.width = width;
+    canvas.height = height;
+    initCanvas();
+  }
+
+  window.addEventListener('resize', () => {
+    resizeCanvas();
+  });
+  
+  // Запуск анимации после загрузки
+  window.addEventListener('load', () => {
+    resizeCanvas();
+    animateCanvas();
+  });
+  
+  // ==================== ОСТАЛЬНОЙ JS (калькулятор, формы и т.д.) ====================
+  // Animated live spread
+  const spreadSpan = document.getElementById('liveSpread');
+  function updateSpread() {
+    let base = 1.97;
+    let variation = Math.sin(Date.now() / 3500) * 0.12;
+    let val = (base + variation).toFixed(2);
+    spreadSpan.innerText = `+${val}%`;
+    requestAnimationFrame(updateSpread);
+  }
+  updateSpread();
+
+  // Calculator
+  const capitalSlider = document.getElementById('capitalRange');
+  const capitalValSpan = document.getElementById('capitalVal');
+  const perTradeSpan = document.getElementById('perTrade');
+  const dailyTotalSpan = document.getElementById('dailyTotal');
+  const monthTotalSpan = document.getElementById('monthTotal');
+
+  function updateCalc() {
+    let capital = parseFloat(capitalSlider.value);
+    capitalValSpan.innerText = capital;
+    let perTrade = capital * 0.02;
+    let daily = perTrade * 4;
+    let monthly = daily * 30;
+    perTradeSpan.innerText = perTrade.toFixed(2);
+    dailyTotalSpan.innerText = daily.toFixed(2);
+    monthTotalSpan.innerText = monthly.toFixed(2);
+  }
+  capitalSlider.addEventListener('input', updateCalc);
+  updateCalc();
+
+  // Intersection Observer for fade-up
+  const fadeElements = document.querySelectorAll('.fade-up');
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        entry.target.classList.add('visible');
+        observer.unobserve(entry.target);
+      }
+    });
+  }, { threshold: 0.15 });
+  fadeElements.forEach(el => observer.observe(el));
+
+  // Form handling
+  const leadForm = document.getElementById('leadForm');
+  leadForm.addEventListener('submit', (e) => {
+    e.preventDefault();
+    const name = document.getElementById('userName').value.trim();
+    if (!name) {
+      alert('Пожалуйста, укажите имя или Telegram для связи');
+      return;
+    }
+    alert(`✅ Спасибо, ${name}! Ваша заявка принята. Наставник свяжется в Telegram в ближайшее время и отправит доступ к обучению.`);
+    leadForm.reset();
+  });
+
+  // Buttons scroll
+  document.getElementById('ctaBtn').addEventListener('click', () => {
+    document.getElementById('leadForm').scrollIntoView({ behavior: 'smooth' });
+  });
+  document.getElementById('ctaFooterBtn').addEventListener('click', () => {
+    document.getElementById('leadForm').scrollIntoView({ behavior: 'smooth' });
+  });
+  document.getElementById('calcScroll').addEventListener('click', () => {
+    document.getElementById('calcSection').scrollIntoView({ behavior: 'smooth' });
+  });
+
+  // manual visible for elements already in view
+  setTimeout(() => {
+    fadeElements.forEach(el => {
+      const rect = el.getBoundingClientRect();
+      if (rect.top < window.innerHeight - 100) {
+        el.classList.add('visible');
+      }
+    });
+  }, 200);
+</script>
+</body>
+</html>
