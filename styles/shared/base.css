@@ -1,0 +1,2137 @@
+:root {
+  --bg-main: #ffffff;
+  --text-main: #fffefe;
+  --text-muted: #ffffff;
+  --accent-dark: #111111;
+  --border-light: #ffffff;
+  --radius-pill: 999px;
+  --radius-card: 24px;
+  --font-heading: "Manrope", system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+  --font-body: "DM Sans", system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+}
+
+
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  font-family: var(--font-body);
+  color: var(--text-main);
+  background-color: var(--bg-main);
+}
+
+html,
+body {
+  max-width: 100%;
+  overflow-x: clip;
+}
+
+img,
+video,
+canvas,
+svg,
+iframe {
+  max-width: 100%;
+}
+
+/* Контейнер */
+
+.container {
+  width: 100%;
+  max-width: 1240px;
+  margin: 0 auto;
+  padding: 0 24px;
+  color: #000000;
+}
+
+/* Шапка */
+
+.site-header {
+  position: sticky;
+  top: 0;
+  z-index: 100;
+  background-color: rgba(255, 255, 255, 0.96);
+  backdrop-filter: blur(12px);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.8);
+}
+
+.header-inner {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  height: 80px;
+}
+
+/* Логотип */
+
+.logo {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  text-decoration: none;
+  color: var(--text-main);
+}
+
+.logo-mark {
+  display: inline-block;
+  width: 160px;       /* подбери под размер логотипа */
+  height: 40px;        /* подбери под высоту */
+  background-image: url('/img_foto/img_logo/img_logo.png'); /* путь к твоему логотипу */
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: contain; /* или auto, если нужен точный размер */
+  vertical-align: middle;
+  /* если логотип не квадратный, можно убрать padding */
+}
+
+.logo-text {
+  font-family: var(--font-heading);
+  font-weight: 800;
+  font-size: 18px;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  color:#000000
+}
+
+/* Навигация */
+
+.main-nav {
+  display: flex;
+  align-items: center;
+  gap: 28px;
+}
+
+.nav-link {
+  position: relative;
+  font-size: 14px;
+  font-weight: 500;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  text-decoration: none;
+  color: #2e2929;
+  transition: color 0.2s ease;
+}
+
+.nav-link::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: -6px;
+  width: 0;
+  height: 1px;
+  background-color: #000000;
+  transition: width 0.2s ease;
+}
+
+.nav-link:hover {
+  color: #000000;
+}
+
+.nav-link:hover::after {
+  width: 100%;
+}
+
+/* Капсула с телефоном */
+
+.phone-pill {
+  display: inline-flex;
+  flex-direction: column;
+  justify-content: center;
+  padding: 10px 18px;
+  border-radius: var(--radius-pill);
+  background-color: var(--accent-dark);
+  color: #ffffff;
+  text-decoration: none;
+  min-width: 190px;
+  transition: background-color 0.2s ease, transform 0.15s ease;
+}
+
+.phone-number {
+  font-family: var(--font-heading);
+  font-weight: 600;
+  font-size: 14px;
+}
+
+.phone-caption {
+  margin-top: 2px;
+  font-size: 11px;
+  font-weight: 400;
+  color: rgba(255, 255, 255);
+}
+
+
+.phone-pill:hover {
+  background-color: #000000;
+  transform: translateY(-1px);
+}
+
+/* Бургер для мобилы */
+
+.burger {
+  display: none;
+  flex-direction: column;
+  justify-content: center;
+  gap: 4px;
+  width: 32px;
+  height: 32px;
+  padding: 0;
+  border: none;
+  background: transparent;
+  cursor: pointer;
+}
+
+.burger span {
+  display: block;
+  height: 2px;
+  width: 18px;
+  border-radius: 999px;
+  background-color: var(--text-main);
+}
+
+/* Адаптив */
+
+@media (max-width: 960px) {
+  .header-inner {
+    height: 68px;
+  }
+
+  .main-nav {
+    display: none; /* потом можно раскрывать через JS */
+  }
+
+  .phone-pill {
+    display: none;
+  }
+
+  .burger {
+    display: flex;
+  }
+}
+
+
+.hero {
+    position: relative;
+  min-height: calc(100vh - 80px); /* fallback */
+  min-height: calc(100dvh - 80px);
+  padding: 96px 0;
+  overflow: hidden;
+  display: flex;
+  align-items: center; /* центрируем контент по вертикали */
+  padding-bottom: 0;
+}
+
+.hero-bg {
+  position: absolute;
+  inset: 0;
+  background-image: url("/hero_kitch.png"); /* путь к твоему фото */
+  background-size: cover;
+  background-position: center;
+  filter: brightness(0.9);
+}
+
+/* чтобы контент был поверх фото */
+.hero-inner {
+  position: relative;
+  z-index: 1;
+}
+
+
+
+/* HERO */
+
+.hero {
+  position: relative;
+  padding: 96px 0 96px;
+  overflow: hidden;
+}
+
+/* фон-фото */
+.hero-bg {
+  position: absolute;
+  inset: 0;
+  background-image: url("img/hero-kitchen.jpg"); /* замени на свой путь */
+  background-size: cover;
+  background-position: center;
+  filter: brightness(0.9);
+}
+
+/* контент поверх */
+.hero-inner {
+  position: relative;
+  z-index: 1;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 48px;
+}
+
+/* стеклянная плашка слева */
+
+.hero-card {
+  max-width: 640px;              /* было ~520px — сделаем шире */
+  padding: 40px 40px 32px;       /* побольше воздуха */
+  border-radius: 36px;
+  background:
+    radial-gradient(circle at top left, rgba(255, 255, 255, 0.08), transparent 55%),
+    radial-gradient(circle at bottom right, rgba(0, 0, 0, 0.4), transparent 60%),
+    linear-gradient(135deg, #5b3a1f, #2b1b0f); /* заменим на более прозрачный */
+  backdrop-filter: blur(18px);   /* стекло */
+  box-shadow: 0 24px 80px rgba(0, 0, 0, 0.22);
+}
+
+
+.hero-kicker {
+  margin: 0 0 12px;
+  font-size: 12px;
+  font-weight: 500;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  color: var(--text-muted);
+}
+
+.hero-title {
+  margin: 0 0 16px;
+  font-family: var(--font-heading);
+  font-weight: 800;
+  font-size: 44px;
+  line-height: 1.05;
+  color: #F7F4F1;
+}
+
+.hero-subtitle {
+  margin: 0 0 20px;
+  font-size: 16px;
+  line-height: 1.6;
+  color: #f5f2f2;
+}
+
+/* буллеты */
+
+.hero-bullets {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px 16px;
+  margin: 0 0 24px;
+  padding: 0;
+  list-style: none;
+  font-size: 14px;
+  color: #fffdfd;
+}
+
+.hero-bullets li::before {
+  content: "•";
+  margin-right: 4px;
+}
+
+/* кнопки */
+
+.hero-actions {
+  display: flex;
+  align-items: flex-start;
+  gap: 16px;
+}
+
+.btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 12px 22px;
+  border-radius: var(--radius-pill);
+  border: 1px solid transparent;
+  font-family: var(--font-heading);
+  font-weight: 600;
+  font-size: 14px;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  text-decoration: none;
+  cursor: pointer;
+  transition: background-color 0.2s ease, color 0.2s ease, border-color 0.2s ease, transform 0.15s ease;
+}
+
+.btn-primary {
+  background-color: var(--accent-dark);
+  color: #ffffff;
+}
+
+.btn-primary:hover {
+  background-color: #000000;
+  transform: translateY(-1px);
+}
+
+.btn-outline {
+  background-color: transparent;
+  color: var(--text-main);
+  border-color: rgba(17, 17, 17, 0.34);
+}
+
+.btn-outline:hover {
+  border-color: var(--text-main);
+  background-color: rgba(3, 3, 3, 0.9);
+}
+
+.hero-secondary {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.hero-secondary-note {
+  font-size: 11px;
+  color: var(--text-muted);
+}
+
+/* карточка проекта справа */
+
+.hero-project-card {
+  align-self: flex-end;
+  max-width: 260px;
+  padding: 16px 18px 18px;
+  border-radius: 20px;
+  background: rgba(17, 17, 17, 0.9);
+  color: #ffffff;
+  backdrop-filter: blur(12px);
+  box-shadow: 0 16px 40px rgba(0, 0, 0, 0.35);
+}
+
+.hero-project-label {
+  display: inline-block;
+  margin-bottom: 8px;
+  padding: 4px 10px;
+  border-radius: 999px;
+  background-color: rgba(255, 255, 255, 0.1);
+  font-size: 11px;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+}
+
+.hero-project-name {
+  margin: 0 0 4px;
+  font-size: 14px;
+  font-weight: 600;
+}
+
+.hero-project-meta {
+  margin: 0 0 8px;
+  font-size: 12px;
+  color: rgba(255, 255, 255, 0.75);
+}
+
+.hero-project-price {
+  margin: 0;
+  font-family: var(--font-heading);
+  font-weight: 700;
+  font-size: 16px;
+}
+
+/* Адаптив hero */
+
+@media (max-width: 960px) {
+  .hero {
+    padding: 72px 0 80px;
+  }
+
+  .hero-inner {
+    flex-direction: column;
+    align-items: stretch;
+  }
+
+  .hero-card {
+    max-width: 100%;
+  }
+
+  .hero-project-card {
+    align-self: flex-start;
+    margin-top: 16px;
+  }
+}
+
+@media (max-width: 640px) {
+  .hero {
+    padding: 64px 0 72px;
+  }
+
+  .hero-title {
+    font-size: 34px;
+  }
+
+  .hero-bullets {
+    flex-direction: column;
+  }
+
+  .hero-actions {
+    flex-direction: column;
+    align-items: stretch;
+  }
+
+  .hero-bg {
+    filter: brightness(0.85);
+  }
+}
+
+
+
+
+/* Плашки-бэйджи преимуществ */
+
+.benefits-badges {
+  padding: 32px 0 40px;
+  background-color: #f7f4f1;
+}
+
+.benefits-badges-inner {
+  display: flex;
+  align-items: stretch;
+  justify-content: space-between;
+  gap: 16px;
+}
+
+.benefit-badge {
+  flex: 1 1 0;
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  padding: 14px 18px;
+  border-radius: 999px;
+  background-color: #ffffff;
+  box-shadow: 0 10px 26px rgba(0, 0, 0, 0.06);
+  transition: transform 0.18s ease, box-shadow 0.18s ease, background-color 0.18s ease;
+}
+
+.benefit-badge-icon {
+  flex-shrink: 0;
+  width: 40px;
+  height: 40px;
+  border-radius: 999px;
+  background-color: #e5d3c0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 20px;
+}
+
+.benefit-badge-text {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+}
+
+.benefit-badge-title {
+  margin: 0;
+  font-size: 13px;
+  font-weight: 600;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+}
+
+.benefit-badge-desc {
+  margin: 0;
+  font-size: 12px;
+  color: #6f6f6f;
+}
+
+/* Ховер */
+
+.benefit-badge:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 18px 40px rgba(0, 0, 0, 0.12);
+  background-color: #ffffff;
+}
+
+/* Адаптив */
+
+@media (max-width: 960px) {
+  .benefits-badges-inner {
+    flex-wrap: wrap;
+  }
+
+  .benefit-badge {
+    flex: 1 1 calc(50% - 8px);
+  }
+}
+
+@media (max-width: 640px) {
+  .benefits-badges {
+    padding: 24px 0 32px;
+  }
+
+  .benefits-badges-inner {
+    flex-direction: column;
+  }
+
+  .benefit-badge {
+    border-radius: 20px;
+  }
+}
+
+
+
+
+
+
+
+
+
+
+/* Блок "Берём заботы на себя" */
+
+.care {
+  padding: 200px 0 200px;
+  background-color: #F7F4F1; /* можешь заменить на свой светлый */
+}
+
+.care-inner {
+  text-align: center;
+}
+
+.care-title {
+  margin: 0 0 16px;
+  font-family: var(--font-heading);
+  font-weight: 800;
+  font-size: 44px;
+}
+
+.care-subtitle {
+  margin: 0 0 40px;
+  max-width: 720px;
+  margin-inline: auto;
+  font-size: 16px;
+  line-height: 1.6;
+  color: #555555;
+}
+
+.care-grid {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: 40px;
+  align-items: start;
+}
+
+.care-item {
+  text-align: center;
+}
+
+.care-icon {
+  width: 80px;
+  height: 80px;
+  margin: 0 auto 16px;
+  border-radius: 50%;
+  background: radial-gradient(circle at 30% 20%, #ffffff, #f0f0f0);
+  box-shadow: 0 14px 40px rgba(0, 0, 0, 0.08);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.care-icon span {
+  font-size: 28px;
+}
+
+.care-item-title {
+  margin: 0 0 10px;
+  font-size: 18px;
+  font-weight: 600;
+}
+
+.care-item-text {
+  margin: 0;
+  font-size: 14px;
+  line-height: 1.6;
+  color: #666666;
+}
+
+/* Адаптив */
+
+@media (max-width: 960px) {
+  .care {
+    padding: 72px 0 80px;
+  }
+
+  .care-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    row-gap: 32px;
+  }
+}
+
+@media (max-width: 640px) {
+  .care {
+    padding: 56px 0 72px;
+  }
+
+  .care-title {
+    font-size: 32px;
+  }
+
+  .care-grid {
+    grid-template-columns: minmax(0, 1fr);
+  }
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* Секция "Наши проекты" */
+
+.projects {
+  padding: 96px 0 80px;
+  background-color: #ffffff;
+}
+
+.section-title {
+  margin: 0 0 32px;
+  font-family: var(--font-heading);
+  font-weight: 700;
+  font-size: 32px;
+  color:#000000;
+}
+
+.projects-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 40px 40px;
+  margin-bottom: 40px;
+}
+
+/* Карточка проекта */
+
+.project-card {
+  display: grid;
+  grid-template-columns: minmax(0, 1.1fr) minmax(0, 1.2fr);
+  gap: 24px;
+  align-items: stretch;
+}
+
+.project-image-wrap {
+  display: block;
+  border-radius: 20px;
+  overflow: hidden;
+  background-color: #f1eee9;
+}
+
+.project-image {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.35s ease;
+}
+
+.project-image-wrap:hover .project-image {
+  transform: scale(1.03);
+}
+
+.project-content {
+  align-self: center;
+  max-width: 360px;
+}
+
+.project-tag {
+  margin: 0 0 8px;
+  font-size: 11px;
+  font-weight: 500;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--text-muted);
+}
+
+.project-title {
+  margin: 0 0 10px;
+  font-family: var(--font-heading);
+  font-weight: 600;
+  font-size: 20px;
+  line-height: 1.3;
+}
+
+.project-text {
+  margin: 0 0 16px;
+  font-size: 14px;
+  line-height: 1.6;
+  color: #555555;
+}
+
+.project-link {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  font-size: 13px;
+  font-weight: 500;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  text-decoration: none;
+  color: var(--text-main);
+}
+
+.project-link-icon {
+  font-size: 12px;
+}
+
+/* Кнопка "Все проекты" снизу */
+
+.projects-footer {
+  display: flex;
+  justify-content: center;
+}
+
+.projects-more {
+  min-width: 180px;
+}
+
+/* Адаптив */
+
+@media (max-width: 1100px) {
+  .project-card {
+    grid-template-columns: minmax(0, 1fr);
+  }
+
+  .project-content {
+    max-width: none;
+  }
+}
+
+@media (max-width: 800px) {
+  .projects {
+    padding: 72px 0 64px;
+  }
+
+  .projects-grid {
+    grid-template-columns: minmax(0, 1fr);
+    gap: 32px;
+  }
+}
+
+@media (max-width: 480px) {
+  .section-title {
+    font-size: 26px;
+    margin-bottom: 24px;
+  }
+
+  .project-title {
+    font-size: 18px;
+  }
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* Footer */
+/* FOOTER */
+
+.site-footer {
+  margin-top: 96px;
+  border-top: 1px solid var(--border-light);
+  background-color: #ffffff;
+  color: #111111;
+  font-size: 13px;
+}
+
+.footer-top {
+  display: grid;
+  grid-template-columns: 2.1fr 1.6fr 1.4fr 1.4fr 1.3fr;
+  gap: 48px;
+  padding: 48px 24px 40px;
+}
+
+.footer-col-wide {
+  max-width: 320px;
+}
+
+.footer-heading {
+  margin: 0 0 12px;
+  font-family: var(--font-heading);
+  font-weight: 600;
+  font-size: 14px;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+}
+
+.footer-heading-spaced {
+  margin-top: 24px;
+}
+
+.footer-phone {
+  display: inline-block;
+  margin-bottom: 4px;
+  font-family: var(--font-heading);
+  font-weight: 600;
+  font-size: 16px;
+  text-decoration: none;
+  color: #111111;
+}
+
+.footer-note {
+  margin: 0 0 16px;
+  font-size: 11px;
+  color: var(--text-muted);
+}
+
+.footer-subblock {
+  margin-bottom: 12px;
+}
+
+.footer-label {
+  margin: 0 0 2px;
+  font-size: 12px;
+  color: #000000;
+}
+
+.footer-text {
+  margin: 0 0 12px;
+}
+
+.footer-link {
+  color: #111111;
+  text-decoration: none;
+  border-bottom: 1px solid transparent;
+  transition: border-color 0.2s ease, color 0.2s ease;
+}
+
+.footer-link:hover {
+  color: #000000;
+  border-color: rgba(0, 0, 0, 0.4);
+}
+
+.footer-list {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.footer-list li {
+  margin-bottom: 6px;
+}
+
+/* Способы оплаты (упрощённо) */
+
+.footer-pay {
+  display: flex;
+  gap: 6px;
+  margin: 4px 0 10px;
+}
+
+.pay-card {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 4px 8px;
+  border-radius: 6px;
+  border: 1px solid var(--border-light);
+  font-size: 11px;
+}
+
+/* Нижняя полоса */
+
+.footer-bottom {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 24px;
+  padding: 18px 24px 22px;
+  border-top: 1px solid var(--border-light);
+  font-size: 12px;
+  color: var(--text-muted);
+}
+
+.footer-bottom-left {
+  display: flex;
+  align-items: center;
+  gap: 24px;
+}
+
+.footer-logo {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.footer-privacy {
+  font-size: 12px;
+  border-bottom: 1px solid rgba(0, 0, 0, 0.25);
+}
+
+.footer-bottom-right {
+  text-align: right;
+}
+
+.footer-copy {
+  margin: 0;
+}
+
+/* Адаптив footer */
+
+@media (max-width: 1100px) {
+  .footer-top {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    row-gap: 32px;
+  }
+}
+
+@media (max-width: 800px) {
+  .site-footer {
+    margin-top: 72px;
+  }
+
+  .footer-top {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    padding-inline: 24px;
+  }
+
+  .footer-bottom {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .footer-bottom-right {
+    text-align: left;
+  }
+}
+
+@media (max-width: 560px) {
+  .footer-top {
+    grid-template-columns: minmax(0, 1fr);
+    padding-inline: 16px;
+  }
+
+  .footer-bottom {
+    padding-inline: 16px;
+  }
+}
+
+
+
+
+/* Заголовок-переход к блоку материалов */
+
+.materials-intro {
+  padding: 56px 0 32px;
+  background-color: #f7f4f1; /* как фон под hero */
+  text-align: center;
+}
+
+.materials-intro-title {
+  margin: 0 0 8px;
+  font-family: var(--font-heading);
+  font-weight: 700;
+  font-size: 28px;
+}
+
+.materials-intro-subtitle {
+  margin: 0;
+  font-family: var(--font-body);
+  font-size: 14px;
+  color: #6a6862;
+}
+
+/* Чтобы не было лишнего воздуха сверху у тёмного блока */
+
+.materials {
+  margin-top: 0;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* Материалы и фурнитура — Contrast shelf */
+
+.materials {
+  margin-top: 100px;
+  padding: 206px 0 206px;
+  background-color: #181818;
+  color: #f7f4f1;
+  min-height: 100%;
+}
+
+.materials-inner {
+  text-align: center;
+}
+
+/* Заголовок */
+
+.materials-title {
+  margin: 0 0 12px;
+  font-family: var(--font-heading);
+  font-weight: 700;
+  font-size: 32px;
+  color: #fffdfd;
+}
+
+.materials-subtitle {
+  margin: 0 0 28px;
+  font-size: 15px;
+  color: rgba(247, 244, 241, 0.75);
+}
+
+/* Логотипы */
+
+.materials-logos {
+  display: inline-flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  margin-bottom: 32px;
+}
+
+.materials-logo {
+  padding: 8px 16px;
+  border-radius: 999px;
+  background-color: rgba(255, 255, 255, 0.04);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  font-size: 12px;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: rgba(247, 244, 241, 0.85);
+}
+
+/* Карточки материалов */
+
+.materials-grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 24px;
+  margin-bottom: 20px;
+  text-align: left;
+}
+
+.materials-card {
+  padding: 24px 24px 22px;
+  border-radius: 24px;
+  background-color: #ffffff;
+  color: #111111;
+  box-shadow: 0 18px 56px rgba(0, 0, 0, 0.38);
+  min-height: 260px;
+}
+
+.materials-card-title {
+  margin: 0 0 10px;
+  font-family: var(--font-heading);
+  font-weight: 600;
+  font-size: 18px;
+}
+
+.materials-card-text {
+  margin: 0 0 16px;
+  font-size: 14px;
+  line-height: 1.6;
+  color: #4a4a4a;
+}
+
+.materials-card-link {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  font-size: 13px;
+  font-weight: 500;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  text-decoration: none;
+  color: #111111;
+}
+
+.materials-card-arrow {
+  font-size: 12px;
+}
+
+/* Низ секции */
+
+.materials-note {
+  margin: 16px auto 0;
+  max-width: 520px;
+  font-size: 13px;
+  color: rgba(247, 244, 241, 0.7);
+}
+
+/* Адаптив */
+
+@media (max-width: 960px) {
+  .materials {
+    margin-top: 72px;
+    padding: 64px 0 72px;
+  }
+
+  .materials-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
+
+@media (max-width: 640px) {
+  .materials-grid {
+    grid-template-columns: minmax(0, 1fr);
+  }
+
+  .materials-title {
+    font-size: 26px;
+  }
+
+  .materials-subtitle {
+    font-size: 14px;
+  }
+}
+
+
+
+
+
+
+
+
+
+.materials-card {
+  position: relative;
+  padding: 24px 24px 22px;
+  border-radius: 24px;
+  background-color: #ffffff;
+  color: #111111;
+  box-shadow: 0 18px 56px rgba(0, 0, 0, 0.38);
+  overflow: hidden; /* чтобы полоска не вылезала за радиус */
+}
+
+/* Общий вид полоски справа */
+.materials-card::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  right: 0;
+  width: 26%;          /* ширина полосы */
+  height: 100%;
+  opacity: 0.4;        /* чтобы не мешала тексту */
+  background-size: cover;
+  background-position: center;
+  pointer-events: none;
+}
+
+/* Конкретные текстуры для карточек */
+.materials-card-laminate::after {
+  background-image: url("img/material-laminate.jpg");
+  
+}
+
+.materials-card-mdf::after {
+  background-image: url("img/material-mdf.jpg");
+
+}
+
+.materials-card-hardware::after {
+  background-image: url("img/material-hardware.jpg");
+}
+
+/* Немного сдвинем текст, чтобы не упирался в полоску */
+.materials-card-title,
+.materials-card-text,
+.materials-card-link {
+  position: relative;
+  z-index: 1;
+  max-width: 70%; /* чтобы текст не заходил на текстуру */
+}
+
+/* Лёгкий эффект по ховеру */
+.materials-card:hover::after {
+  opacity: 0.95;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* Секция "Что мы делаем" */
+
+.services {
+  padding: 96px 0 80px;
+  background-color: #f7f4f1;
+}
+
+.section-subtitle {
+  margin: 0 0 32px;
+  font-size: 15px;
+  color: #606060;
+}
+
+.services-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 40px 40px;
+  margin-bottom: 32px;
+}
+
+/* Карточка как в блоке "Наши проекты" */
+
+.service-card {
+  display: grid;
+  grid-template-columns: minmax(0, 1.05fr) minmax(0, 1.25fr);
+  gap: 24px;
+  align-items: stretch;
+}
+
+.service-image-wrap {
+  display: block;
+  border-radius: 20px;
+  overflow: hidden;
+  background-color: #eee6dd;
+}
+
+.service-image {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.35s ease;
+}
+
+.service-image-wrap:hover .service-image {
+  transform: scale(1.03);
+}
+
+.service-content {
+  align-self: center;
+  max-width: 360px;
+}
+
+.service-tag {
+  margin: 0 0 8px;
+  font-size: 11px;
+  font-weight: 500;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+
+}
+
+.service-title {
+  margin: 0 0 10px;
+  font-family: var(--font-heading);
+  font-weight: 600;
+  font-size: 20px;
+  line-height: 1.3;
+}
+
+.service-text {
+  margin: 0 0 16px;
+  font-size: 14px;
+  line-height: 1.6;
+  color: #555555;
+}
+
+.service-link {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  font-size: 13px;
+  font-weight: 500;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  text-decoration: none;
+  color: #111111;
+}
+
+.service-link-icon {
+  font-size: 12px;
+}
+
+/* Низ секции */
+
+.services-note {
+  margin: 0;
+  font-size: 13px;
+  color: #555555;
+}
+
+.services-note a {
+  color: #111111;
+  text-decoration: underline;
+  text-decoration-thickness: 1px;
+}
+
+/* Адаптив */
+
+@media (max-width: 1100px) {
+  .service-card {
+    grid-template-columns: minmax(0, 1fr);
+  }
+
+  .service-content {
+    max-width: none;
+  }
+}
+
+@media (max-width: 800px) {
+  .services {
+    padding: 72px 0 64px;
+  }
+
+  .services-grid {
+    grid-template-columns: minmax(0, 1fr);
+    gap: 32px;
+  }
+}
+
+@media (max-width: 480px) {
+  .section-title {
+    font-size: 26px;
+  }
+
+  .service-title {
+    font-size: 18px;
+  }
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* Сплит-блок "Обсудим ваш проект?" */
+
+.contact-split {
+  padding: 80px 0 96px;
+  background-color: #f7f4f1;
+}
+
+.contact-split-inner {
+ display: grid;
+  grid-template-columns: minmax(0, 1.1fr) minmax(0, 0.9fr);
+  border-radius: 32px;
+  overflow: hidden;
+  box-shadow: 0 32px 90px rgba(0, 0, 0, 0.16);
+  background-color: transparent;
+  background-image: linear-gradient(
+    to right,
+    #ffffff 0%,
+    #ffffff 55%,
+    #111111 55%,
+    #111111 100%
+  );
+}
+
+/* Левая часть */
+
+.contact-split-left {
+  padding: 40px 40px 36px;
+  background-color: transparent;
+}
+
+.contact-title {
+  margin: 0 0 28px;
+  font-family: var(--font-heading);
+  font-weight: 700;
+  font-size: 28px;
+}
+
+.contact-form-row {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 16px 20px;
+  margin-bottom: 18px;
+}
+
+.contact-field {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  margin-bottom: 16px;
+}
+
+.contact-label {
+  font-size: 11px;
+  font-weight: 500;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: #8b8b8b;
+}
+
+.contact-input {
+  width: 100%;
+  padding: 11px 14px;
+  border-radius: 12px;
+  border: 1px solid #e2e0dc;
+  background-color: #faf8f5;
+  font-size: 14px;
+  outline: none;
+  transition: border-color 0.18s ease, box-shadow 0.18s ease, background-color 0.18s ease;
+}
+
+.contact-input::placeholder {
+  color: #b4b1ab;
+}
+
+.contact-input:focus {
+  border-color: #c79862;
+  box-shadow: 0 0 0 1px rgba(199, 152, 98, 0.3);
+  background-color: #ffffff;
+}
+
+.contact-textarea {
+  min-height: 120px;
+  resize: vertical;
+}
+
+/* Кнопка */
+
+.contact-submit {
+  width: 100%;
+  margin-top: 4px;
+  padding: 14px 20px;
+  border-radius: 14px;
+  border: none;
+  background-color: #111111;
+  color: #ffffff;
+  font-family: var(--font-heading);
+  font-weight: 600;
+  font-size: 14px;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  cursor: pointer;
+  transition: background-color 0.18s ease, transform 0.15s ease, box-shadow 0.18s ease;
+}
+
+.contact-submit:hover {
+  background-color: #000000;
+  transform: translateY(-1px);
+  box-shadow: 0 10px 26px rgba(0, 0, 0, 0.25);
+}
+
+.contact-privacy {
+  margin: 10px 0 0;
+  font-size: 11px;
+  color: #a09d96;
+}
+
+/* Правая часть */
+
+.contact-split-right {
+  padding: 40px 40px 32px;
+  
+  background-color: transparent;
+  color: #f7f4f1;
+}
+
+.contact-right-title {
+  margin: 0 0 28px;
+  font-family: var(--font-heading);
+  font-weight: 600;
+  font-size: 20px;
+}
+
+.contact-right-block {
+  display: flex;
+  align-items: flex-start;
+  gap: 14px;
+  margin-bottom: 20px;
+}
+
+.contact-right-icon {
+  flex-shrink: 0;
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  background-color: #1e1e1e;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 18px;
+}
+
+.contact-right-label {
+  margin: 0 0 2px;
+  font-size: 11px;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: #a4a4a4;
+}
+
+.contact-right-text {
+  margin: 0;
+  font-size: 14px;
+}
+
+.contact-right-divider {
+  height: 1px;
+  margin: 24px 0 18px;
+  background-color: rgba(255, 255, 255, 0.12);
+}
+
+.contact-right-socials {
+  display: flex;
+  gap: 12px;
+}
+
+.contact-right-social {
+  font-size: 13px;
+  color: #f7f4f1;
+  text-decoration: none;
+  border-bottom: 1px solid rgba(247, 244, 241, 0.4);
+}
+
+/* Адаптив */
+
+@media (max-width: 960px) {
+  .contact-split-inner {
+    grid-template-columns: minmax(0, 1fr);
+  }
+
+  .contact-split-right {
+    border-top: 1px solid rgba(255, 255, 255, 0.08);
+  }
+}
+
+@media (max-width: 640px) {
+  .contact-split {
+    padding: 64px 0 80px;
+  }
+
+  .contact-split-left,
+  .contact-split-right {
+    padding: 28px 24px 28px;
+  }
+
+  .contact-form-row {
+    grid-template-columns: minmax(0, 1fr);
+  }
+
+  .contact-title {
+    font-size: 24px;
+  }
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+.contact-right-icon {
+  flex-shrink: 0;
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  background-color: #ffffff;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.contact-right-icon img {
+  width: 20px;      /* подгони под свои иконки */
+  height: 20px;
+  object-fit: contain;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* Базовая обёртка секции */
+.wardrobe-section {
+  padding: 60px 0;
+  background: #f5f4f1;
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, "SF Pro Text",
+    "Segoe UI", sans-serif;
+}
+
+.wardrobe-inner {
+  max-width: 1180px;
+  margin: 0 auto;
+  background: #ffffff;
+  border-radius: 32px;
+  padding: 32px 32px 28px;
+  display: grid;
+  grid-template-columns: minmax(0, 1.2fr) minmax(0, 1fr);
+  gap: 32px;
+  box-shadow: 0 24px 80px rgba(15, 15, 15, 0.14);
+}
+
+/* Левая часть */
+.wardrobe-left {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+
+
+
+/* Хотспот на фасаде */
+.wardrobe-hotspot {
+  position: absolute;
+  inset: 12% 20% 26%;
+  border-radius: 16px;
+  background: transparent;
+  border: none;
+  cursor: pointer;
+}
+
+/* Текущая комплектация */
+.wardrobe-current {
+  margin-top: 20px;
+  padding: 16px 20px;
+  background: #ffffff;
+  border-radius: 18px;
+  display: inline-flex;
+  flex-direction: column;
+  gap: 4px;
+  box-shadow: 0 14px 40px rgba(0, 0, 0, 0.18);
+}
+
+.wardrobe-current-label {
+  font-size: 11px;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: #8e8e8e;
+}
+
+.wardrobe-current-main {
+  display: flex;
+  gap: 8px;
+  flex-wrap: wrap;
+  font-size: 14px;
+  color: #141414;
+}
+
+.wardrobe-current-size {
+  color: #8e8e8e;
+}
+
+/* Правая часть */
+.wardrobe-right {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+/* Вкладки */
+.wardrobe-tabs {
+  display: flex;
+  gap: 16px;
+  border-bottom: 1px solid #ececec;
+  margin-bottom: 8px;
+}
+
+.wardrobe-tab {
+  padding: 6px 0;
+  background: none;
+  border: none;
+  border-bottom: 2px solid transparent;
+  font-size: 14px;
+  color: #8a8a8a;
+  cursor: pointer;
+}
+
+.wardrobe-tab.is-active {
+  color: #151515;
+  border-color: #151515;
+}
+
+/* Карточки-панели */
+.wardrobe-panel {
+  padding: 12px 0;
+}
+
+.wardrobe-panel-title {
+  font-size: 13px;
+  text-transform: uppercase;
+  letter-spacing: 0.14em;
+  color: #9c9c9c;
+  margin-bottom: 12px;
+}
+
+/* Материалы фасада */
+.wardrobe-materials {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+}
+
+.material-swatch {
+  position: relative;
+  display: inline-flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 6px;
+  padding: 8px 10px;
+  border-radius: 18px;
+  border: 1px solid transparent;
+  background: #f4f3f0;
+  cursor: pointer;
+  font-size: 12px;
+  color: #4b4b4b;
+  min-width: 70px;
+}
+
+.material-swatch.is-active {
+  border-color: #151515;
+  background: #ffffff;
+}
+
+.material-color {
+  width: 42px;
+  height: 32px;
+  border-radius: 10px;
+  border: 1px solid rgba(0, 0, 0, 0.08);
+}
+
+/* Здесь подбери оттенки под дизайн */
+.material-color--oak {
+  background: #c99b63;
+}
+
+.material-color--white {
+  background: #f8f8f8;
+}
+
+.material-color--anthracite {
+  background: #545454;
+}
+
+.material-color--wenge {
+  background: #8a6a4b;
+}
+
+/* Слайдеры */
+.wardrobe-slider-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 4px;
+  margin-top: 12px;
+}
+
+.wardrobe-slider-label {
+  font-size: 13px;
+  color: #5a5a5a;
+}
+
+.wardrobe-slider-value {
+  font-size: 13px;
+  color: #111111;
+}
+
+.wardrobe-slider {
+  width: 100%;
+  accent-color: #151515;
+}
+
+/* Опции */
+.wardrobe-option {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 10px 0;
+  gap: 12px;
+  cursor: pointer;
+}
+
+.wardrobe-option-main {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.wardrobe-option-icon {
+  width: 24px;
+  height: 24px;
+  border-radius: 999px;
+  background: #f2f2f2;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 12px;
+}
+
+.wardrobe-option-text {
+  font-size: 14px;
+  color: #222222;
+}
+
+/* Кастомный переключатель */
+.wardrobe-option-input {
+  position: absolute;
+  opacity: 0;
+  pointer-events: none;
+}
+
+.wardrobe-option-switch {
+  position: relative;
+  flex-shrink: 0;
+  width: 36px;
+  height: 20px;
+  border-radius: 999px;
+  background: #d5d5d5;
+  transition: background 0.2s ease;
+}
+
+.wardrobe-option-switch::before {
+  content: "";
+  position: absolute;
+  top: 2px;
+  left: 2px;
+  width: 16px;
+  height: 16px;
+  border-radius: 50%;
+  background: #ffffff;
+  box-shadow: 0 1px 4px rgba(0, 0, 0, 0.25);
+  transition: transform 0.2s ease;
+}
+
+.wardrobe-option-input:checked + .wardrobe-option-switch {
+  background: #111111;
+}
+
+.wardrobe-option-input:checked + .wardrobe-option-switch::before {
+  transform: translateX(16px);
+}
+
+/* Блок цены */
+.wardrobe-price {
+  margin-top: auto;
+  align-self: flex-end;
+  padding: 14px 24px;
+  border-radius: 18px;
+  background: #111111;
+  color: #ffffff;
+  display: inline-flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.wardrobe-price-label {
+  font-size: 11px;
+  text-transform: uppercase;
+  letter-spacing: 0.16em;
+  color: rgba(255, 255, 255, 0.6);
+}
+
+.wardrobe-price-value {
+  font-size: 20px;
+}
+
+/* Адаптив */
+@media (max-width: 900px) {
+  .wardrobe-inner {
+    grid-template-columns: 1fr;
+    padding: 24px 16px 20px;
+  }
+
+  .wardrobe-canvas img {
+    width: 72%;
+  }
+
+  .wardrobe-price {
+    align-self: stretch;
+    justify-content: space-between;
+    flex-direction: row;
+  }
+}
+
+
+
+.wardrobe-canvas {
+  position: relative;
+  border-radius: 32px;
+  overflow: hidden;          /* чтобы края картинки не вылазили */
+}
+
+/* картинка на весь блок */
+.wardrobe-canvas img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;         /* заполняет блок без искажений пропорций */
+  display: block;
+  transition: opacity 0.25s ease;
+}
+
+/* тень снизу уже не нужна, можешь удалить или оставить по вкусу */
+.wardrobe-shadow {
+  display: none;
+}
+
+/* ===== Responsive safety layer (non-breaking) ===== */
+@media (max-width: 1280px) {
+  .container {
+    padding-inline: clamp(16px, 2.4vw, 24px);
+  }
+}
+
+@media (max-width: 1024px) {
+  .hero-title {
+    font-size: clamp(30px, 4.4vw, 48px);
+    line-height: 1.15;
+  }
+
+  .hero-subtitle {
+    font-size: clamp(15px, 1.7vw, 18px);
+  }
+}
+
+@media (max-width: 768px) {
+  .hero {
+    min-height: auto;
+    padding-top: 56px;
+    padding-bottom: 32px;
+  }
+
+  .hero-card,
+  .hero-project-card {
+    max-width: 100%;
+  }
+
+  .hero-actions {
+    gap: 10px;
+  }
+
+  .hero-actions .btn,
+  .hero-secondary .btn {
+    min-height: 44px;
+  }
+
+  .phone-pill {
+    min-width: 0;
+    max-width: 100%;
+  }
+}
+
+@media (max-width: 480px) {
+  .container {
+    padding-inline: 12px;
+  }
+
+  .hero {
+    padding-top: 40px;
+  }
+
+  .hero-title {
+    font-size: clamp(24px, 8vw, 34px);
+  }
+}

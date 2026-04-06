@@ -1,28 +1,32 @@
-document.querySelector('.contact-form').addEventListener('submit', async (e) => {
-  e.preventDefault();
+const contactForm = document.querySelector('.contact-form');
 
-  const btn = e.target.querySelector('.contact-submit');
-  btn.textContent = 'Отправляем...';
-  btn.disabled = true;
+if (contactForm) {
+  contactForm.addEventListener('submit', async (e) => {
+    e.preventDefault();
 
-  // ✅ FormData вместо URLSearchParams
-  const formData = new FormData();
-  formData.append('name',  document.getElementById('cf-name').value);
-  formData.append('phone', document.getElementById('cf-phone').value);
-  formData.append('idea',  document.getElementById('cf-idea').value);
+    const btn = e.target.querySelector('.contact-submit');
+    btn.textContent = 'Отправляем...';
+    btn.disabled = true;
 
-  const res = await fetch('/submit-form', {
-    method: 'POST',
-    body: formData,  // ← Content-Type НЕ указываем вручную!
+    // ✅ FormData вместо URLSearchParams
+    const formData = new FormData();
+    formData.append('name', document.getElementById('cf-name').value);
+    formData.append('phone', document.getElementById('cf-phone').value);
+    formData.append('idea', document.getElementById('cf-idea').value);
+
+    const res = await fetch('/submit-form', {
+      method: 'POST',
+      body: formData, // ← Content-Type НЕ указываем вручную!
+    });
+
+    if (res.ok) {
+      btn.textContent = 'Запрос отправлен ✓';
+    } else {
+      btn.textContent = 'Ошибка, попробуйте снова';
+      btn.disabled = false;
+    }
   });
-
-  if (res.ok) {
-    btn.textContent = 'Запрос отправлен ✓';
-  } else {
-    btn.textContent = 'Ошибка, попробуйте снова';
-    btn.disabled = false;
-  }
-});
+}
 
 
 // Уже существующий обработчик для .contact-form тут выше...
@@ -102,4 +106,3 @@ if (calcForm) {
     }
   });
 }
-
