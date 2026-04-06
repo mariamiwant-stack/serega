@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://precise-home.ru/sitemap.xml
