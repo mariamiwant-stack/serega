@@ -1316,3 +1316,55 @@ body {
       transform: translateY(-2px);
       box-shadow: 0 22px 50px rgba(0, 0, 0, 0.12);
     }
+
+/* ===== Extra responsive fixes (safe overrides) ===== */
+.page {
+  width: min(100%, var(--max-width));
+  margin-inline: auto;
+}
+
+.page__inner,
+.header__inner {
+  width: min(100% - 24px, var(--max-width));
+}
+
+.hero-title {
+  font-size: clamp(28px, 5vw, 56px);
+}
+
+.hero-subtitle {
+  font-size: clamp(14px, 1.8vw, 18px);
+}
+
+@media (max-width: 1024px) {
+  .hero-grid,
+  .compare-grid,
+  .bento-grid {
+    grid-template-columns: minmax(0, 1fr);
+  }
+}
+
+@media (max-width: 768px) {
+  .page__inner {
+    padding-top: 78px;
+  }
+
+  .hero,
+  .compare,
+  .cta,
+  .calc {
+    padding: 18px 16px;
+  }
+
+  .btn-primary,
+  .btn-secondary {
+    min-height: 44px;
+  }
+}
+
+@media (max-width: 480px) {
+  .page__inner,
+  .header__inner {
+    width: min(100% - 16px, var(--max-width));
+  }
+}

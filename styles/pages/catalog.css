@@ -446,3 +446,54 @@
         grid-template-columns: 1fr;
       }
     }
+
+    /* ===== Extra responsive fixes (safe overrides) ===== */
+    .page {
+      width: min(100%, 1200px);
+      padding-inline: clamp(12px, 2.5vw, 24px);
+    }
+
+    .cards-grid {
+      grid-template-columns: repeat(auto-fit, minmax(min(280px, 100%), 1fr));
+    }
+
+    .modal {
+      width: min(100%, 900px);
+      max-height: min(90dvh, 900px);
+    }
+
+    .btn,
+    .category-chip,
+    .pvh-chip {
+      min-height: 44px;
+    }
+
+    @media (max-width: 768px) {
+      .filters,
+      .filters-main,
+      .catalog-layout {
+        grid-template-columns: 1fr;
+      }
+
+      .filters-actions {
+        justify-content: stretch;
+      }
+
+      .filters-actions .btn {
+        width: 100%;
+      }
+
+      .modal-body {
+        padding: 16px;
+      }
+    }
+
+    @media (max-width: 480px) {
+      h1 {
+        font-size: clamp(26px, 8vw, 34px);
+      }
+
+      .subtitle {
+        font-size: 14px;
+      }
+    }

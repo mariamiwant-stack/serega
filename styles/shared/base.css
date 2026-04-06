@@ -25,6 +25,20 @@ body {
   background-color: var(--bg-main);
 }
 
+html,
+body {
+  max-width: 100%;
+  overflow-x: clip;
+}
+
+img,
+video,
+canvas,
+svg,
+iframe {
+  max-width: 100%;
+}
+
 /* Контейнер */
 
 .container {
@@ -202,7 +216,8 @@ body {
 
 .hero {
     position: relative;
-  min-height: calc(100vh - 80px); /* 80px — высота шапки на десктопе */
+  min-height: calc(100vh - 80px); /* fallback */
+  min-height: calc(100dvh - 80px);
   padding: 96px 0;
   overflow: hidden;
   display: flex;
@@ -2060,4 +2075,63 @@ body {
 /* тень снизу уже не нужна, можешь удалить или оставить по вкусу */
 .wardrobe-shadow {
   display: none;
+}
+
+/* ===== Responsive safety layer (non-breaking) ===== */
+@media (max-width: 1280px) {
+  .container {
+    padding-inline: clamp(16px, 2.4vw, 24px);
+  }
+}
+
+@media (max-width: 1024px) {
+  .hero-title {
+    font-size: clamp(30px, 4.4vw, 48px);
+    line-height: 1.15;
+  }
+
+  .hero-subtitle {
+    font-size: clamp(15px, 1.7vw, 18px);
+  }
+}
+
+@media (max-width: 768px) {
+  .hero {
+    min-height: auto;
+    padding-top: 56px;
+    padding-bottom: 32px;
+  }
+
+  .hero-card,
+  .hero-project-card {
+    max-width: 100%;
+  }
+
+  .hero-actions {
+    gap: 10px;
+  }
+
+  .hero-actions .btn,
+  .hero-secondary .btn {
+    min-height: 44px;
+  }
+
+  .phone-pill {
+    min-width: 0;
+    max-width: 100%;
+  }
+}
+
+@media (max-width: 480px) {
+  .container {
+    padding-inline: 12px;
+  }
+
+  .hero {
+    padding-top: 40px;
+  }
+
+  .hero-title {
+    font-size: clamp(24px, 8vw, 34px);
+  }
 }
