@@ -4,16 +4,33 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>Калькулятор мебели под ключ — Владивосток</title>
+  <meta name="description" content="Онлайн-калькулятор кухни и шкафа на заказ во Владивостоке: оцените стоимость по размерам, уровню материалов и срокам изготовления.">
+  <meta name="robots" content="index,follow,max-image-preview:large">
+  <link rel="canonical" href="https://precise-home.ru/calc/calc.html">
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="Калькулятор мебели под ключ — Владивосток">
+  <meta property="og:description" content="Рассчитайте ориентировочную стоимость кухни или шкафа на заказ онлайн.">
+  <meta property="og:url" content="https://precise-home.ru/calc/calc.html">
+  <meta property="og:image" content="https://precise-home.ru/foto_44.png">
   <script src="https://cdn.tailwindcss.com"></script>
   
   <link rel="icon" href="/browser.png" sizes="32x32" type="image/png">
-  <link rel="stylesheet" href="/styles.css">
-  <link rel="stylesheet" href="/calc/calc.css">
+  <link rel="stylesheet" href="/styles/shared/base.css">
+  <link rel="stylesheet" href="/styles/pages/calc.css">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
   <script src="https://cdnjs.cloudflare.com/ajax/libs/html2pdf.js/0.10.1/html2pdf.bundle.min.js"
         integrity="sha512-GsLlZN/3F2ErC5ifS5QtgpiJtWd43JWSuIgh7mbzZ8zBps+dvLusV+eNQATqgA/HdeKFVgA5v3S/cIrLF7QnIg=="
         crossorigin="anonymous" referrerpolicy="no-referrer"></script>
-   <script src="/calc/calc.js"></script>
+   <script src="/scripts/pages/calc.js" defer></script>
+   <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "WebPage",
+      "name": "Калькулятор мебели под ключ",
+      "url": "https://precise-home.ru/calc/calc.html",
+      "description": "Онлайн расчет кухни и шкафов на заказ во Владивостоке."
+    }
+  </script>
 </head>
 <body class="min-h-screen">
 <header class="site-header">
@@ -40,6 +57,9 @@
     </button>
   </div>
 </header>
+<nav class="container breadcrumbs" aria-label="Хлебные крошки">
+  <a href="/">Главная</a> <span>•</span> <span>Калькулятор</span>
+</nav>
 
 
 
@@ -464,9 +484,6 @@
   <p id="pdf-total" style="font-size:22px;font-weight:bold;"></p>
 </div>
 
-
-
-
-
+<script src="/scripts/shared/performance.js" defer></script>
 </body>
 </html>

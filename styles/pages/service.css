@@ -1,0 +1,76 @@
+.service-page {
+  width: min(100%, 1120px);
+  margin: 0 auto;
+  padding: 24px 16px 56px;
+  color: #111;
+}
+
+.service-hero {
+  background: #fff;
+  border: 1px solid #ececec;
+  border-radius: 20px;
+  padding: clamp(16px, 3vw, 28px);
+  margin-bottom: 20px;
+}
+
+.service-hero h1 {
+  margin: 0 0 10px;
+  font-size: clamp(28px, 4vw, 44px);
+}
+
+.service-hero p {
+  margin: 0;
+  color: #444;
+  max-width: 75ch;
+}
+
+.service-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(min(280px, 100%), 1fr));
+  gap: 12px;
+  margin-bottom: 20px;
+}
+
+.service-card {
+  background: #fff;
+  border: 1px solid #ececec;
+  border-radius: 16px;
+  padding: 16px;
+}
+
+.service-card h2 {
+  margin: 0 0 8px;
+  font-size: 20px;
+}
+
+.service-card p,
+.service-card li {
+  color: #444;
+}
+
+.service-cta {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+}
+
+.service-cta a {
+  min-height: 44px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 999px;
+  padding: 10px 16px;
+  text-decoration: none;
+}
+
+.service-cta .cta-primary {
+  background: #111;
+  color: #fff;
+}
+
+.service-cta .cta-secondary {
+  background: #fff;
+  border: 1px solid #ddd;
+  color: #111;
+}
